@@ -18,4 +18,10 @@ public abstract class EnemyBase : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
     }
+
+
+    void TestMethodFromMyPC()
+    {
+
+    }
 }
