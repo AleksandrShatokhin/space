@@ -29,7 +29,7 @@ public class SpawnerBox : MonoBehaviour
         Vector3 randomPoint;
 
         randomPoint.x = Random.Range(bc.bounds.min.x, bc.bounds.max.x);
-        randomPoint.y = Random.Range(bc.bounds.min.y, bc.bounds.max.y);
+        randomPoint.y = 0.0f;
         randomPoint.z = Random.Range(bc.bounds.min.z, bc.bounds.max.z);
 
         return randomPoint;
@@ -39,12 +39,13 @@ public class SpawnerBox : MonoBehaviour
 
     void Spawn()
     {
-        Quaternion q = Quaternion.identity;
-        q.y = -180;
+        Quaternion q = new Quaternion(0,180,0,0);
+
 
         if (timer < Time.time)
         {
-            Instantiate(objectToSpawn, GetRandomPointInBounds(), q);
+            GameObject obj = Instantiate(objectToSpawn, GetRandomPointInBounds(), q);
+            Debug.Log(obj.transform.rotation);
             timer += rate;
         }
 

@@ -10,6 +10,11 @@ public class AsteroidEnemy : EnemyBase
         
     }
 
+    private void Awake()
+    {
+        Debug.Log(transform.rotation);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -18,9 +23,9 @@ public class AsteroidEnemy : EnemyBase
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        Debug.Log("Astro");
-        if(collision.gameObject.tag == "Player")
+        //Если астероид попал в игрока, то убиваем игрока.
+        //Потенциально заменить на вызов метода у игрока 
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
         }
