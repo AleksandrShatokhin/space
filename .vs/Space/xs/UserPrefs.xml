@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utilities/Mover.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Utilities/SpawnerBox.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Utilities/Mover.cs" Line="15" Column="17" />
+      <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" />
+      <File FileName="Assets/Scripts/Utilities/RandomRotator.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Space" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Enemies" expanded="True" />
+                <Node name="Utilities" expanded="True">
+                  <Node name="SpawnerBox.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="eb211d65-f5d8-4e34-a91b-b5115864de68" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
