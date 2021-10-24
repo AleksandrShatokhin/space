@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class SpawnerBox : MonoBehaviour
 {
-    float timer;
-    float rate = 3.0f;
-    public GameObject objectToSpawn;
 
     BoxCollider bc;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         bc = GetComponent<BoxCollider>();
-        timer = Time.time + rate;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Spawn();
+       
     }
 
 
@@ -37,17 +33,9 @@ public class SpawnerBox : MonoBehaviour
 
 
 
-    void Spawn()
+    public GameObject Spawn(GameObject go)
     {
         Quaternion q = new Quaternion(0,180,0,0);
-
-
-        if (timer < Time.time)
-        {
-            GameObject obj = Instantiate(objectToSpawn, GetRandomPointInBounds(), q);
-            Debug.Log(obj.transform.rotation);
-            timer += rate;
-        }
-
+        return Instantiate(go, GetRandomPointInBounds(), q);
     }
 }
