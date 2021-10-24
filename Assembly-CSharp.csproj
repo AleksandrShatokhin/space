@@ -55,14 +55,15 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" />
     <Compile Include="Assets/Scripts/Enemies/EnemyBase.cs" />
+    <Compile Include="Assets/Scripts/Utilities/RandomRotator.cs" />
     <Compile Include="Assets/Scripts/Projectiles/Projectile.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Utilities/GarbageCollector.cs" />
     <Compile Include="Assets/Scripts/Enemies/AsteroidEnemy.cs" />
+    <Compile Include="Assets/Scripts/Utilities/Mover.cs" />
     <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
     <Compile Include="Assets/Scripts/Utilities/SpawnerBox.cs" />
-    <Compile Include="Assets/Scripts/Utilities/RandomRotator.cs" />
-    <Compile Include="Assets/Scripts/Utilities/Mover.cs" />
+    <Compile Include="Assets/Scripts/Game/GameController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/file.txt" />
