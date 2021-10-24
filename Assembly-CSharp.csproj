@@ -47,6 +47,8 @@
      <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
      <Compile Include="Assets\Scripts\Utilities\ScreenBounds.cs" />
      <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
+     <Compile Include="Assets\Scripts\UI\ClickButtonStart.cs" />
+     <Compile Include="Assets\Scripts\UI\SceneManagerForLevelSelect.cs" />
      <None Include="Assets\file.txt" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\Unity Hub\2020.3.19f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
