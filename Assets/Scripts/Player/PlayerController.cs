@@ -16,9 +16,16 @@ public class PlayerController : MonoBehaviour
     public GameObject projectile;
     Rigidbody rb;
 
-    float speed = 18.0f;
+    public float speedPlayer = 18.0f;
     float forwardInput = 0;
     float horizontalInput = 0;
+
+    private float debuffSlowingActions = 10.0f;
+
+
+    //переменные таймера
+    private float timerStatr = 10.0f;
+    private float timerEnd = 0.0f;
     
 
     // Start is called before the first frame update
@@ -59,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
         //Задать вектор движения и умножить на скорость игрока. 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.velocity = movement * speed;
+        rb.velocity = movement * speedPlayer;
 
 
         //Задать вращение при движении по оси X. Угол наклона регулируется через параметр tilt
@@ -85,6 +92,31 @@ public class PlayerController : MonoBehaviour
         {
             leftUsed = true;
             return leftGun;
+        }
+    }
+
+    void Update()
+    {
+        //запустим условный таймер действия дебафа замедления и востановим начальную скорость
+        if (speedPlayer == debuffSlowingActions)
+        {
+            if (timerStatr > 0)
+            {
+                timerStatr = timerStatr - 0.007f;
+                if (timerStatr <= timerEnd)
+                speedPlayer = 18.0f;
+            }
+        }
+    }
+
+    //проверим столкновение с обьектом
+    void OnCollisionEnter(Collision collision)
+    {   
+        //проверка столкновения с дебафом замедления
+        if (collision.gameObject.tag == "DebuffSlowing")
+        {
+            speedPlayer = debuffSlowingActions;
+            Destroy(collision.gameObject);
         }
     }
 
