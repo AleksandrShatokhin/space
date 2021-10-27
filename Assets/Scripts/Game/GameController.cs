@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
+    static private GameController instance;
+    static public GameController GetInstance() => instance;
 
     public SpawnerBox enemiesSpawner;
     private bool shouldSpawnWave = true;
@@ -13,18 +15,21 @@ public class GameController : MonoBehaviour
     public float waitAfterWave = 5.0f;
     public int enemiesInWave = 10;
     public float waitOnStart = 2.0f;
- 
+
+    private bool isGameOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         StartCoroutine(SpawnWave());
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -47,4 +52,8 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+
+    public bool IsGameOver() => isGameOver;
+    public void GameOver() => isGameOver = true;
 }

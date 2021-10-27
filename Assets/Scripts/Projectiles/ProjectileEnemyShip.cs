@@ -23,8 +23,11 @@ public class ProjectileEnemyShip : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            
+
+            //Вызвать смерть из объекта игрока. Не удалять извне
+            collision.gameObject.GetComponent<PlayerController>().Death();
             Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
 }

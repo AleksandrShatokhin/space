@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public GameObject leftGun;
     public GameObject rightGun;
 
+    private GameController game;
+
     //Регулировка угла наклона 
     public float tilt = 1.5f;
     bool leftUsed = false;
@@ -48,17 +50,6 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         ////Переместить игрока 
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime * forwardInput);
-        //transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
-
-        ////Повернуть игрока при движении влево и вправо
-        //rb.rotation = Quaternion.Euler(
-        //    0.0f,
-        //    0.0f,
-        //    -horizontalInput * 20.0f
-        //);
-
-
         //Реализовал новую механику перемещения используя RigidBody игрока
         //При использовании напрямую Transofrm получаю странное поведение при поворотах игрока
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -118,6 +109,15 @@ public class PlayerController : MonoBehaviour
             speedPlayer = debuffSlowingActions;
             Destroy(collision.gameObject);
         }
+    }
+
+
+    //Правильный путь для смерти игрока. Должны задаваться все необходимые переменные
+    //Например, признак конца игры
+    public void Death()
+    {
+        GameController.GetInstance().GameOver();    
+        Destroy(this.gameObject);
     }
 
 }

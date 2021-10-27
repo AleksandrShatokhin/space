@@ -35,6 +35,11 @@ public class SpawnerBox : MonoBehaviour
 
     public GameObject Spawn(GameObject go)
     {
+        //if (!bc)
+        //{
+        //    return null; 
+        //}
+
         Quaternion q = new Quaternion(0,180,0,0);
         return Instantiate(go, GetRandomPointInBounds(), q);
     }

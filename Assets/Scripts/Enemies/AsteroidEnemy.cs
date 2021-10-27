@@ -12,7 +12,7 @@ public class AsteroidEnemy : EnemyBase
 
     private void Awake()
     {
-        Debug.Log(transform.rotation);
+        
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class AsteroidEnemy : EnemyBase
         //Потенциально заменить на вызов метода у игрока 
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerController>().Death();
         }
     }
 }
