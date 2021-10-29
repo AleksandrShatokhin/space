@@ -444,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1299128683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -753,8 +753,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059675187444420666, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: m_Constraints
-      value: 36
+      value: 116
       objectReference: {fileID: 0}
+    - target: {fileID: 4059675187444420670, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: shield
+      value: 
+      objectReference: {fileID: 3793889367936125265, guid: c0787f79dce45fd4aa5014f9551aacb6, type: 3}
     - target: {fileID: 4059675187444420670, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: timerStatr
       value: 10

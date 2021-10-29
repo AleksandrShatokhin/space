@@ -1,0 +1,48 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ShieldController : MonoBehaviour
+{
+    private Transform targetPlayerPos;
+    public bool isShield = false;
+    public float timerStatrForShield = 10.0f;
+    private float timerEndForShield = 0.0f;
+
+    void Start()
+    {
+        targetPlayerPos = GameObject.Find("Player").GetComponent<Transform>();
+        isShield = true;
+    }
+
+    
+    void Update()
+    {
+        if (isShield == true)
+        {
+            if (timerStatrForShield > 0)
+            {
+                timerStatrForShield = timerStatrForShield - 0.007f;
+                if (timerStatrForShield <= timerEndForShield)
+                isShield = false;
+                if (timerStatrForShield < 0)
+                {
+                    timerStatrForShield = 10.0f;
+                }            
+            }
+        }
+        if (isShield == false)
+        Destroy(gameObject);
+    }
+
+    void LateUpdate()
+    {
+        transform.position = targetPlayerPos.transform.position;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "PlayerProjectile")
+        Destroy(other.gameObject);
+    }
+}

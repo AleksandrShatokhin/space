@@ -23,14 +23,22 @@ public class PlayerController : MonoBehaviour
     float horizontalInput = 0;
 
     private float debuffSlowingActions = 10.0f;
+    public bool isDisableShot = false; //для дебаффа отключения стрельбы
 
+    //переменные таймера для дебаффа замедления
+    public float timerStatrForSlowing = 10.0f;
+    private float timerEndForSlowing = 0.0f;
 
-    //переменные таймера
-    private float timerStatr = 10.0f;
-    private float timerEnd = 0.0f;
+    //переменные таймера для дебаффа замедления
+    public float timerStatrForDisableShot = 10.0f;
+    private float timerEndForDisableShot = 0.0f;
+
+    //переменные для баффа щита
+    public bool isShield = false;
+    public GameObject shield;
     
 
-    // Start is called before the first frame update
+    // ----------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -67,10 +75,11 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && isDisableShot == false)
         {
             _ = Instantiate(projectile, GetGun().transform.position, Quaternion.identity);
         }
+        else TimerForDisableShot();
     }
 
     private GameObject GetGun()
@@ -88,26 +97,49 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //запустим условный таймер действия дебафа замедления и востановим начальную скорость
-        if (speedPlayer == debuffSlowingActions)
-        {
-            if (timerStatr > 0)
-            {
-                timerStatr = timerStatr - 0.007f;
-                if (timerStatr <= timerEnd)
-                speedPlayer = 18.0f;
-            }
-        }
+        TimerForSlowing();
     }
 
     //проверим столкновение с обьектом
     void OnCollisionEnter(Collision collision)
     {   
+
         //проверка столкновения с дебафом замедления
         if (collision.gameObject.tag == "DebuffSlowing")
         {
-            speedPlayer = debuffSlowingActions;
+            if (speedPlayer == 18.0f)
+            {
+                speedPlayer = debuffSlowingActions;
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                timerStatrForSlowing = 10.0f;
+                Destroy(collision.gameObject);
+            }
+        }
+
+        //проверка столкновения с дебафом отключения стрельбы
+        if (collision.gameObject.tag == "DebuffDisableShot")
+        {
+            if (isDisableShot == false)
+            {
+                isDisableShot = true;
+                Destroy(collision.gameObject);
+            }
+            else 
+            {
+                timerStatrForDisableShot = 10.0f;
+                Destroy(collision.gameObject);
+            }
+        }
+
+        //проверка на столкновение с баффом щитом
+        if (collision.gameObject.tag == "BuffShield")
+        {
+            isShield = true;
             Destroy(collision.gameObject);
+            Instantiate(shield, transform.position, transform.rotation);
         }
     }
 
@@ -120,4 +152,37 @@ public class PlayerController : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    void TimerForSlowing() //условный таймер действия дебафа замедления и востановим начальную скорость
+    {
+        if (speedPlayer == debuffSlowingActions)
+        {
+            if (timerStatrForSlowing > 0)
+            {
+                timerStatrForSlowing = timerStatrForSlowing - 0.007f;
+                if (timerStatrForSlowing <= timerEndForSlowing)
+                speedPlayer = 18.0f;
+                if (timerStatrForSlowing < 0)
+                {
+                    timerStatrForSlowing = 10.0f;
+                }
+            }
+        }
+    }
+
+    void TimerForDisableShot() //условный таймер действия дебафа отключения стрельбы
+    {
+        if (isDisableShot == true)
+        {
+            if (timerStatrForDisableShot > 0)
+            {
+                timerStatrForDisableShot = timerStatrForDisableShot - 0.007f;
+                if (timerStatrForDisableShot <= timerEndForDisableShot)
+                isDisableShot = false;
+                if (timerStatrForDisableShot < 0)
+                {
+                    timerStatrForDisableShot = 10.0f;
+                }            
+            }
+        }
+    }
 }
