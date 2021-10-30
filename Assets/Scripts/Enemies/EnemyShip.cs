@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
-    public Transform targetLookAtPlayer;
+    private Transform targetLookAtPlayer;
 
     public GameObject leftEnemyGun;
     public GameObject rightEnemyGun;
@@ -76,6 +76,19 @@ public class EnemyShip : MonoBehaviour
         {
             leftEnemyUsed = true;
             return leftEnemyGun;
+        }
+    }
+
+    
+    // пробовал через игнор колизии прописать проскакивание астероидов сквозь вражеский корабль
+    // нифига не работает эта фигня
+    // дебаг.лог выводит, столкновение нужных объектов видит
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
+            Debug.Log("Столкновение");
         }
     }
 }

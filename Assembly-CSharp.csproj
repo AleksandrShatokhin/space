@@ -49,10 +49,12 @@
      <Compile Include="Assets\Scripts\Game\GameController.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyShip.cs" />
      <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
+     <Compile Include="Assets\Scripts\Player\ShieldController.cs" />
      <Compile Include="Assets\Scripts\Utilities\ScreenBounds.cs" />
      <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
-     <Compile Include="Assets\Scripts\Player\ShieldController.cs" />
+     <Compile Include="Assets\Scripts\BuffAndDebuff\BlastWaveController.cs" />
+     <Compile Include="Assets\Scripts\ParticleSistemBlastWave.cs" />
      <None Include="Assets\file.txt" />
      <None Include="Assets\Materials\ShieldShader.shader" />
     <Reference Include="UnityEngine">

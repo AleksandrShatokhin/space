@@ -18,7 +18,7 @@ public class AsteroidEnemy : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -30,4 +30,18 @@ public class AsteroidEnemy : EnemyBase
             collision.gameObject.GetComponent<PlayerController>().Death();
         }
     }
+
+
+// при такой реализации через триггер не работают некоторые необходимые действия
+    /*void OnTriggerEnter(Collider other)
+    {
+        поменял для теста на триггер только по игроку, 
+        чтоб астероиды игнорировали все обстальные игровые объекты, кроме игрока,
+        и не отскакивали от них
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().Death();
+            Destroy(gameObject);
+        }
+    }*/
 }
