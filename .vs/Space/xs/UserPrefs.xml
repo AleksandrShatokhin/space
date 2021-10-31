@@ -1,26 +1,22 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemies/EnemyShip.cs" Line="38" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="120" Column="25" />
-      <File FileName="Assets/Scripts/Projectiles/Projectile.cs" />
-      <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" Line="30" Column="75" />
-      <File FileName="Assets/Scripts/Utilities/SpawnerBox.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="24" Column="25" />
-      <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" Line="27" Column="13" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="56" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Space" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Materials" expanded="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="Enemies" expanded="True" />
-                <Node name="Game" expanded="True" />
-                <Node name="Player" expanded="True" />
-                <Node name="Projectiles" expanded="True">
-                  <Node name="ProjectileEnemyShip.cs" selected="True" />
+                <Node name="Game" expanded="True">
+                  <Node name="GameController.cs" selected="True" />
                 </Node>
+                <Node name="Player" expanded="True" />
+                <Node name="Projectiles" expanded="True" />
+                <Node name="UI" expanded="True" />
                 <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
@@ -31,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="31002003-340f-4d06-bab5-0ad54b5b1258" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="08063740-4351-432c-a203-d2ea6a304a61" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
