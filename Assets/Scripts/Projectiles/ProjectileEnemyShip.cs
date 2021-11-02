@@ -13,20 +13,27 @@ public class ProjectileEnemyShip : MonoBehaviour
 
     void Update()
     {
-        //transform.localPosition = transform.localPosition + new Vector3(0, 0, 1) * Time.deltaTime;
-        //pr_Rigidbody.velocity = -transform.forward * speed;
         pr_Rigidbody.AddForce(transform.forward * 0.5f, ForceMode.Impulse);
-        //transform.Translate(-Vector3.forward * speed * Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.layer == 7)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
         if (collision.gameObject.tag == "Player")
         {
-            
-
             //Вызвать смерть из объекта игрока. Не удалять извне
             collision.gameObject.GetComponent<PlayerController>().Death();
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            //Уничтожается снаряд, астероид или другой вражеский корабль не уничтожается
             Destroy(gameObject);
         }
     }

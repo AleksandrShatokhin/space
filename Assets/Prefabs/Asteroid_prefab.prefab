@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1179865243143540468}
   - component: {fileID: -3899185242863356616}
   - component: {fileID: 9120813861358783570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asteroid_prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  enemyShip: {fileID: 4014471606503684602, guid: 26cabe228385a7348b32702d72d420cd, type: 3}
 --- !u!114 &-1179865243143540468
 MonoBehaviour:
   m_ObjectHideFlags: 0

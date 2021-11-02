@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3756366886522876491}
   - component: {fileID: 3756366886522876488}
   - component: {fileID: 3756366886522876492}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuffShield
   m_TagString: BuffShield
   m_Icon: {fileID: 0}

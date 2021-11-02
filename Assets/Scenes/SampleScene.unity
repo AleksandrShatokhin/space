@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 1147107630}
   - component: {fileID: 1147107629}
   - component: {fileID: 1147107632}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlastWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5397,10 +5397,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesSpawner: {fileID: 1299128685}
+  postGame: {fileID: 709052682419479365, guid: 5d7397de297ea43d69ea82a9922ae72f, type: 3}
   asteroid: {fileID: 7881811179783615571, guid: 4e5941b3b5728428b8e8133812f533a3, type: 3}
   spawnEveryNSeconds: 0.8
   waitAfterWave: 5
   enemiesInWave: 10
+  numberOfWaves: 3
   waitOnStart: 2
 --- !u!114 &1741654573
 MonoBehaviour:
@@ -5574,9 +5576,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3789696362218080997, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059675186905684795, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059675187213485558, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4059675187444420666, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059675187444420667, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059675187444420670, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: shield
@@ -5633,6 +5651,14 @@ PrefabInstance:
     - target: {fileID: 4601663350897184863, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969012661997124693, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980103071964477887, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}

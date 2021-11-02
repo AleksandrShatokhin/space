@@ -24,6 +24,10 @@ public class PlayerSimpleProjectile : Projectile
         {
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.layer == 7)
+        {
+            Destroy(collision.gameObject);
+        }
 
         Destroy(gameObject);
     }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2020165762366178670}
   - component: {fileID: 2020165762366178657}
   - component: {fileID: 2020165762366178669}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DebuffDisableShot
   m_TagString: DebuffDisableShot
   m_Icon: {fileID: 0}

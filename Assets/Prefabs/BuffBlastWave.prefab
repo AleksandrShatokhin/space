@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6396367849970775483}
   - component: {fileID: 6396367849970775476}
   - component: {fileID: 6396367849970775487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuffBlastWave
   m_TagString: BlastWave
   m_Icon: {fileID: 0}

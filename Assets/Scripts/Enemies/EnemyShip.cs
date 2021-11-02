@@ -78,17 +78,4 @@ public class EnemyShip : MonoBehaviour
             return leftEnemyGun;
         }
     }
-
-    
-    // пробовал через игнор колизии прописать проскакивание астероидов сквозь вражеский корабль
-    // нифига не работает эта фигня
-    // дебаг.лог выводит, столкновение нужных объектов видит
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
-            Debug.Log("Столкновение");
-        }
-    }
 }

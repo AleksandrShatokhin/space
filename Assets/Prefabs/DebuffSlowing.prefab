@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 810726798811055705}
   - component: {fileID: 810726798811055704}
   - component: {fileID: 810726798811055708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DebuffSlowing
   m_TagString: DebuffSlowing
   m_Icon: {fileID: 0}

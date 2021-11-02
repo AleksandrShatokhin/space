@@ -16,3 +16,4 @@ public class BlastWaveController : MonoBehaviour
         }
     }
 }
+//GetComponentInChildren
