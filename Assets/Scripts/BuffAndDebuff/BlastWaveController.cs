@@ -6,6 +6,10 @@ public class BlastWaveController : MonoBehaviour
 {
     public ParticleSystem blastWave;
     
+    void Start()
+    {
+        blastWave = GameObject.Find("Player").GetComponentInChildren<ParticleSystem>();
+    }
 
     void OnCollisionEnter(Collision collision)
     {

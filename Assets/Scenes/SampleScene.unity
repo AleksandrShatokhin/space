@@ -5377,6 +5377,7 @@ GameObject:
   - component: {fileID: 1741654575}
   - component: {fileID: 1741654574}
   - component: {fileID: 1741654573}
+  - component: {fileID: 1741654577}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -5508,6 +5509,22 @@ RectTransform:
   m_AnchoredPosition: {x: -10.965064, y: 40.56906}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1741654577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741654571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd616994ce6b24b9087d571fc5b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerStatrForSlowing: 10
+  isSlowing: 0
+  timerStatrForDisableShot: 10
+  isDisable: 0
 --- !u!1 &2072382430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5594,7 +5611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059675187444420667, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4059675187444420670, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: shield

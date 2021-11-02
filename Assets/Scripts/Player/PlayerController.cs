@@ -22,19 +22,9 @@ public class PlayerController : MonoBehaviour
     float forwardInput = 0;
     float horizontalInput = 0;
 
-    private float debuffSlowingActions = 10.0f;
     public bool isDisableShot = false; //для дебаффа отключения стрельбы
 
-    //переменные таймера для дебаффа замедления
-    public float timerStatrForSlowing = 10.0f;
-    private float timerEndForSlowing = 0.0f;
-
-    //переменные таймера для дебаффа замедления
-    public float timerStatrForDisableShot = 10.0f;
-    private float timerEndForDisableShot = 0.0f;
-
-    //переменные для баффа щита
-    public bool isShield = false;
+    public bool isShield = false; // переменные для баффа щита
     public GameObject shield;
     
 
@@ -48,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         Shoot();
+        GameObject.Find("Game").GetComponent<TimerController>().TimerForSlowing();
     }
 
     // Update is called once per frame
@@ -79,7 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             _ = Instantiate(projectile, GetGun().transform.position, Quaternion.identity);
         }
-        else TimerForDisableShot();
+        else GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
     }
 
     private GameObject GetGun()
@@ -95,94 +86,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        TimerForSlowing();
-    }
-
-    //проверим столкновение с обьектом
-    void OnCollisionEnter(Collision collision)
-    {   
-
-        //проверка столкновения с дебафом замедления
-        if (collision.gameObject.tag == "DebuffSlowing")
-        {
-            if (speedPlayer == 18.0f)
-            {
-                speedPlayer = debuffSlowingActions;
-                Destroy(collision.gameObject);
-            }
-            else
-            {
-                timerStatrForSlowing = 10.0f;
-                Destroy(collision.gameObject);
-            }
-        }
-
-        //проверка столкновения с дебафом отключения стрельбы
-        if (collision.gameObject.tag == "DebuffDisableShot")
-        {
-            if (isDisableShot == false)
-            {
-                isDisableShot = true;
-                Destroy(collision.gameObject);
-            }
-            else 
-            {
-                timerStatrForDisableShot = 10.0f;
-                Destroy(collision.gameObject);
-            }
-        }
-
-        //проверка на столкновение с баффом щитом
-        if (collision.gameObject.tag == "BuffShield")
-        {
-            isShield = true;
-            Destroy(collision.gameObject);
-            Instantiate(shield, transform.position, transform.rotation);
-        }
-    }
-
-
     //Правильный путь для смерти игрока. Должны задаваться все необходимые переменные
     //Например, признак конца игры
     public void Death()
     {
         GameController.GetInstance().GameOver();    
         Destroy(this.gameObject);
-    }
-
-    void TimerForSlowing() //условный таймер действия дебафа замедления и востановим начальную скорость
-    {
-        if (speedPlayer == debuffSlowingActions)
-        {
-            if (timerStatrForSlowing > 0)
-            {
-                timerStatrForSlowing = timerStatrForSlowing - 0.007f;
-                if (timerStatrForSlowing <= timerEndForSlowing)
-                speedPlayer = 18.0f;
-                if (timerStatrForSlowing < 0)
-                {
-                    timerStatrForSlowing = 10.0f;
-                }
-            }
-        }
-    }
-
-    void TimerForDisableShot() //условный таймер действия дебафа отключения стрельбы
-    {
-        if (isDisableShot == true)
-        {
-            if (timerStatrForDisableShot > 0)
-            {
-                timerStatrForDisableShot = timerStatrForDisableShot - 0.007f;
-                if (timerStatrForDisableShot <= timerEndForDisableShot)
-                isDisableShot = false;
-                if (timerStatrForDisableShot < 0)
-                {
-                    timerStatrForDisableShot = 10.0f;
-                }            
-            }
-        }
     }
 }

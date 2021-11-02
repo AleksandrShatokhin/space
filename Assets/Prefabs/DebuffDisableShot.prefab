@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2020165762366178670}
   - component: {fileID: 2020165762366178657}
   - component: {fileID: 2020165762366178669}
+  - component: {fileID: -3633133455383135026}
   m_Layer: 7
   m_Name: DebuffDisableShot
   m_TagString: DebuffDisableShot
@@ -106,5 +107,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a32f47ba5153d44f848df9cd3d5ca8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3633133455383135026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020165762366178656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9bfba74b9682349a52d95e07b345eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

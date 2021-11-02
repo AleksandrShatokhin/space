@@ -15,9 +15,10 @@ public class ShieldController : MonoBehaviour
         isShield = true;
     }
 
-    
-    void Update()
+    void LateUpdate()
     {
+        transform.position = targetPlayerPos.transform.position;
+
         if (isShield == true)
         {
             if (timerStatrForShield > 0)
@@ -33,11 +34,6 @@ public class ShieldController : MonoBehaviour
         }
         if (isShield == false)
         Destroy(gameObject);
-    }
-
-    void LateUpdate()
-    {
-        transform.position = targetPlayerPos.transform.position;
     }
 
     void OnTriggerEnter(Collider other)
