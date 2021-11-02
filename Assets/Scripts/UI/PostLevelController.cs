@@ -9,6 +9,7 @@ public class PostLevelController : MonoBehaviour
 {
 
     public Button next;
+    public Button restart;
     public Button toMenu;
 
 
@@ -17,30 +18,36 @@ public class PostLevelController : MonoBehaviour
     {
 
         next.onClick.AddListener(ToNextLevel);
+        restart.onClick.AddListener(Restart);
         toMenu.onClick.AddListener(ToMainMenu);
         Time.timeScale = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     void ToNextLevel()
     {
-        string currentScene = SceneManager.GetActiveScene().name;
-        int levelNumber = int.Parse(Regex.Match(currentScene, @"\d+").Value);
-        
-        string nextLevel = $"Level{++levelNumber}";
-        Debug.Log(nextLevel);
-        SceneManager.LoadScene(nextLevel);
+        if (GameController.GetInstance().IsLevelEnded())
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            int levelNumber = int.Parse(Regex.Match(currentScene, @"\d+").Value);
+
+            string nextLevel = $"Level{++levelNumber}";
+            Debug.Log(nextLevel);
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 
 
     void ToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void Restart()
+    {
+        if (GameController.GetInstance().IsGameOver() || GameController.GetInstance().IsLevelEnded())
+        {
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

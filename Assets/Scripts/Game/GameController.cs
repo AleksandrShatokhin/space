@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         Restart();
         CheckIfLevelEnd();
+
     }
 
 
@@ -78,6 +79,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
+        _ = Instantiate(postGame);
     }
 
     public void LevelEnded()
@@ -110,5 +112,11 @@ public class GameController : MonoBehaviour
             }
         }
         
+    }
+
+
+    public bool IsLevelEnded()
+    {
+        return isLevelEnded;
     }
 }
