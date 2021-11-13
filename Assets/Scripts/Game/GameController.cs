@@ -9,11 +9,18 @@ public class GameController : MonoBehaviour
     static private GameController instance;
     static public GameController GetInstance() => instance;
 
-    public SpawnerBox enemiesSpawner;
+
+    //Параметр для контроля спауна волн.
+    //Можно отключить извне для тестов
+    public  bool shouldSpawnWave = true;
+
+    public SpawnerBox spawner;
     public GameObject postGame;
 
-    private bool shouldSpawnWave = true;
-    public GameObject asteroid;
+    //Массив для противников
+    public GameObject[] enemies;
+
+    
     public float spawnEveryNSeconds = 0.5f;
     public float waitAfterWave = 5.0f;
     public int enemiesInWave = 10;
@@ -53,7 +60,9 @@ public class GameController : MonoBehaviour
         while (shouldSpawnWave)
         {
             if (enemiesSpawned < enemiesInWave) {
-                GameObject spawned = enemiesSpawner.Spawn(asteroid);
+
+                //Спаун случайного противника
+                GameObject spawned = spawner.Spawn(GetRandomEnemy());
                 enemiesSpawned++;
                 allEnemiesSpawned++;
 
@@ -118,5 +127,13 @@ public class GameController : MonoBehaviour
     public bool IsLevelEnded()
     {
         return isLevelEnded;
+    }
+
+
+
+    //Выбор случайного противника из списка
+    private GameObject GetRandomEnemy()
+    {
+        return enemies[Random.Range(0, enemies.Length)];
     }
 }

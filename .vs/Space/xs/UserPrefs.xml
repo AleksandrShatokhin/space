@@ -1,15 +1,22 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Utilities/SpawnerBox.cs" Line="38" Column="50" />
-      <File FileName="Assets/Scripts/UI/PostLevelController.cs" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="127" Column="85" />
+      <File FileName="Assets/Scripts/UI/PostLevelController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player/PlayerController.cs" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="61" Column="70" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Space" expanded="True" selected="True" />
+          <Node name="Space" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="UI" expanded="True">
+                  <Node name="PostLevelController.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
@@ -17,9 +24,10 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c5deba79-0e9e-4fc6-a414-d105ef3eedb9" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor-firstpass PreferredExecutionTarget="c5deba79-0e9e-4fc6-a414-d105ef3eedb9" />
 </Properties>
