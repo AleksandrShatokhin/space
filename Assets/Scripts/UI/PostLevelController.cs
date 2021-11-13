@@ -20,6 +20,8 @@ public class PostLevelController : MonoBehaviour
         next.onClick.AddListener(ToNextLevel);
         restart.onClick.AddListener(Restart);
         toMenu.onClick.AddListener(ToMainMenu);
+
+        //Оставить игру после показа меню
         Time.timeScale = 0;
     }
 
@@ -31,7 +33,9 @@ public class PostLevelController : MonoBehaviour
             int levelNumber = int.Parse(Regex.Match(currentScene, @"\d+").Value);
 
             string nextLevel = $"Level{++levelNumber}";
-            Debug.Log(nextLevel);
+
+            //Перед загрузкой новой сцены снять игру с паузы
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene(nextLevel);
         }
     }

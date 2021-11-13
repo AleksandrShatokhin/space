@@ -1,23 +1,38 @@
-﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/GameController.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI/PostLevelController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/PostLevelController.cs" Line="40" Column="1" />
       <File FileName="Assets/Scripts/Player/PlayerController.cs" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="61" Column="70" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" />
+      <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" />
+      <File FileName="Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" Line="68" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Space" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="UI" expanded="True">
-                  <Node name="PostLevelController.cs" selected="True" />
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="Enemies" expanded="True" />
+                  <Node name="Game" expanded="True" />
+                  <Node name="Projectiles" expanded="True" />
+                  <Node name="UI" expanded="True">
+                    <Node name="PostLevelController.cs" selected="True" />
+                  </Node>
                 </Node>
+              </Node>
+            </Node>
+            <Node name="Assembly-CSharp-Editor-firstpass" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Plugins" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -26,7 +41,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c5deba79-0e9e-4fc6-a414-d105ef3eedb9" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/UI/PostLevelController.cs" relfile="Assets/Scripts/UI/PostLevelController.cs" line="30" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor-firstpass PreferredExecutionTarget="c5deba79-0e9e-4fc6-a414-d105ef3eedb9" />

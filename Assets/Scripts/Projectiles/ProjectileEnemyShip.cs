@@ -6,6 +6,9 @@ public class ProjectileEnemyShip : MonoBehaviour
 {
     private Rigidbody pr_Rigidbody;
 
+    //Коэффициент силы
+    public float forceRate = 0.3f;
+
     void Start()
     {
         pr_Rigidbody = GetComponent<Rigidbody>();
@@ -13,7 +16,7 @@ public class ProjectileEnemyShip : MonoBehaviour
 
     void Update()
     {
-        pr_Rigidbody.AddForce(transform.forward * 0.5f, ForceMode.Impulse);
+        pr_Rigidbody.AddForce(transform.forward * forceRate, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)

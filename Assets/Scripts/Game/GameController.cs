@@ -9,18 +9,16 @@ public class GameController : MonoBehaviour
     static private GameController instance;
     static public GameController GetInstance() => instance;
 
-
-    //Параметр для контроля спауна волн.
-    //Можно отключить извне для тестов
-    public  bool shouldSpawnWave = true;
-
     public SpawnerBox spawner;
     public GameObject postGame;
 
     //Массив для противников
     public GameObject[] enemies;
 
-    
+    //Массив инфлюенсеров - бонусов и дебафов
+    public GameObject[] influencers;
+
+    //Основные параметры игры
     public float spawnEveryNSeconds = 0.5f;
     public float waitAfterWave = 5.0f;
     public int enemiesInWave = 10;
@@ -29,10 +27,23 @@ public class GameController : MonoBehaviour
     private int allEnemiesSpawned = 0;
     private int allEnemies;
 
+    //Частота спауна бонусов в игре
+    public float influencerSpawnRate = 5.0f;
+
+    //Вероятность спауна бонуса 1 = 100%
+    public float influencerChance = 1.0f;
+
     private GameObject lastEnemy;
 
+
+    //Состояния игры
     private bool isGameOver = false;
     private bool isLevelEnded = false;
+    private bool isInfluencerTryToSpawn = false;
+
+    //Параметр для контроля спауна волн.
+    //Можно отключить извне для тестов
+    public bool shouldSpawnWave = true;
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +56,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Restart();
-        CheckIfLevelEnd();
 
+        //Проверка на нажатие клавиши R для перезапуска
+        Restart();
+
+        //Проверка, что уровень завершен
+        CheckIfLevelEnd();
     }
 
 
@@ -59,6 +73,11 @@ public class GameController : MonoBehaviour
 
         while (shouldSpawnWave)
         {
+            if (!isInfluencerTryToSpawn)
+            {
+                _ = StartCoroutine(SpawnBonus());
+            }
+
             if (enemiesSpawned < enemiesInWave) {
 
                 //Спаун случайного противника
@@ -103,9 +122,7 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-
-
-
+    
     void CheckIfLevelEnd()
     {
         if (isLevelEnded)
@@ -123,17 +140,41 @@ public class GameController : MonoBehaviour
         
     }
 
-
     public bool IsLevelEnded()
     {
         return isLevelEnded;
     }
 
-
-
     //Выбор случайного противника из списка
     private GameObject GetRandomEnemy()
     {
         return enemies[Random.Range(0, enemies.Length)];
+    }
+    
+    IEnumerator SpawnBonus()
+    {
+        //Сразу выставляем признак, что не нужно запускать следующий спаун
+        //Так как надо сначала выждать паузу, а затем уже 
+        isInfluencerTryToSpawn = true;
+
+        //Сначала запускаем паузу. Объект должен добавиться после ожидания. 
+        yield return new WaitForSeconds(influencerSpawnRate);
+
+        //Для расчета вероятности воспользуемся Random.Range
+        float randomSeed = Random.Range(0.0f, 1.0f);
+
+        //Если полученное значение входит в допустимую вероятность, то можно спаунить объект
+        if(randomSeed <= influencerChance)
+        {
+            spawner.Spawn(GetInfluencer());
+        }
+
+        isInfluencerTryToSpawn = false;
+    }
+
+    //Получить случайный инфлюенсер
+    GameObject GetInfluencer()
+    {
+        return influencers[Random.Range(0, influencers.Length)];
     }
 }
