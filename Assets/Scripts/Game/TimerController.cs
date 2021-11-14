@@ -53,9 +53,4 @@ public class TimerController : MonoBehaviour
             }
         }
     }
-
-    void Test()
-    {
-        
-    }
 }
