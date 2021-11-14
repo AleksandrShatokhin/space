@@ -18,7 +18,7 @@ public class EnemyShip : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("EnemyShoot", Random.Range(1, 3), Random.Range(1, 5));
+        InvokeRepeating("EnemyShoot", Random.Range(5, 7), Random.Range(1, 5));
 
         startPosEnemyShip = transform.position;
         newPosEnemyShip = new Vector3(Random.Range(-15, 15), 0, Random.Range(13, 0));

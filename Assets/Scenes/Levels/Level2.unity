@@ -356,7 +356,6 @@ MonoBehaviour:
   - {fileID: 3756366886522876489, guid: aaaa7e2fef7bfd54e9013236ea9a5657, type: 3}
   - {fileID: 2020165762366178656, guid: 39076c63fb94094499953a0720eecff5, type: 3}
   - {fileID: 810726798811055707, guid: d49c91f545e10284bb2693de8ea3cd0d, type: 3}
-  - {fileID: 3793889367936125265, guid: c0787f79dce45fd4aa5014f9551aacb6, type: 3}
   spawnEveryNSeconds: 1
   waitAfterWave: 5
   enemiesInWave: 10
