@@ -177,4 +177,10 @@ public class GameController : MonoBehaviour
     {
         return influencers[Random.Range(0, influencers.Length)];
     }
+
+    //Test
+    void Test()
+    {
+       //Test
+    }
 }
