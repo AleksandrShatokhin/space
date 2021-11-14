@@ -5267,7 +5267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1299128683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5397,14 +5397,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a44bdc21a3cd42cb9b1c719345db76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesSpawner: {fileID: 1299128685}
+  spawner: {fileID: 0}
   postGame: {fileID: 709052682419479365, guid: 5d7397de297ea43d69ea82a9922ae72f, type: 3}
-  asteroid: {fileID: 7881811179783615571, guid: 4e5941b3b5728428b8e8133812f533a3, type: 3}
+  enemies: []
+  influencers: []
   spawnEveryNSeconds: 0.8
   waitAfterWave: 5
   enemiesInWave: 10
   numberOfWaves: 3
   waitOnStart: 2
+  influencerSpawnRate: 5
+  influencerChance: 1
+  shouldSpawnWave: 1
 --- !u!114 &1741654573
 MonoBehaviour:
   m_ObjectHideFlags: 0
