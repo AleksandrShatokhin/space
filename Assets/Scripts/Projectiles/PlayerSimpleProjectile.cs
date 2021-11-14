@@ -20,11 +20,7 @@ public class PlayerSimpleProjectile : Projectile
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy") 
-        {
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.layer == 6) // слой 6 - это enemy
         {
             Destroy(collision.gameObject);
         }

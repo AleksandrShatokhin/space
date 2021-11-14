@@ -38,7 +38,7 @@ public class ShieldController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "PlayerProjectile")
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "PlayerProjectile" && other.gameObject.tag != "EnemyShip")
         Destroy(other.gameObject);
     }
 }

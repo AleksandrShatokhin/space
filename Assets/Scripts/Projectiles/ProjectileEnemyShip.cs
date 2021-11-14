@@ -21,12 +21,6 @@ public class ProjectileEnemyShip : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 7)
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-
         if (collision.gameObject.tag == "Player")
         {
             //Вызвать смерть из объекта игрока. Не удалять извне
@@ -34,7 +28,7 @@ public class ProjectileEnemyShip : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.layer == 6) //слой 6 - это enemy
         {
             //Уничтожается снаряд, астероид или другой вражеский корабль не уничтожается
             Destroy(gameObject);
