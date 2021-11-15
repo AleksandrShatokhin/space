@@ -51,6 +51,8 @@ public class GameController : MonoBehaviour
         instance = this;
         StartCoroutine(SpawnWave());
         allEnemies = enemiesInWave * numberOfWaves;
+
+       
     }
 
     // Update is called once per frame
@@ -176,5 +178,13 @@ public class GameController : MonoBehaviour
     GameObject GetInfluencer()
     {
         return influencers[Random.Range(0, influencers.Length)];
+    }
+
+    IEnumerator AddBullets()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+
+
     }
 }

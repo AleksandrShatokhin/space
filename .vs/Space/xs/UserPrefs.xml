@@ -1,47 +1,44 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyShip.cs">
+﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utilities/Weapon.cs">
     <Files>
+      <File FileName="Assets/Scripts/Utilities/Switcher.cs" Line="5" Column="22" />
       <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/PostLevelController.cs" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="126" Column="27" />
-      <File FileName="Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" />
-      <File FileName="Assets/Scripts/Enemies/EnemyShip.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="105" Column="1" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="55" Column="8" />
+      <File FileName="Assets/Scripts/Utilities/Weapon.cs" Line="39" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Space" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Assets" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="Enemies" expanded="True">
-                    <Node name="EnemyShip.cs" selected="True" />
-                  </Node>
-                  <Node name="Game" expanded="True" />
-                  <Node name="Player" expanded="True" />
-                  <Node name="Projectiles" expanded="True" />
-                  <Node name="UI" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Enemies" expanded="True" />
+                <Node name="Game" expanded="True" />
+                <Node name="Player" expanded="True" />
+                <Node name="Projectiles" expanded="True" />
+                <Node name="Utilities" expanded="True">
+                  <Node name="Weapon.cs" selected="True" />
                 </Node>
-              </Node>
-            </Node>
-            <Node name="Assembly-CSharp-Editor-firstpass" expanded="True">
-              <Node name="Assets" expanded="True">
-                <Node name="Plugins" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c5deba79-0e9e-4fc6-a414-d105ef3eedb9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7a86c045-522d-48af-aeca-f84fbac61ec8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/UI/PostLevelController.cs" relfile="Assets/Scripts/UI/PostLevelController.cs" line="30" column="1" />
+      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/Player/PlayerController.cs" relfile="Assets/Scripts/Player/PlayerController.cs" line="105" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

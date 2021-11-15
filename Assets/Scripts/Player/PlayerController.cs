@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
 
     //Регулировка угла наклона 
     public float tilt = 1.5f;
-    bool leftUsed = false;
+    //bool leftUsed = false;
 
-    public GameObject projectile;
+    public GameObject currentProjectile;
     Rigidbody rb;
 
     public float speedPlayer = 18.0f;
@@ -26,14 +26,35 @@ public class PlayerController : MonoBehaviour
 
     public bool isShield = false; // переменные для баффа щита
     public GameObject shield;
+
+
+
+    private Switcher gunSwitcher;
+    private Weapon currentWeapon;
+
+    public List<Weapon> weapons;
     
 
     // ----------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gunSwitcher = new Switcher();
+
+        //weapons = new List<Weapon>
+        //{
+        //    new Weapon(currentProjectile, 5, 5, true)
+        //};
+
+        currentWeapon = new Weapon(currentProjectile, 5, 5, true);
+        
     }
 
+
+    private void Awake()
+    {
+        StartCoroutine(AddBullets());
+    }
 
     private void LateUpdate()
     {
@@ -66,24 +87,35 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKeyDown("space") && isDisableShot == false)
+        //Проверить, что стрельба не отключена
+        if (isDisableShot)
         {
-            _ = Instantiate(projectile, GetGun().transform.position, Quaternion.identity);
+            return;
         }
-        else GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
+
+
+        //Проверить, что есть снаряды в текущем оружии
+        if (currentWeapon.GetBullets() == 0)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown("space"))
+        {
+            _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
+
+            //После спауна пули отнимаем один заряд
+            currentWeapon.AddBullets(-1);
+        }
+        else
+        {
+            GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
+        }
     }
 
     private GameObject GetGun()
     {
-        if (leftUsed)
-        {
-            leftUsed = false;
-            return rightGun;
-        } else
-        {
-            leftUsed = true;
-            return leftGun;
-        }
+        return gunSwitcher.GetState() ? leftGun : rightGun;
     }
 
     //Правильный путь для смерти игрока. Должны задаваться все необходимые переменные
@@ -92,5 +124,17 @@ public class PlayerController : MonoBehaviour
     {
         GameController.GetInstance().GameOver();    
         Destroy(this.gameObject);
+    }
+
+
+    // Для теста реализовать в Player'е
+    //По идее надо вынести в  GameContoller
+    IEnumerator AddBullets()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.0f);
+            currentWeapon.AddBullets(1);
+        }
     }
 }
