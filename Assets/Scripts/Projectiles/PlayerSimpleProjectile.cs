@@ -23,6 +23,7 @@ public class PlayerSimpleProjectile : Projectile
         if (collision.gameObject.layer == 6) // слой 6 - это enemy
         {
             Destroy(collision.gameObject);
+            GameController.GetInstance().AddKilledEnemy();
         }
 
         Destroy(gameObject);

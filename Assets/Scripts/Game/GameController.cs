@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
     private int allEnemiesSpawned = 0;
     private int allEnemies;
 
+    private int enemiesKilled = 0;
+
     //Частота спауна бонусов в игре
     public float influencerSpawnRate = 5.0f;
 
@@ -93,6 +95,10 @@ public class GameController : MonoBehaviour
 
                 yield return new WaitForSeconds(spawnEveryNSeconds);
             }
+            else if(enemiesKilled < allEnemiesSpawned){
+                yield return new WaitForSeconds(waitAfterWave);
+            }
+
             else {
                 enemiesSpawned = 0;
                 yield return new WaitForSeconds(waitAfterWave);
@@ -132,7 +138,7 @@ public class GameController : MonoBehaviour
             return;
         }
 
-        if (allEnemies == allEnemiesSpawned)
+        if (allEnemies == allEnemiesSpawned && enemiesKilled == allEnemiesSpawned)
         {
             if (lastEnemy == null)
             {
@@ -183,8 +189,12 @@ public class GameController : MonoBehaviour
     IEnumerator AddBullets()
     {
         yield return new WaitForSeconds(1.0f);
+    }
 
-
-
+    //Для контроля над спауном нужно подсчитывать кол-во уничтоженных врагов
+    //При уничтожении нужно вызывать данный метод
+    public void AddKilledEnemy()
+    {
+        enemiesKilled++;
     }
 }
