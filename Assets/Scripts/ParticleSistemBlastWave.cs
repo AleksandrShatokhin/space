@@ -12,10 +12,8 @@ public class ParticleSistemBlastWave : MonoBehaviour
 
             if (other.gameObject.layer == 6)
             {
-                GameController.GetInstance().AddKilledEnemy();
+                other.gameObject.GetComponent<EnemyBase>().Death();
             }
-
-            Destroy(other.gameObject);
         }
     }
 

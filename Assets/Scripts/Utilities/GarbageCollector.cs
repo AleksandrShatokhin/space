@@ -21,7 +21,7 @@ public class GarbageCollector : MonoBehaviour
         //Если это враг, то мы должны подсчитать как уничтоженного
         if(collision.gameObject.layer == 6)
         {
-            GameController.GetInstance().AddKilledEnemy();
+            collision.gameObject.GetComponent<EnemyBase>().Death();
         }
 
         //Удалить все объекты, которые попадают в коллектор

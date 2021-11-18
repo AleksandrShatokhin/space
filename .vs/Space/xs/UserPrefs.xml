@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/TimerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="112" Column="74" IsPinned="True" />
-      <File FileName="Assets/Scripts/UI/PostLevelController.cs" IsPinned="True" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" />
-      <File FileName="Assets/Scripts/ParticleSistemBlastWave.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/Game/TimerController.cs" Line="38" Column="17" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" />
+      <File FileName="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" Line="28" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +14,12 @@
               <Node name="Scripts" expanded="True">
                 <Node name="BuffAndDebuff" expanded="True" />
                 <Node name="Enemies" expanded="True" />
-                <Node name="Game" expanded="True">
-                  <Node name="TimerController.cs" selected="True" />
+                <Node name="Game" expanded="True" />
+                <Node name="Player" expanded="True">
+                  <Node name="PlayerController.cs" selected="True" />
                 </Node>
-                <Node name="Player" expanded="True" />
                 <Node name="Projectiles" expanded="True" />
+                <Node name="UI" expanded="True" />
                 <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
@@ -31,11 +31,11 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8079d604-b1fd-43d0-b829-ca5fdb1c868e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b0bfc130-4d24-4ec8-8741-11ac2d4bbdc5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/UI/PostLevelController.cs" relfile="Assets/Scripts/UI/PostLevelController.cs" line="30" column="1" />
-      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/Player/PlayerController.cs" relfile="Assets/Scripts/Player/PlayerController.cs" line="105" column="1" />
+      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/Player/PlayerController.cs" relfile="Assets/Scripts/Player/PlayerController.cs" line="106" column="1" />
       <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/Player/PlayerController.cs" relfile="Assets/Scripts/Player/PlayerController.cs" line="91" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -19,10 +19,14 @@ public abstract class EnemyBase : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    
+
+
+    public void Death()
     {
-        //Астероид просто движется вперед. В сторону игрока
-        transform.Translate(transform.forward * Time.deltaTime * movementSpeed);
+        Debug.Log("Death");
+        GameController.GetInstance().AddKilledEnemy();
+        Destroy(gameObject);
     }
 
 }

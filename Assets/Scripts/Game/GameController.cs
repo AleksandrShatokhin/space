@@ -196,5 +196,7 @@ public class GameController : MonoBehaviour
     public void AddKilledEnemy()
     {
         enemiesKilled++;
+        Debug.Log(enemiesKilled);
+        Debug.Log("All enemies " + allEnemiesSpawned);
     }
 }

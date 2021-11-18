@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip : MonoBehaviour
+public class EnemyShip : EnemyBase
 {
     private Transform targetLookAtPlayer;
 
@@ -78,4 +78,7 @@ public class EnemyShip : MonoBehaviour
             return leftEnemyGun;
         }
     }
+
+
+    
 }
