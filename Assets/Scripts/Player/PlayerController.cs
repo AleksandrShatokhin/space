@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         //Проверить, что стрельба не отключена
         if (isDisableShot)
         {
+            GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
             return;
         }
 
@@ -106,10 +107,6 @@ public class PlayerController : MonoBehaviour
 
             //После спауна пули отнимаем один заряд
             currentWeapon.AddBullets(-1);
-        }
-        else
-        {
-            GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
         }
     }
 
