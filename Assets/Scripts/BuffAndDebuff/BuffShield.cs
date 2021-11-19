@@ -26,6 +26,7 @@ public class BuffShield : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerController>().isShield = true;
             Destroy(gameObject);
             Instantiate(shield, transform.position, transform.rotation);
+            GameObject.Find("MainUI").GetComponent<MainUIController>().isPickedUpShield = true; // для вызова тектса на экран игроку
         }
 
         // проверка на столкновение со всевозможными снарядами

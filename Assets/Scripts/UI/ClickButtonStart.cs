@@ -17,7 +17,7 @@ public class ClickButtonStart : MonoBehaviour
 
     void toFirstLavel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     void toLevelSelection()
