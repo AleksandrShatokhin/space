@@ -4833,6 +4833,7 @@ GameObject:
   - component: {fileID: 4059675187444420664}
   - component: {fileID: 4059675187444420670}
   - component: {fileID: 4059675187444420665}
+  - component: {fileID: 6352735774428509018}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -4956,7 +4957,7 @@ MonoBehaviour:
   leftGun: {fileID: 4059675186905684795}
   rightGun: {fileID: 4059675187213485558}
   tilt: 1.5
-  projectile: {fileID: 3805352292494200675, guid: ebd2bbd9d0faa47fe9b79d117b09933e, type: 3}
+  currentProjectile: {fileID: 0}
   speedPlayer: 18
   isDisableShot: 0
   isShield: 0
@@ -4976,6 +4977,19 @@ MonoBehaviour:
   playerWidth: 0
   playerHeight: 0
   mr: {fileID: 1512364590191694911}
+--- !u!114 &6352735774428509018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789696362218080997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a72b98c0e9347d7aef433ee69729f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!1 &4059675186905684795
 GameObject:
   m_ObjectHideFlags: 0

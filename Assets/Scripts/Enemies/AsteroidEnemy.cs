@@ -33,8 +33,10 @@ public class AsteroidEnemy : EnemyBase
         //Потенциально заменить на вызов метода у игрока 
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().Death();
+            collision.gameObject.GetComponent<PlayerController>().AddDamage(1);
+            Death();
         }
+        
     }
 
 

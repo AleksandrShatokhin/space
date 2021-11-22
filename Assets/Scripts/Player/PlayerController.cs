@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, Deathable
 {
 
 
@@ -33,9 +33,11 @@ public class PlayerController : MonoBehaviour
     private Weapon currentWeapon;
 
     public List<Weapon> weapons;
-    
 
-    // ----------------------------------------------------------------------------------------------------------------------------------------------
+
+    public HealtComponent health;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,6 +49,11 @@ public class PlayerController : MonoBehaviour
         //};
 
         currentWeapon = new Weapon(currentProjectile, 5, 5, true);
+
+
+        //Получить ссылку на компонент здоровья, для удобства использования
+        health = GetComponent<HealtComponent>();
+        health.SetDeathable(this);
         
     }
 
@@ -134,4 +141,17 @@ public class PlayerController : MonoBehaviour
             currentWeapon.AddBullets(1);
         }
     }
+
+
+    void Deathable.Kill()
+    {
+        Death();
+    }
+
+
+    public void AddDamage(float dmg)
+    {
+        GetComponent<HealtComponent>().Change(-dmg);
+    }
+
 }

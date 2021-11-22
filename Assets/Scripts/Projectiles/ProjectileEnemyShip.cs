@@ -8,6 +8,7 @@ public class ProjectileEnemyShip : MonoBehaviour
 
     //Коэффициент силы
     public float forceRate = 0.3f;
+    public float damage = 1.0f;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class ProjectileEnemyShip : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //Вызвать смерть из объекта игрока. Не удалять извне
-            collision.gameObject.GetComponent<PlayerController>().Death();
+            collision.gameObject.GetComponent<PlayerController>().AddDamage(damage);
             Destroy(gameObject);
         }
 

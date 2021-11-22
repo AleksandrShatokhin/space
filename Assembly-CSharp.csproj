@@ -71,14 +71,17 @@
     <Compile Include="Assets/Scripts/Utilities/SpawnerBox.cs" />
     <Compile Include="Assets/Scripts/BuffAndDebuff/MoveElements.cs" />
     <Compile Include="Assets/Scripts/BuffAndDebuff/DebuffSlowing.cs" />
+    <Compile Include="Assets/Scripts/Utilities/Weapon.cs" />
     <Compile Include="Assets/Scripts/Game/TimerController.cs" />
     <Compile Include="Assets/Scripts/Enemies/AsteroidEnemy.cs" />
     <Compile Include="Assets/Scripts/Game/GameController.cs" />
+    <Compile Include="Assets/Scripts/Utilities/Switcher.cs" />
     <Compile Include="Assets/Scripts/Player/ShieldController.cs" />
     <Compile Include="Assets/Scripts/UI/PostLevelController.cs" />
     <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
-    <Compile Include="Assets/Scripts/Utilities/Switcher.cs" />
-    <Compile Include="Assets/Scripts/Utilities/Weapon.cs" />
+    <Compile Include="Assets/Scripts/Utilities/HealtComponent.cs" />
+    <Compile Include="Assets/Scripts/Utilities/DeathComponent.cs" />
+    <Compile Include="Assets/Scripts/Base/Deathable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/file.txt" />
