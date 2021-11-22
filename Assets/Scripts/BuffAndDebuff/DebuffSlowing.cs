@@ -49,6 +49,8 @@ public class DebuffSlowing : MonoBehaviour
         //проверка столкновения с игроком
         if (other.gameObject.tag == "Player")
         {
+            GameObject.Find("MainUI").GetComponent<MainUIController>().isPickedUpSlowing = true; // для вызова тектса на экран игроку
+
             if (GameObject.Find("Game").GetComponent<TimerController>().isSlowing == false)
             {
                 GameObject.Find("Game").GetComponent<TimerController>().isSlowing = true;

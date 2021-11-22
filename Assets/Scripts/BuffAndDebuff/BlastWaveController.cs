@@ -27,6 +27,7 @@ public class BlastWaveController : MonoBehaviour
         {
             blastWave.Play();
             Destroy(gameObject);
+            GameObject.Find("MainUI").GetComponent<MainUIController>().isPickedUpBlastWave = true; // для вызова тектса на экран игроку
         }
 
         // проверка на столкновение со всевозможными снарядами
