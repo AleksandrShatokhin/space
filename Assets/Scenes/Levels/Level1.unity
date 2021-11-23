@@ -739,7 +739,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
