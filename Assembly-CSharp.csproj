@@ -35,49 +35,6 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneOSX:2</UnityBuildTarget>
-    <UnityVersion>2020.3.20f1</UnityVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" />
-    <Compile Include="Assets/Scripts/Enemies/EnemyBase.cs" />
-    <Compile Include="Assets/Scripts/Utilities/RandomRotator.cs" />
-    <Compile Include="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" />
-    <Compile Include="Assets/Scripts/BuffAndDebuff/DebuffDisableShot.cs" />
-    <Compile Include="Assets/Scripts/UI/ClickButtonStart.cs" />
-    <Compile Include="Assets/Scripts/Projectiles/Projectile.cs" />
-    <Compile Include="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" />
-    <Compile Include="Assets/Scripts/Player/PlayerController.cs" />
-    <Compile Include="Assets/Scripts/UI/SceneManagerForLevelSelect.cs" />
-    <Compile Include="Assets/Scripts/Utilities/GarbageCollector.cs" />
-    <Compile Include="Assets/Scripts/Enemies/EnemyShip.cs" />
-    <Compile Include="Assets/Scripts/Utilities/Mover.cs" />
-    <Compile Include="Assets/Scripts/ParticleSistemBlastWave.cs" />
-    <Compile Include="Assets/Scripts/BuffAndDebuff/BuffShield.cs" />
-    <Compile Include="Assets/Scripts/Utilities/SpawnerBox.cs" />
-    <Compile Include="Assets/Scripts/BuffAndDebuff/MoveElements.cs" />
-    <Compile Include="Assets/Scripts/BuffAndDebuff/DebuffSlowing.cs" />
-    <Compile Include="Assets/Scripts/Utilities/Weapon.cs" />
-    <Compile Include="Assets/Scripts/Game/TimerController.cs" />
-    <Compile Include="Assets/Scripts/Enemies/AsteroidEnemy.cs" />
-    <Compile Include="Assets/Scripts/Game/GameController.cs" />
-    <Compile Include="Assets/Scripts/Utilities/Switcher.cs" />
-    <Compile Include="Assets/Scripts/Player/ShieldController.cs" />
-    <Compile Include="Assets/Scripts/UI/PostLevelController.cs" />
-    <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
-    <Compile Include="Assets/Scripts/Utilities/HealtComponent.cs" />
-    <Compile Include="Assets/Scripts/Utilities/DeathComponent.cs" />
-    <Compile Include="Assets/Scripts/Base/Deathable.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets/file.txt" />
-    <None Include="Assets/Materials/ShieldShader.shader" />
-  </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Projectiles\PlayerSimpleProjectile.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyBase.cs" />
@@ -88,6 +45,7 @@
      <Compile Include="Assets\Scripts\BuffAndDebuff\DebuffSlowing.cs" />
      <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
      <Compile Include="Assets\Scripts\Utilities\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Utilities\HealtComponent.cs" />
      <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
      <Compile Include="Assets\Scripts\Game\TimerController.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\BlastWaveController.cs" />
@@ -101,9 +59,11 @@
      <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
      <Compile Include="Assets\Scripts\Player\ShieldController.cs" />
      <Compile Include="Assets\Scripts\ParticleSistemBlastWave.cs" />
+     <Compile Include="Assets\Scripts\Utilities\DeathComponent.cs" />
      <Compile Include="Assets\Scripts\UI\PostLevelController.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\BuffShield.cs" />
      <Compile Include="Assets\Scripts\Utilities\ScreenBounds.cs" />
+     <Compile Include="Assets\Scripts\Base\Deathable.cs" />
      <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
