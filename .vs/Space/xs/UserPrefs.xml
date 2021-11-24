@@ -1,14 +1,17 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utilities/GarbageCollector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/MainUIController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Utilities/HealtComponent.cs" Line="10" Column="27" />
-      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" Line="28" Column="55" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="152" Column="12" />
-      <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" Line="38" Column="17" />
-      <File FileName="Assets/Scripts/Enemies/EnemyShip.cs" Line="5" Column="35" />
-      <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" Line="29" Column="33" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="200" Column="55" />
+      <File FileName="Assets/Scripts/UI/PostLevelController.cs" Line="40" Column="10" />
+      <File FileName="Assets/Scripts/Utilities/HealtComponent.cs" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" />
+      <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" />
+      <File FileName="Assets/Scripts/Enemies/EnemyShip.cs" />
+      <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Utilities/GarbageCollector.cs" Line="24" Column="68" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/DebuffDisableShot.cs" Line="26" Column="43" />
+      <File FileName="Assets/Scripts/UI/MainUIController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,13 +20,15 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Base" expanded="True" />
+                <Node name="BuffAndDebuff" expanded="True" />
                 <Node name="Enemies" expanded="True" />
                 <Node name="Game" expanded="True" />
                 <Node name="Player" expanded="True" />
                 <Node name="Projectiles" expanded="True" />
-                <Node name="Utilities" expanded="True">
-                  <Node name="GarbageCollector.cs" selected="True" />
+                <Node name="UI" expanded="True">
+                  <Node name="MainUIController.cs" selected="True" />
                 </Node>
+                <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -34,11 +39,9 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d443cf64-0af2-4573-9afa-9ac694c442a1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6f895f29-f315-42f4-b325-236d7c5d9ade" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/UI/PostLevelController.cs" relfile="Assets/Scripts/UI/PostLevelController.cs" line="30" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor-firstpass PreferredExecutionTarget="c5deba79-0e9e-4fc6-a414-d105ef3eedb9" />

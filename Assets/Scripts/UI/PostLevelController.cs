@@ -12,6 +12,10 @@ public class PostLevelController : MonoBehaviour
     public Button restart;
     public Button toMenu;
 
+    public GameObject nextGO;
+    public GameObject restartGO;
+    public GameObject toMenuGO;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,21 +27,32 @@ public class PostLevelController : MonoBehaviour
 
         //Оставить игру после показа меню
         Time.timeScale = 0;
+
+        if (GameController.GetInstance().IsLevelEnded())
+        {
+            restartGO.SetActive(false);
+        }
+
+
+        if (GameController.GetInstance().IsGameOver())
+        {
+            nextGO.SetActive(false);
+        }
     }
 
     void ToNextLevel()
     {
-        if (GameController.GetInstance().IsLevelEnded())
-        {
-            string currentScene = SceneManager.GetActiveScene().name;
+
+
+        string currentScene = SceneManager.GetActiveScene().name;
             int levelNumber = int.Parse(Regex.Match(currentScene, @"\d+").Value);
 
             string nextLevel = $"Level{++levelNumber}";
 
             //Перед загрузкой новой сцены снять игру с паузы
             Time.timeScale = 1.0f;
-            SceneManager.LoadScene(nextLevel);
-        }
+        SceneManager.LoadScene(nextLevel);
+
     }
 
 
@@ -48,10 +63,7 @@ public class PostLevelController : MonoBehaviour
 
     void Restart()
     {
-        if (GameController.GetInstance().IsGameOver() || GameController.GetInstance().IsLevelEnded())
-        {
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 }

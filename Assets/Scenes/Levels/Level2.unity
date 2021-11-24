@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 2033092833}
-  postGame: {fileID: 709052682419479365, guid: 5d7397de297ea43d69ea82a9922ae72f, type: 3}
+  postGame: {fileID: 797679595789509714, guid: aef3e894c20e7420e891f850875ada82, type: 3}
   enemies:
   - {fileID: 7881811179783615571, guid: 4e5941b3b5728428b8e8133812f533a3, type: 3}
   - {fileID: 4014471606503684602, guid: 26cabe228385a7348b32702d72d420cd, type: 3}
