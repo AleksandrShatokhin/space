@@ -739,7 +739,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -766,6 +766,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: ForceModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3789696362218080997, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: m_Name
       value: Player

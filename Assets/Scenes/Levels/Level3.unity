@@ -637,6 +637,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 360559588, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3789696362218080997, guid: f79c00cd04c5a2c46b888443b49d5e4b, type: 3}
       propertyPath: m_Name
       value: Player
