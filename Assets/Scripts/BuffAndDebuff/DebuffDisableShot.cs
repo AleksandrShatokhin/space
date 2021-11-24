@@ -50,18 +50,16 @@ public class DebuffDisableShot : MonoBehaviour
         //проверка столкновения с игроком
         if (other.gameObject.tag == "Player")
         {
-            GameObject.Find("MainUI").GetComponent<MainUIController>().isPickedUpDisableShot = true; // для вызова тектса на экран игроку
-
-            if (GameObject.Find("Game").GetComponent<TimerController>().isDisable == false)
+            if (TimerController.isDisable == false)
             {
-                GameObject.Find("Game").GetComponent<TimerController>().isDisable = true;
-                GameObject.Find("Player").GetComponent<PlayerController>().isDisableShot = true;
+                TimerController.isDisable = true;
+                PlayerController.isDisableShot = true;
                 Destroy(gameObject);
-                GameObject.Find("MainUI").GetComponent<MainUIController>().isPickedUpDisableShot = true; 
+                MainUIController.isPickedUpDisableShot = true;
             }
             else
             {
-                GameObject.Find("Game").GetComponent<TimerController>().timerStatrForDisableShot = 10.0f;
+                TimerController.timerStatrForDisableShot = 10.0f;
                 Destroy(gameObject);
             }
         }

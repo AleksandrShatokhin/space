@@ -6,10 +6,10 @@ using TMPro;
 public class MainUIController : MonoBehaviour
 {
      public TextMeshProUGUI centerText;
-    public bool isPickedUpSlowing = false;
-    public bool isPickedUpShield = false;
-    public bool isPickedUpDisableShot = false;
-    public bool isPickedUpBlastWave = false;
+    public static bool isPickedUpSlowing = false;
+    public static bool isPickedUpShield = false;
+    public static bool isPickedUpDisableShot = false;
+    public static bool isPickedUpBlastWave = false;
     private Vector3 maxScale = new Vector3(2.0f, 2.0f, 2.0f);
     private Vector3 startTextScale;
 

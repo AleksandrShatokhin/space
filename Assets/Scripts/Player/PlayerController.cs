@@ -18,13 +18,13 @@ public class PlayerController : MonoBehaviour, Deathable
     public GameObject currentProjectile;
     Rigidbody rb;
 
-    public float speedPlayer = 18.0f;
+    public static float speedPlayer = 18.0f;
     float forwardInput = 0;
     float horizontalInput = 0;
 
-    public bool isDisableShot = false; //для дебаффа отключения стрельбы
+    public static bool isDisableShot = false; //для дебаффа отключения стрельбы
 
-    public bool isShield = false; // переменные для баффа щита
+    public static bool isShield = false; // переменные для баффа щита
     public GameObject shield;
 
 
