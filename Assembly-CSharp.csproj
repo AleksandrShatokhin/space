@@ -66,6 +66,8 @@
      <Compile Include="Assets\Scripts\Base\Deathable.cs" />
      <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
+     <Compile Include="Assets\Scripts\Projectiles\BombEnemyShip.cs" />
+     <Compile Include="Assets\Scripts\PS_BombBlast.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
