@@ -40,8 +40,7 @@ public class BlastWaveController : MonoBehaviour
         // проверка на столкновение с астероидами
         if(other.gameObject.tag == "Asteroid")
         {
-            Destroy(gameObject);
-            GameController.GetInstance().AddKilledEnemy();
+            other.gameObject.GetComponent<EnemyBase>().Death();
         }
     }
 }
