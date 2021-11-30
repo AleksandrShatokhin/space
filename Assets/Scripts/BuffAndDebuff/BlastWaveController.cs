@@ -41,6 +41,7 @@ public class BlastWaveController : MonoBehaviour
         if(other.gameObject.tag == "Asteroid")
         {
             Destroy(gameObject);
+            GameController.GetInstance().AddKilledEnemy();
         }
     }
 }
