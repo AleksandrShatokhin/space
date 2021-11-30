@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class BombEnemyShip : MonoBehaviour
 {
-    public float forceRate;
     private Vector3 startPos;
     private Vector3 endPos;
-    public float step;
+    private float step;
     private Transform targetPos;
     public GameObject bombBlast;
-    public bool isRed;
+    private bool isRed;
     private Color colorDefault;
     private float timer = 10.0f;
-    public int counter = 3;
+    private int counter = 3;
 
 
     void Start()
@@ -38,8 +37,6 @@ public class BombEnemyShip : MonoBehaviour
             Destroy(gameObject);
             Instantiate(bombBlast, transform.position, transform.rotation);
         }
-
-        Debug.Log(timer);
     }
 
     void MoveProjectileBomb() //задам движение объекта
@@ -76,5 +73,11 @@ public class BombEnemyShip : MonoBehaviour
                     gameObject.GetComponent<Renderer>().material.color = colorDefault;
                 break;
             }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    { // пока реализую, что при соприкосновении с игроком взрыв происходит сразу (бомба взрывается)
+        if (collision.gameObject.tag == "Player")
+            counter = 0;
     }
 }
