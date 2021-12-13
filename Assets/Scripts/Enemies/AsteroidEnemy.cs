@@ -35,6 +35,7 @@ public class AsteroidEnemy : EnemyBase
         {
             collision.gameObject.GetComponent<PlayerController>().AddDamage(1);
             Death();
+            CameraController.shake = true;
         }
         
     }

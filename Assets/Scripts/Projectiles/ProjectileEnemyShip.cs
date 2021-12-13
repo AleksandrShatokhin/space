@@ -7,7 +7,7 @@ public class ProjectileEnemyShip : MonoBehaviour
     private Rigidbody pr_Rigidbody;
 
     //Коэффициент силы
-    public float forceRate = 0.3f;
+    private float forceRate = 1.0f;
     public float damage = 1.0f;
 
     void Start()
@@ -15,7 +15,7 @@ public class ProjectileEnemyShip : MonoBehaviour
         pr_Rigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         pr_Rigidbody.AddForce(transform.forward * forceRate, ForceMode.Impulse);
     }
@@ -27,6 +27,7 @@ public class ProjectileEnemyShip : MonoBehaviour
             //Вызвать смерть из объекта игрока. Не удалять извне
             collision.gameObject.GetComponent<PlayerController>().AddDamage(damage);
             Destroy(gameObject);
+            CameraController.shake = true;
         }
 
         if (collision.gameObject.layer == 6) //слой 6 - это enemy
