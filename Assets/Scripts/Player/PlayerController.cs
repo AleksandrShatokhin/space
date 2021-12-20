@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public float tilt = 1.5f;
     //bool leftUsed = false;
 
-    public GameObject currentProjectile;
+    public GameObject currentProjectile, rocketProjectile;
     Rigidbody rb;
 
     public static float speedPlayer = 18.0f;
@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour, Deathable
     public static bool isShield = false; // переменные для баффа щита
     public GameObject shield;
 
+    public static bool isRocket;
+    public static int quantityRockets;
 
 
     private Switcher gunSwitcher;
@@ -55,12 +57,19 @@ public class PlayerController : MonoBehaviour, Deathable
         health = GetComponent<HealtComponent>();
         health.SetDeathable(this);
         
+        isRocket = false;
+        quantityRockets = 5;
     }
 
 
     private void Awake()
     {
         StartCoroutine(AddBullets());
+    }
+
+    void Update()
+    {
+        SwitchProjectile();
     }
 
     private void LateUpdate()
@@ -101,20 +110,33 @@ public class PlayerController : MonoBehaviour, Deathable
             return;
         }
 
-
-        //Проверить, что есть снаряды в текущем оружии
-        if (currentWeapon.GetBullets() == 0)
+        //варианты ведения стрельбы
+        switch (isRocket)
         {
-            return;
-        }
+            case true: //если выбраны ракеты
+                if (Input.GetKeyDown("space") && quantityRockets > 0)
+                {
+                    Instantiate(rocketProjectile, GetGun().transform.position, transform.rotation);
+                    quantityRockets -= 1;
+                }
+            break;
+            case false: //если выбраны стандартные снаряды
+                //Проверить, что есть снаряды в текущем оружии
+                if (currentWeapon.GetBullets() == 0)
+                {
+                    return;
+                }
 
-        if (Input.GetKeyDown("space"))
-        {
-            _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
+                if (Input.GetKeyDown("space"))
+                {
+                    _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
 
-            //После спауна пули отнимаем один заряд
-            currentWeapon.AddBullets(-1);
+                    //После спауна пули отнимаем один заряд
+                    currentWeapon.AddBullets(-1);
+                }
+            break;
         }
+        
     }
 
     private GameObject GetGun()
@@ -154,4 +176,17 @@ public class PlayerController : MonoBehaviour, Deathable
         GetComponent<HealtComponent>().Change(-dmg);
     }
 
+    void SwitchProjectile()
+    {
+        // здесь воодим переключение снарядов для выстрела
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (isRocket == false)
+                isRocket = true;
+            else
+                isRocket = false;
+
+        // ограничение по количеству ракет
+        if (quantityRockets > 20)
+            quantityRockets = 20;
+    }
 }

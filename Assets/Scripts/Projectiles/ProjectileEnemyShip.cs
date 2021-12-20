@@ -7,7 +7,7 @@ public class ProjectileEnemyShip : MonoBehaviour
     private Rigidbody pr_Rigidbody;
 
     //Коэффициент силы
-    private float forceRate = 1.0f;
+    private float forceRate = 0.7f;
     public float damage = 1.0f;
 
     void Start()
