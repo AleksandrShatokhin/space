@@ -8,9 +8,12 @@ public class EnemyBomber : EnemyBase
     private float step = 0.0f;
     private Transform targetLookAtPlayer;
     public GameObject bombPrefab, gun;
+    private Animator animShot;
 
     void Start()
     {
+        animShot = GetComponent<Animator>();
+
         startPosEnemyBomber = transform.position;
         newPosEnemyBomber = new Vector3(Random.Range(-15, 15), 0, Random.Range(13, 0));
 
@@ -56,5 +59,12 @@ public class EnemyBomber : EnemyBase
         }
 
         Instantiate(bombPrefab, gun.transform.position, transform.rotation);
+        animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
+    }
+
+    public void AnimDefault()
+    {   // фунция вызывается по Event на анимационном клипе
+        // по окончании анимации происходит возват условий в default
+        animShot.SetBool("isShot", false);
     }
 }

@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &6717351317250013580
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497929295063307193}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1865970aea811542bf188058617ef30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3344772250948986864
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +31,7 @@ GameObject:
   - component: {fileID: 3344772250948986866}
   - component: {fileID: 3344772250948986865}
   - component: {fileID: 1565268528}
+  - component: {fileID: 2497485438362399494}
   m_Layer: 6
   m_Name: EnemyBomber
   m_TagString: EnemyShip
@@ -78,6 +98,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 2.0039682}
   m_Center: {x: 0, y: 0, z: -0.8}
+--- !u!95 &2497485438362399494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3344772250948986864}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f13d58137e02324392c917d5c21c982, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3344772251685870658
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224c64d40842c456f8e8e60aecc38c98, type: 3}
+--- !u!1 &2497929295063307193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 224c64d40842c456f8e8e60aecc38c98, type: 3}
+  m_PrefabInstance: {fileID: 3344772252658265832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3017901965171099907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 224c64d40842c456f8e8e60aecc38c98, type: 3}
