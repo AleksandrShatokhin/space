@@ -2,32 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlastWaveController : MonoBehaviour
+public class BuffRocket : MonoBehaviour
 {
-    public ParticleSystem blastWave;
-    
+    private int quantityRt;
+
     void Start()
     {
-        blastWave = GameObject.Find("Player").GetComponentInChildren<ParticleSystem>();
+        quantityRt = Random.Range(2, 5);
     }
-
-    /*void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            blastWave.Play();
-            Destroy(gameObject);
-        }
-    }Пока убрал данный формат. Тестируем через триггер*/
-
+    
     void OnTriggerEnter(Collider other)
     {
-        //проверка на столкновение с игроком
+        // проверка на столкновение с Игроком
         if (other.gameObject.tag == "Player")
         {
-            blastWave.Play();
+            PlayerController.quantityRockets += quantityRt;
             Destroy(gameObject);
-            MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
         }
 
         // проверка на столкновение со всевозможными снарядами

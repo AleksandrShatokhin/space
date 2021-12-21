@@ -7,6 +7,7 @@ public abstract class Projectile : MonoBehaviour
 
     SphereCollider sc;
     public float projectileSpeed = 15.0f;
+    public float rocketSpeed = 8.0f;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,11 @@ public abstract class Projectile : MonoBehaviour
     virtual protected void FixedUpdate()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * projectileSpeed);
+    }
+
+    virtual protected void Rocket() //если игроком выбраны ракеты
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * rocketSpeed);
     }
 
 
