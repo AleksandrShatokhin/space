@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour, Deathable
 {
 
     public float movementSpeed;
@@ -18,10 +18,6 @@ public abstract class EnemyBase : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
-    
-
-
     public void Death()
     {
         Debug.Log("Death");
@@ -29,4 +25,14 @@ public abstract class EnemyBase : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void Deathable.Kill()
+    {
+        Death();
+    }
+
+
+    public void AddDamage(float damage)
+    {
+        GetComponent<HealtComponent>().Change(-damage);
+    }
 }

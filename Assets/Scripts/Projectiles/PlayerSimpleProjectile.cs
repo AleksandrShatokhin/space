@@ -22,7 +22,8 @@ public class PlayerSimpleProjectile : Projectile
     {
         if (collision.gameObject.layer == 6) // слой 6 - это enemy
         {
-            collision.gameObject.GetComponent<EnemyBase>().Death();
+            //collision.gameObject.GetComponent<EnemyBase>().Death();
+            collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
         }
 
         Destroy(gameObject);

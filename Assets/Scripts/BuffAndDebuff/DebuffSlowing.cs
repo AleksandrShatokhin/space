@@ -16,6 +16,12 @@ public class DebuffSlowing : MonoBehaviour
 
     void Update()
     {
+
+        if (!targetPlayer)
+        {
+            return;
+        }
+
         // узнаем дистанцию до игрока и при короткой дистанции заставляем двигаться дебафф на игрока
         distance = Vector3.Distance(transform.position, targetPlayer.transform.position);
         if (distance < 10)

@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 4014471606503684601}
   - component: {fileID: 4014471606503684607}
   - component: {fileID: -4045208890884959435}
+  - component: {fileID: 4816807759903485256}
   m_Layer: 6
   m_Name: EnemyShip
   m_TagString: EnemyShip
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ee3614db76c2c40bbeefc5a69912bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0
   leftEnemyGun: {fileID: 4014471608169217456}
   rightEnemyGun: {fileID: 4014471606374558700}
   EnemyShipProjectile: {fileID: 6311570661009229835, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
@@ -140,6 +142,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &4816807759903485256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014471606503684602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a72b98c0e9347d7aef433ee69729f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!1 &4014471608169217456
 GameObject:
   m_ObjectHideFlags: 0

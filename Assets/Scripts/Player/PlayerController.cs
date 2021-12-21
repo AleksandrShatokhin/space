@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
         //Получить ссылку на компонент здоровья, для удобства использования
         health = GetComponent<HealtComponent>();
-        health.SetDeathable(this);
+        //health.SetDeathable(this);
         
         isRocket = false;
         quantityRockets = 5;
@@ -164,7 +164,6 @@ public class PlayerController : MonoBehaviour, Deathable
         }
     }
 
-
     void Deathable.Kill()
     {
         Death();
@@ -180,13 +179,22 @@ public class PlayerController : MonoBehaviour, Deathable
     {
         // здесь воодим переключение снарядов для выстрела
         if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
             if (isRocket == false)
+            {
                 isRocket = true;
+            }
             else
+            {
                 isRocket = false;
+            }
+        }
 
         // ограничение по количеству ракет
         if (quantityRockets > 20)
+        {
             quantityRockets = 20;
+        }
+            
     }
 }

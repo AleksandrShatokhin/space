@@ -8,7 +8,7 @@ public abstract class Projectile : MonoBehaviour
     SphereCollider sc;
     public float projectileSpeed = 15.0f;
     public float rocketSpeed = 8.0f;
-
+    public float damage = 1.0f;
 
     // Start is called before the first frame update
     void Start()

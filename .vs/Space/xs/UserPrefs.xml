@@ -1,28 +1,25 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyBomber.cs">
     <Files>
-      <File FileName="Assets/Scripts/Utilities/HealtComponent.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" Line="43" Column="64" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="196" Column="28" />
-      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" Line="25" Column="20" />
-      <File FileName="Assets/Scripts/Projectiles/Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" Line="28" Column="29" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBomber.cs" Line="70" Column="2" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="169" Column="62" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Space" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Assets" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="BuffAndDebuff" expanded="True">
-                    <Node name="BlastWaveController.cs" selected="True" />
-                  </Node>
-                  <Node name="Enemies" expanded="True" />
-                  <Node name="Game" expanded="True" />
-                  <Node name="Projectiles" expanded="True" />
-                  <Node name="Utilities" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Base" expanded="True" />
+                <Node name="BuffAndDebuff" expanded="True" />
+                <Node name="Enemies" expanded="True">
+                  <Node name="EnemyBomber.cs" selected="True" />
                 </Node>
+                <Node name="Game" expanded="True" />
+                <Node name="Player" expanded="True" />
+                <Node name="Projectiles" expanded="True" />
+                <Node name="UI" expanded="True" />
+                <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -33,7 +30,7 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7861d1e9-fa98-4a15-a4fc-b1bfaf638e04" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6e44d72c-5651-46af-803e-cde5f4ff599c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

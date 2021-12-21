@@ -15,9 +15,8 @@ public class HealtComponent : MonoBehaviour
 
     public void Change(float hp)
     {
-
         //Ограничить ввод жизней. Если пытаемся отнять больше, чем есть, то просто обнуляем.
-        if (health < Mathf.Abs(hp) && hp < 0)
+        if (health <= Mathf.Abs(hp) && hp < 0)
         {
             GetComponentInParent<Deathable>().Kill();
             return;
