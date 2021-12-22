@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
 
     public HealtComponent health;
+    public HealthBarComponent healthBar;
 
 
     void Start()
@@ -59,6 +60,9 @@ public class PlayerController : MonoBehaviour, Deathable
         
         isRocket = false;
         quantityRockets = 5;
+
+
+        healthBar.SetValue(health.GetHealth());
     }
 
 
@@ -173,6 +177,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public void AddDamage(float dmg)
     {
         GetComponent<HealtComponent>().Change(-dmg);
+        healthBar.SetValue(health.GetHealth());
     }
 
     void SwitchProjectile()

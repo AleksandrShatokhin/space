@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyBomber.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemies/EnemyBomber.cs" Line="70" Column="2" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="169" Column="62" />
+      <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" Line="9" Column="26" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="33" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,11 +13,11 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Base" expanded="True" />
                 <Node name="BuffAndDebuff" expanded="True" />
-                <Node name="Enemies" expanded="True">
-                  <Node name="EnemyBomber.cs" selected="True" />
-                </Node>
+                <Node name="Enemies" expanded="True" />
                 <Node name="Game" expanded="True" />
-                <Node name="Player" expanded="True" />
+                <Node name="Player" expanded="True">
+                  <Node name="PlayerController.cs" selected="True" />
+                </Node>
                 <Node name="Projectiles" expanded="True" />
                 <Node name="UI" expanded="True" />
                 <Node name="Utilities" expanded="True" />
@@ -30,7 +31,7 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6e44d72c-5651-46af-803e-cde5f4ff599c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ca5789ce-3397-4322-903d-33efc2a6c3e3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
