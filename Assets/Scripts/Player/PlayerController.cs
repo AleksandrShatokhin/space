@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public void AddDamage(float dmg)
     {
         GetComponent<HealtComponent>().Change(-dmg);
-        healthBar.SetValue(health.GetHealth());
+        //healthBar.SetValue(health.GetHealth());
     }
 
     void SwitchProjectile()

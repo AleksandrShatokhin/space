@@ -15,14 +15,16 @@ public class HealtComponent : MonoBehaviour
 
     public void Change(float hp)
     {
-        //Ограничить ввод жизней. Если пытаемся отнять больше, чем есть, то просто обнуляем.
-        if (health <= Mathf.Abs(hp) && hp < 0)
-        {
-            GetComponentInParent<Deathable>().Kill();
-            return;
-        }
 
         health += hp;
+        
+        //Ограничить ввод жизней. Если пытаемся отнять больше, чем есть, то просто обнуляем.
+        if (health <= 0)
+        {
+            GetComponentInParent<Deathable>().Kill();
+        }
+
+        UpdatePlayerHealthBar();
     }
 
 
@@ -35,4 +37,18 @@ public class HealtComponent : MonoBehaviour
         deathableParent = deathable;
     }
 
+
+    public void UpdatePlayerHealthBar()
+    {
+        //Если есть компонент HealthBar в родителе, то надо проставить новое значение
+        PlayerController pc = GetComponentInParent<PlayerController>();
+
+        if (!pc)
+        {
+            return;
+        }
+        
+        pc.healthBar.SetValue(health);
+
+    }
 }
