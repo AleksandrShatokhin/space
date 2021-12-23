@@ -2,11 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/HealthBarComponent.cs">
     <Files>
       <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" Line="14" Column="46" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="41" Column="41" />
-      <File FileName="Assets/Scripts/Utilities/HealtComponent.cs" Line="49" Column="10" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/DebuffDisableShot.cs" Line="20" Column="1" />
-      <File FileName="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,7 +30,7 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a3fe70e5-5084-4f51-8de9-059c7ccd0539" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5540c47b-4c32-40fd-acf7-4c442070193f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
