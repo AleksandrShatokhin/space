@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PS_RocketBlast : MonoBehaviour
 {
+    private float damage = 2.0f;
+    private bool isCollision;
+
+    void Start()
+    {
+        isCollision = false;
+    }
+
     void Update()
     {
         Destroy(gameObject, 1);
@@ -11,9 +19,10 @@ public class PS_RocketBlast : MonoBehaviour
 
     void OnParticleCollision(GameObject collision)
     {
-        if (collision.gameObject.layer == 6) // слой 6 - это enemy
+        if (collision.gameObject.layer == 6 && isCollision == false) // слой 6 - это enemy
         {
-            collision.gameObject.GetComponent<EnemyBase>().Death();
+            isCollision = true;
+            collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
         }
     }
 }

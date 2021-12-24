@@ -11,6 +11,7 @@ public class MainUIController : MonoBehaviour
     public static bool isPickedUpShield = false;
     public static bool isPickedUpDisableShot = false;
     public static bool isPickedUpBlastWave = false;
+    public static bool isPickedUpRocket = false;
     private Vector3 maxScale = new Vector3(2.0f, 2.0f, 2.0f);
     private Vector3 startTextScale;
 
@@ -57,6 +58,11 @@ public class MainUIController : MonoBehaviour
         // выводим на экран текст по взрывной волне
         if (isPickedUpBlastWave == true)
         IsPickedUpBlastWave();
+
+        // проверка на получение ракет, 
+        // выводим на экран текст по количеству подобраных ракет
+        if (isPickedUpRocket == true)
+        IsPickedUpRocket();
     }
 
     void IsPickedUpSlowing() //метод для вывода текста на экран при получения замедления
@@ -111,6 +117,20 @@ public class MainUIController : MonoBehaviour
         {
             centerText.text = null;
             isPickedUpBlastWave = false;
+            centerText.transform.localScale = startTextScale;
+        }
+    }
+
+    public void IsPickedUpRocket() //метод для вывода текста на экран при подборе рокет
+    {
+        centerText.text = "Добавлены ракеты";
+
+        centerText.transform.localScale += new Vector3(2f, 2f, 2f) * Time.deltaTime;
+        
+        if(centerText.transform.localScale.x > maxScale.x)
+        {
+            centerText.text = null;
+            isPickedUpRocket = false;
             centerText.transform.localScale = startTextScale;
         }
     }

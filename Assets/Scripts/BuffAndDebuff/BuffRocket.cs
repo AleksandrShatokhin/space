@@ -18,6 +18,7 @@ public class BuffRocket : MonoBehaviour
         {
             PlayerController.quantityRockets += quantityRt;
             Destroy(gameObject);
+            MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
         }
 
         // проверка на столкновение со всевозможными снарядами

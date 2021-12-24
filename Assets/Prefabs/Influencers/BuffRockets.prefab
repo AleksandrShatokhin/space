@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6622730543190572808}
   - component: {fileID: 6622730543190572819}
   - component: {fileID: 6622730543190572815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuffRockets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
