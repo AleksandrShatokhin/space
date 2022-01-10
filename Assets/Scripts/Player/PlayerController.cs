@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour, Deathable
 
     private GameController game;
 
+    private Animator animPlayer;
+
     //Регулировка угла наклона 
     public float tilt = 1.5f;
     //bool leftUsed = false;
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour, Deathable
     {
         rb = GetComponent<Rigidbody>();
         gunSwitcher = new Switcher();
+
+        animPlayer = GetComponent<Animator>();
 
         //weapons = new List<Weapon>
         //{
@@ -122,6 +126,9 @@ public class PlayerController : MonoBehaviour, Deathable
                 {
                     Instantiate(rocketProjectile, GetGun().transform.position, transform.rotation);
                     quantityRockets -= 1;
+
+                    // Запускаем анимацию стрельбы
+                    EnterAnimShot();
                 }
             break;
             case false: //если выбраны стандартные снаряды
@@ -134,6 +141,9 @@ public class PlayerController : MonoBehaviour, Deathable
                 if (Input.GetKeyDown("space"))
                 {
                     _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
+
+                    // Запускаем анимацию стрельбы
+                    EnterAnimShot();
 
                     //После спауна пули отнимаем один заряд
                     currentWeapon.AddBullets(-1);
@@ -201,5 +211,31 @@ public class PlayerController : MonoBehaviour, Deathable
             quantityRockets = 20;
         }
             
+    }
+
+    // функции на выход из анимаций стрельбы пушек (Event на анимации)
+    public void ExitAnimShotLG()
+    {
+        animPlayer.SetBool("isShotLG", false);
+    }
+
+    public void ExitAnimShotRG()
+    {
+        animPlayer.SetBool("isShotRG", false);
+    }
+
+    // функция на запуск анимации стрельбы левой и правой пушек
+    // сейчас почему то работает странно (изменить LG и RG)
+    void EnterAnimShot()
+    {
+        if (gunSwitcher.GetState() == leftGun)
+        {
+            animPlayer.SetBool("isShotRG", true);
+        }
+
+        if (gunSwitcher.GetState() == rightGun)
+        {
+            animPlayer.SetBool("isShotLG", true);
+        }
     }
 }

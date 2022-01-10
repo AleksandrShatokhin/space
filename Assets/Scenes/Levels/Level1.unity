@@ -123,6 +123,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &126129419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3793873959096031788, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+  m_PrefabInstance: {fileID: 2529090270196278168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &126129420
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126129419}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 295e549bf5cd88a4eb8fb67e00febccc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &230323946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5649,7 +5673,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6474,6 +6498,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1176887504}
+    - target: {fileID: 650821327851580971, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_Name
+      value: Gun.Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659348299970621306, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5879617
+      objectReference: {fileID: 0}
     - target: {fileID: 3404361760265040575, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -6521,6 +6553,38 @@ PrefabInstance:
     - target: {fileID: 3793873959096031788, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548017141647724182, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5879617
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848621077395662563, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_Name
+      value: Gun.Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623454001088688711, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623454001088688711, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623454001088688711, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623454001088688711, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623454001088688711, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623454001088688711, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ParticleSistemBlastWave : MonoBehaviour
 {
+    // данный формат потенциально вывести на создание объекта
+    void Update()
+    {
+        transform.rotation = Quaternion.Euler(-90, 0, 0);
+    }
 
     void OnParticleCollision(GameObject other)
     {
