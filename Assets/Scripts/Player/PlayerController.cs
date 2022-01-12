@@ -190,6 +190,11 @@ public class PlayerController : MonoBehaviour, Deathable
         //healthBar.SetValue(health.GetHealth());
     }
 
+    public void AddHealth(byte hp)
+    {
+        GetComponent<HealtComponent>().Change(hp);
+    }
+
     void SwitchProjectile()
     {
         // здесь воодим переключение снарядов для выстрела

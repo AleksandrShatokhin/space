@@ -24,6 +24,11 @@ public class HealtComponent : MonoBehaviour
             GetComponentInParent<Deathable>().Kill();
         }
 
+        if (health > 5) //если подобраное сердечко дает больше определенного значения
+        {
+            health = 5;
+        }
+
         UpdatePlayerHealthBar();
     }
 

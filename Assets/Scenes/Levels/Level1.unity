@@ -5686,7 +5686,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5994,10 +5994,10 @@ RectTransform:
   m_Father: {fileID: 924179770}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: -206}
-  m_SizeDelta: {x: 186.0594, y: 31.2733}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 60}
+  m_SizeDelta: {x: 186.05939, y: 31.273315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176887503
 MonoBehaviour:
@@ -6459,7 +6459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.55529785, y: 0.06309986}
+  m_AnchoredPosition: {x: 0.55529785, y: 0.06309509}
   m_SizeDelta: {x: -6.6355, y: -4.8214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970833424

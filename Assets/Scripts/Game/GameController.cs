@@ -47,6 +47,8 @@ public class GameController : MonoBehaviour
     //Можно отключить извне для тестов
     public bool shouldSpawnWave = true;
 
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     // Start is called before the first frame update
     void Start()
     {
