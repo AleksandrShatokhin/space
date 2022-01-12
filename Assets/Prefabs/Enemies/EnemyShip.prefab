@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 4014471606503684607}
   - component: {fileID: -4045208890884959435}
   - component: {fileID: 4816807759903485256}
+  - component: {fileID: 1792117863829712764}
   m_Layer: 6
   m_Name: EnemyShip
   m_TagString: EnemyShip
@@ -155,6 +156,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+--- !u!114 &1792117863829712764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014471606503684602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89584da655d94ec47842b3fce4f2bb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyWidth: 0
+  enemyHeight: 0
+  mr: {fileID: 2339568370989045336}
 --- !u!1 &4014471608169217456
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,5 +281,10 @@ PrefabInstance:
 --- !u!4 &3475932104172596535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4bca1226182fa41dc9978f8650453e75, type: 3}
+  m_PrefabInstance: {fileID: 4014471607839361756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2339568370989045336 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 4bca1226182fa41dc9978f8650453e75, type: 3}
   m_PrefabInstance: {fileID: 4014471607839361756}
   m_PrefabAsset: {fileID: 0}

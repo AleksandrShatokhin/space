@@ -18,6 +18,7 @@ public class EnemyShip : EnemyBase
 
     void Start()
     {
+        //задаем стрельбу вражеского корабля
         InvokeRepeating("EnemyShoot", Random.Range(5, 7), Random.Range(1, 5));
 
         startPosEnemyShip = transform.position;

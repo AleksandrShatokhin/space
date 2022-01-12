@@ -66,7 +66,7 @@
      <Compile Include="Assets\Scripts\ParticleSystem\ParticleSistemBlastWave.cs" />
      <Compile Include="Assets\Scripts\Utilities\DeathComponent.cs" />
      <Compile Include="Assets\Scripts\UI\PostLevelController.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Utilities\CameraController.cs" />
      <Compile Include="Assets\Scripts\Projectiles\BombEnemyShip.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\BuffShield.cs" />
      <Compile Include="Assets\Scripts\UI\HealthBarComponent.cs" />
@@ -74,6 +74,8 @@
      <Compile Include="Assets\Scripts\Base\Deathable.cs" />
      <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
      <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
+     <Compile Include="Assets\Scripts\BoundEmemyShip.cs" />
+     <Compile Include="Assets\Scripts\BoundSpawner.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
