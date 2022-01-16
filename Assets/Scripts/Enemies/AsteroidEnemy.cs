@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AsteroidEnemy : EnemyBase
 {
+    public GameObject heartPrefab;
+    public int counterAsteroid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +20,7 @@ public class AsteroidEnemy : EnemyBase
 
     void FixedUpdate()
     {
-        //Астероид просто движется вперед. В сторону игрока
-        transform.Translate(transform.forward * Time.deltaTime * movementSpeed);
+        
     }
 
     // Update is called once per frame
@@ -42,7 +44,10 @@ public class AsteroidEnemy : EnemyBase
 
     protected void SpawnCollectableHP()
     {
+        //GameObject[] masObj = new GameObject [null, null, heartPrefab];
+        byte randomPoint = Random.Range(0, 10);
 
+        Instantiate(heartPrefab, transform.position, heartPrefab.transform.rotation);
     }
 
     public override void Death()
