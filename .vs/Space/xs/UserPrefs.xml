@@ -1,9 +1,13 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyBase.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="156" Column="39" />
-      <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" Line="9" Column="26" />
+      <File FileName="Assets/Scripts/HeartAction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="234" Column="33" />
+      <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" />
       <File FileName="Assets/Scripts/Game/GameController.cs" />
+      <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" Line="51" Column="30" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" Line="34" Column="22" />
+      <File FileName="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" Line="26" Column="78" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +17,11 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Base" expanded="True" />
                 <Node name="BuffAndDebuff" expanded="True" />
-                <Node name="Enemies" expanded="True" />
-                <Node name="Game" expanded="True" />
-                <Node name="Player" expanded="True">
-                  <Node name="PlayerController.cs" selected="True" />
+                <Node name="Enemies" expanded="True">
+                  <Node name="EnemyBase.cs" selected="True" />
                 </Node>
+                <Node name="Game" expanded="True" />
+                <Node name="Player" expanded="True" />
                 <Node name="Projectiles" expanded="True" />
                 <Node name="UI" expanded="True" />
                 <Node name="Utilities" expanded="True" />
@@ -26,14 +30,19 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a47a3f63-11df-4411-845e-9e88158d59e6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1b51576c-1a3c-4553-ac04-db6e92bc6597" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/Enemies/AsteroidEnemy.cs" relfile="Assets/Scripts/Enemies/AsteroidEnemy.cs" line="51" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
