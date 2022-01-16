@@ -17,8 +17,6 @@ public class AsteroidEnemy : EnemyBase
 
     void FixedUpdate()
     {
-        //Астероид просто движется вперед. В сторону игрока
-        transform.Translate(transform.forward * Time.deltaTime * movementSpeed);
     }
 
     // Update is called once per frame
