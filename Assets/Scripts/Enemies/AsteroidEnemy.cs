@@ -20,7 +20,10 @@ public class AsteroidEnemy : EnemyBase
 
     void FixedUpdate()
     {
+<<<<<<< HEAD
         
+=======
+>>>>>>> a6b4f5ad35ff506b1ccff2500c488ad999a37f77
     }
 
     // Update is called once per frame
