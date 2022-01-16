@@ -20,10 +20,7 @@ public class AsteroidEnemy : EnemyBase
 
     void FixedUpdate()
     {
-<<<<<<< HEAD
-        
-=======
->>>>>>> a6b4f5ad35ff506b1ccff2500c488ad999a37f77
+
     }
 
     // Update is called once per frame
@@ -47,10 +44,13 @@ public class AsteroidEnemy : EnemyBase
 
     protected void SpawnCollectableHP()
     {
-        //GameObject[] masObj = new GameObject [null, null, heartPrefab];
-        byte randomPoint = Random.Range(0, 10);
+        // выпадание жизни происходить от вероятности
+        int randomPoint = Random.Range(0, 10);
 
-        Instantiate(heartPrefab, transform.position, heartPrefab.transform.rotation);
+        if (randomPoint >= 8)
+        {
+            Instantiate(heartPrefab, transform.position, heartPrefab.transform.rotation);
+        }
     }
 
     public override void Death()
