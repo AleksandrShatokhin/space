@@ -30,7 +30,7 @@ public class AsteroidEnemy : EnemyBase
     private void OnCollisionEnter(Collision collision)
     {
         //Если астероид попал в игрока, то убиваем игрока.
-        //Потенциально заменить на вызов метода у игрока 
+        //Потенциально заменить на вызов метода у игрока    
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().AddDamage(1);
@@ -40,8 +40,19 @@ public class AsteroidEnemy : EnemyBase
         
     }
 
+    protected void SpawnCollectableHP()
+    {
 
-// при такой реализации через триггер не работают некоторые необходимые действия
+    }
+
+    public override void Death()
+    {
+        //Спаун жизней
+        SpawnCollectableHP();
+        base.Death();
+    }
+
+    // при такой реализации через триггер не работают некоторые необходимые действия
     /*void OnTriggerEnter(Collider other)
     {
         поменял для теста на триггер только по игроку, 

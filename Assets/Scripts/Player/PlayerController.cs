@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public GameObject leftGun;
     public GameObject rightGun;
+    public AudioClip shotSound;
 
     private GameController game;
 
@@ -118,6 +119,9 @@ public class PlayerController : MonoBehaviour, Deathable
             return;
         }
 
+        
+
+
         //варианты ведения стрельбы
         switch (isRocket)
         {
@@ -144,6 +148,14 @@ public class PlayerController : MonoBehaviour, Deathable
 
                     // Запускаем анимацию стрельбы
                     EnterAnimShot();
+
+                    AudioSource audio = GetComponent<AudioSource>();
+
+                    audio.clip = shotSound;
+
+                    audio.volume = 0.2f;
+
+                    audio.PlayOneShot(shotSound);
 
                     //После спауна пули отнимаем один заряд
                     currentWeapon.AddBullets(-1);

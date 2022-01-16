@@ -18,7 +18,7 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     {
     }
 
-    public void Death()
+    public virtual void Death()
     {
         Debug.Log("Death");
         GameController.GetInstance().AddKilledEnemy();
