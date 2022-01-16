@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyWidth: 0
-  enemyHeight: 0
   mr: {fileID: 4155293059630101100}
 --- !u!1 &3344772251685870658
 GameObject:
@@ -240,6 +239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 224c64d40842c456f8e8e60aecc38c98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e8a06803061c3421bb33145e86f70ade, type: 2}
     - target: {fileID: 919132149155446097, guid: 224c64d40842c456f8e8e60aecc38c98, type: 3}
       propertyPath: m_Name
       value: BomberBody

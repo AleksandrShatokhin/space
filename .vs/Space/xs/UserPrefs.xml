@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/HealthBarComponent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" Line="14" Column="46" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="156" Column="39" />
+      <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" Line="9" Column="26" />
       <File FileName="Assets/Scripts/Game/GameController.cs" />
     </Files>
     <Pads>
@@ -14,11 +15,11 @@
                 <Node name="BuffAndDebuff" expanded="True" />
                 <Node name="Enemies" expanded="True" />
                 <Node name="Game" expanded="True" />
-                <Node name="Player" expanded="True" />
-                <Node name="Projectiles" expanded="True" />
-                <Node name="UI" expanded="True">
-                  <Node name="HealthBarComponent.cs" selected="True" />
+                <Node name="Player" expanded="True">
+                  <Node name="PlayerController.cs" selected="True" />
                 </Node>
+                <Node name="Projectiles" expanded="True" />
+                <Node name="UI" expanded="True" />
                 <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
@@ -30,7 +31,7 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="d4211a64-5012-48fb-a6c2-acec5dcd876a" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5540c47b-4c32-40fd-acf7-4c442070193f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a47a3f63-11df-4411-845e-9e88158d59e6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
