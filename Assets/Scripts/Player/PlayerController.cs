@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour, Deathable
     public HealtComponent health;
     public HealthBarComponent healthBar;
 
+    private GameObject joystick;
+
 
     void Start()
     {
@@ -68,6 +70,8 @@ public class PlayerController : MonoBehaviour, Deathable
 
 
         healthBar.SetValue(health.GetHealth());
+
+        joystick = GameObject.Find("JoyStick");
     }
 
 
@@ -79,6 +83,9 @@ public class PlayerController : MonoBehaviour, Deathable
     void Update()
     {
         SwitchProjectile();
+
+        joystick.GetComponent<MoveJoyStick>().CheckTouch(tilt);
+
     }
 
     private void LateUpdate()
@@ -89,6 +96,11 @@ public class PlayerController : MonoBehaviour, Deathable
 
     // Update is called once per frame
     void FixedUpdate()
+    {
+        PlayerShipMove();
+    }
+
+    void PlayerShipMove()
     {
         //Получить данные по вводу от игркоа
         forwardInput = Input.GetAxis("Vertical");
