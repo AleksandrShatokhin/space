@@ -32,7 +32,10 @@ public class MainUIController : MonoBehaviour
     void ClearText() // пока сделал метод для очистки текста (использую при старте игры)
     {
         if(centerText.text != null)
+        {
             centerText.text = null;
+        }
+            
     }
     
     void Update()
@@ -137,12 +140,15 @@ public class MainUIController : MonoBehaviour
 
     void ProjectileOnScreen() // зададим условия выводимого изображения на экран по выбранному виду оружия игроком
     {
-        if (PlayerController.isRocket == true)
+
+        Weapons currentWeapon = GameController.GetInstance().GetPlayer().GetWeapon().id;
+
+        if (currentWeapon == Weapons.Rocket)
         {
             imageProjectile.sprite = rocketPr;
-            quantityRocketsText.text = PlayerController.quantityRockets.ToString();
+            quantityRocketsText.text = GameController.GetInstance().GetPlayer().GetWeapon().GetBullets().ToString();
         }
-        else
+        else if(currentWeapon == Weapons.Laser)
         {
             imageProjectile.sprite = defaultPr;
             quantityRocketsText.text = null;

@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
 
     static private GameController instance;
+    private PlayerController player;
     static public GameController GetInstance() => instance;
 
     public SpawnerBox spawner;
@@ -47,8 +48,7 @@ public class GameController : MonoBehaviour
     //Можно отключить извне для тестов
     public bool shouldSpawnWave = true;
 
-    //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +56,8 @@ public class GameController : MonoBehaviour
         StartCoroutine(SpawnWave());
         allEnemies = enemiesInWave * numberOfWaves;
 
-       
+        //Сохранить ссылку на игрока для дальнейшего использования
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -129,7 +130,9 @@ public class GameController : MonoBehaviour
     void Restart()
     {
         if (Input.GetKeyDown(KeyCode.R))
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     
@@ -201,4 +204,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Killed enemies:" + enemiesKilled);
         Debug.Log("All enemies " + allEnemiesSpawned);
     }
+
+
+    public PlayerController GetPlayer() => player;
 }

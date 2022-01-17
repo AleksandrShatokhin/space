@@ -51,18 +51,19 @@ public class PlayerController : MonoBehaviour, Deathable
 
         animPlayer = GetComponent<Animator>();
 
-        //weapons = new List<Weapon>
-        //{
-        //    new Weapon(currentProjectile, 5, 5, true)
-        //};
+        weapons = new List<Weapon>
+        {
+            new Weapon(Weapons.Laser, currentProjectile, 5, 5, true),
+            new Weapon(Weapons.Rocket, rocketProjectile, 5, 5, false)
+        };
 
-        currentWeapon = new Weapon(currentProjectile, 5, 5, true);
-
+        //currentWeapon = new Weapon(currentProjectile, 5, 5, true);
+        currentWeapon = weapons[0];
 
         //Получить ссылку на компонент здоровья, для удобства использования
         health = GetComponent<HealtComponent>();
         //health.SetDeathable(this);
-        
+
         isRocket = false;
         quantityRockets = 5;
 
@@ -73,6 +74,8 @@ public class PlayerController : MonoBehaviour, Deathable
 
     private void Awake()
     {
+
+
         StartCoroutine(AddBullets());
     }
 
@@ -119,50 +122,32 @@ public class PlayerController : MonoBehaviour, Deathable
             return;
         }
 
-        
-
-
         //варианты ведения стрельбы
-        switch (isRocket)
+        //Проверить, что есть снаряды в текущем оружии
+        if (currentWeapon.GetBullets() == 0)
         {
-            case true: //если выбраны ракеты
-                if (Input.GetKeyDown("space") && quantityRockets > 0)
-                {
-                    Instantiate(rocketProjectile, GetGun().transform.position, transform.rotation);
-                    quantityRockets -= 1;
-
-                    // Запускаем анимацию стрельбы
-                    EnterAnimShot();
-                }
-            break;
-            case false: //если выбраны стандартные снаряды
-                //Проверить, что есть снаряды в текущем оружии
-                if (currentWeapon.GetBullets() == 0)
-                {
-                    return;
-                }
-
-                if (Input.GetKeyDown("space"))
-                {
-                    _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
-
-                    // Запускаем анимацию стрельбы
-                    EnterAnimShot();
-
-                    AudioSource audio = GetComponent<AudioSource>();
-
-                    audio.clip = shotSound;
-
-                    audio.volume = 0.2f;
-
-                    audio.PlayOneShot(shotSound);
-
-                    //После спауна пули отнимаем один заряд
-                    currentWeapon.AddBullets(-1);
-                }
-            break;
+            return;
         }
-        
+
+        if (Input.GetKeyDown("space"))
+        {
+            _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
+
+            // Запускаем анимацию стрельбы
+            EnterAnimShot();
+
+            AudioSource audio = GetComponent<AudioSource>();
+
+            audio.clip = shotSound;
+
+            audio.volume = 0.2f;
+
+            audio.PlayOneShot(shotSound);
+
+            //После спауна пули отнимаем один заряд
+            currentWeapon.AddBullets(-1);
+        }
+
     }
 
     private GameObject GetGun()
@@ -174,7 +159,7 @@ public class PlayerController : MonoBehaviour, Deathable
     //Например, признак конца игры
     public void Death()
     {
-        GameController.GetInstance().GameOver();    
+        GameController.GetInstance().GameOver();
         Destroy(this.gameObject);
     }
 
@@ -186,7 +171,11 @@ public class PlayerController : MonoBehaviour, Deathable
         while (true)
         {
             yield return new WaitForSeconds(1.0f);
-            currentWeapon.AddBullets(1);
+
+            if (currentWeapon.GettingBulletsByTime())
+            {
+                currentWeapon.AddBullets(1);
+            }
         }
     }
 
@@ -212,22 +201,19 @@ public class PlayerController : MonoBehaviour, Deathable
         // здесь воодим переключение снарядов для выстрела
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (isRocket == false)
+            int nextWeaponIndex = (int)currentWeapon.id + 1;
+
+            if (nextWeaponIndex >= weapons.Count)
             {
-                isRocket = true;
+                currentWeapon = weapons[0];
             }
             else
             {
-                isRocket = false;
+                currentWeapon = weapons[nextWeaponIndex];
             }
+
         }
 
-        // ограничение по количеству ракет
-        if (quantityRockets > 20)
-        {
-            quantityRockets = 20;
-        }
-            
     }
 
     // функции на выход из анимаций стрельбы пушек (Event на анимации)
@@ -255,4 +241,7 @@ public class PlayerController : MonoBehaviour, Deathable
             animPlayer.SetBool("isShotLG", true);
         }
     }
+
+
+    public Weapon GetWeapon() => currentWeapon;
 }
