@@ -191,10 +191,6 @@ public class GameController : MonoBehaviour
         return influencers[Random.Range(0, influencers.Length)];
     }
 
-    IEnumerator AddBullets()
-    {
-        yield return new WaitForSeconds(1.0f);
-    }
 
     //Для контроля над спауном нужно подсчитывать кол-во уничтоженных врагов
     //При уничтожении нужно вызывать данный метод
@@ -207,4 +203,23 @@ public class GameController : MonoBehaviour
 
 
     public PlayerController GetPlayer() => player;
+
+
+    IEnumerator AddBullets()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.0f);
+
+            foreach (var weapon in player.weapons)
+            {
+                if (player.GetWeapon().GettingBulletsByTime())
+                {
+                    player.GetWeapon().AddBullets(1);
+                }
+            }
+
+            
+        }
+    }
 }
