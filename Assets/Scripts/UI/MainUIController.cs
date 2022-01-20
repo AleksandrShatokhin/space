@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainUIController : MonoBehaviour
 {
-     public TextMeshProUGUI centerText, quantityRocketsText;
+    public TextMeshProUGUI centerText, quantityRocketsText;
     public static bool isPickedUpSlowing = false;
     public static bool isPickedUpShield = false;
     public static bool isPickedUpDisableShot = false;

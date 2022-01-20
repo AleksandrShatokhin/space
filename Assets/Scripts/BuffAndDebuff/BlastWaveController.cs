@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class BlastWaveController : MonoBehaviour
 {
-    public ParticleSystem blastWave;
-    
-    void Start()
-    {
-        blastWave = GameObject.Find("Player").GetComponentInChildren<ParticleSystem>();
-    }
+    private GameObject player;
 
     /*void OnCollisionEnter(Collision collision)
     {
@@ -20,12 +15,17 @@ public class BlastWaveController : MonoBehaviour
         }
     }Пока убрал данный формат. Тестируем через триггер*/
 
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
+
     void OnTriggerEnter(Collider other)
     {
         //проверка на столкновение с игроком
         if (other.gameObject.tag == "Player")
         {
-            blastWave.Play();
+            player.GetComponent<PlayerController>().StartBlastWave();
             Destroy(gameObject);
             MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
         }

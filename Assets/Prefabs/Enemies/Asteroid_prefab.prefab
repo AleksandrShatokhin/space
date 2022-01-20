@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 15
+  heartPrefab: {fileID: 1999070248628597430, guid: 363334295e95a984593b72a7d66dba7b, type: 3}
+  counterAsteroid: 0
 --- !u!114 &-1179865243143540468
 MonoBehaviour:
   m_ObjectHideFlags: 0

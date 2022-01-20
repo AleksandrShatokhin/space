@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour, Deathable
 
     private GameObject joystick;
 
+    private Transform spawnPosBlastWave;
+    public GameObject blastWave;
+
 
     void Start()
     {
@@ -73,6 +76,8 @@ public class PlayerController : MonoBehaviour, Deathable
         healthBar.SetValue(health.GetHealth());
 
         joystick = GameObject.Find("JoyStick");
+
+        spawnPosBlastWave = gameObject.transform.GetChild(2);
     }
 
 
@@ -87,8 +92,6 @@ public class PlayerController : MonoBehaviour, Deathable
     {
         SwitchProjectile();
 
-        joystick.GetComponent<MoveJoyStick>().CheckTouch(tilt);
-
     }
 
     private void LateUpdate()
@@ -101,6 +104,8 @@ public class PlayerController : MonoBehaviour, Deathable
     void FixedUpdate()
     {
         PlayerShipMove();
+
+        joystick.GetComponent<MoveJoyStick>().CheckTouch(this.tilt, speedPlayer);
     }
 
     void PlayerShipMove()
@@ -124,15 +129,20 @@ public class PlayerController : MonoBehaviour, Deathable
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
     }
 
+    public void StartBlastWave() // метод запуска взрывной волны (вызывается инфлюенсом)
+    {
+        Instantiate(blastWave, transform.position, blastWave.transform.rotation);
+    }
 
-    private void Shoot()
+
+    public void Shoot()
     {
         //Проверить, что стрельба не отключена
-        if (isDisableShot)
+        if (isDisableShot)    
         {
             GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
             return;
-        }
+        }    
 
         //варианты ведения стрельбы
         //Проверить, что есть снаряды в текущем оружии
@@ -157,9 +167,8 @@ public class PlayerController : MonoBehaviour, Deathable
             audio.PlayOneShot(shotSound);
 
             //После спауна пули отнимаем один заряд
-            currentWeapon.AddBullets(-1);
+            currentWeapon.AddBullets(-1);    
         }
-
     }
 
     private GameObject GetGun()
