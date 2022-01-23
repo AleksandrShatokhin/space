@@ -7,6 +7,8 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public float movementSpeed;
 
+    public GameObject explosionEffect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,14 +16,15 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
         
     }
 
-    private void Awake()
-    {
-    }
-
     public virtual void Death()
     {
-        Debug.Log("Death");
         GameController.GetInstance().AddKilledEnemy();
+
+        if (explosionEffect)
+        {
+            _ = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 

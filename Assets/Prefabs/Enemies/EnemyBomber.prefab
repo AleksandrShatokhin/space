@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
+  explosionEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   bombPrefab: {fileID: 1576971607692184322, guid: 4109965749d146648aa9e21c12aa6198, type: 3}
   gun: {fileID: 3344772251685870658}
 --- !u!65 &1565268528

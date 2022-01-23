@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
+  explosionEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   leftEnemyGun: {fileID: 5184522325005704937}
   rightEnemyGun: {fileID: 7538318708422303360}
   EnemyShipProjectile: {fileID: 6311570661009229835, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
