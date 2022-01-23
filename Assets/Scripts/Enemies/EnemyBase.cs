@@ -22,7 +22,8 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
         if (explosionEffect)
         {
-            _ = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
+            GameObject expolion = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
+            Destroy(expolion, 2);
         }
 
         Destroy(gameObject);
