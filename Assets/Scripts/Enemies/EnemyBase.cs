@@ -11,6 +11,7 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public AudioClip shootSound;
     public AudioClip deathSound;
+    public AudioClip hitSound;
 
     public virtual void Death()
     {
@@ -34,18 +35,30 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public void AddDamage(float damage)
     {
-        GetComponent<HealtComponent>().Change(-damage);
+        bool isDead = GetComponent<HealtComponent>().Change(-damage);
+
+
+        if (!isDead)
+        {
+            HitSound();
+        }
     }
 
 
     public void ShootSound()
     {
-        GameController.GetInstance().PlaySound(shootSound, .4f);
+        GameController.GetInstance().PlaySound(shootSound, .3f);
     }
 
     public void DeathSound()
     {
-        GameController.GetInstance().PlaySound(deathSound, 1.0f);
+        GameController.GetInstance().PlaySound(deathSound, 0.8f);
+    }
+
+
+    public void HitSound()
+    {
+        GameController.GetInstance().PlaySound(hitSound, 0.5f);
     }
 
 }

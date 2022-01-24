@@ -88,6 +88,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   shootSound: {fileID: 8300000, guid: da17665d573ad4a47b91e63a27742b24, type: 3}
   deathSound: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
+  hitSound: {fileID: 8300000, guid: 077b2e6cce38546a5b265d36692ab2a3, type: 3}
   bombPrefab: {fileID: 1576971607692184322, guid: 4109965749d146648aa9e21c12aa6198, type: 3}
   gun: {fileID: 3344772251685870658}
 --- !u!65 &1565268528
