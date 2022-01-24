@@ -65,6 +65,9 @@ public class EnemyShip : EnemyBase
         // для стрельбы понадобилось проверять в какую сторону повернуты пушки и после чего вызывать снаряд
         Quaternion startRot = leftEnemyGun.transform.rotation;
         Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
+
+        ShootSound();
+
     }
 
     private GameObject EnemyGetGun()  // чередование правой и левой пушек для выстрела

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffShield : MonoBehaviour
+public class BuffShield : Influencer
 {
     public GameObject shield;
     
@@ -27,6 +27,7 @@ public class BuffShield : MonoBehaviour
             Destroy(gameObject);
             Instantiate(shield, transform.position, transform.rotation);
             MainUIController.isPickedUpShield = true; // для вызова тектса на экран игроку
+            ActivateSound();
         }
 
         // проверка на столкновение со всевозможными снарядами

@@ -10,6 +10,9 @@ public class GameController : MonoBehaviour
     private PlayerController player;
     static public GameController GetInstance() => instance;
 
+
+    private AudioSource audioSource;
+
     public SpawnerBox spawner;
     public GameObject postGame;
 
@@ -58,6 +61,10 @@ public class GameController : MonoBehaviour
 
         //Сохранить ссылку на игрока для дальнейшего использования
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+
+
+        audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -222,4 +229,17 @@ public class GameController : MonoBehaviour
             
         }
     }
+
+
+    public void PlaySound(AudioClip clip, float volume = 1.0f)
+    {
+
+        if (!clip) {
+            return;
+        }
+
+
+        audioSource.PlayOneShot(clip, volume);
+    }
+
 }

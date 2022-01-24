@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlastWaveController : MonoBehaviour
+public class BlastWaveController : Influencer
 {
     private GameObject player;
 
@@ -28,6 +28,7 @@ public class BlastWaveController : MonoBehaviour
             player.GetComponent<PlayerController>().StartBlastWave();
             Destroy(gameObject);
             MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
+            ActivateSound();
         }
 
         // проверка на столкновение со всевозможными снарядами

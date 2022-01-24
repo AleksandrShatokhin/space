@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebuffDisableShot : MonoBehaviour
+public class DebuffDisableShot : Influencer
 {
     private Transform targetPlayer;
     private float distance;
@@ -68,6 +68,9 @@ public class DebuffDisableShot : MonoBehaviour
                 TimerController.timerStatrForDisableShot = 10.0f;
                 Destroy(gameObject);
             }
+
+            ActivateSound();
+
         }
 
         // проверка на столкновение со всевозможными снарядами

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public GameObject leftGun;
     public GameObject rightGun;
     public AudioClip shotSound;
+    public AudioClip engineSound;
 
     private GameController game;
 
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour, Deathable
     private Transform spawnPosBlastWave;
     public GameObject blastWave;
 
+    private AudioSource audioSource;
+
 
     void Start()
     {
@@ -78,6 +81,13 @@ public class PlayerController : MonoBehaviour, Deathable
         joystick = GameObject.Find("JoyStick");
 
         spawnPosBlastWave = gameObject.transform.GetChild(2);
+
+
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.volume = 0.3f;
+        audioSource.clip = engineSound;
+        audioSource.Play();
     }
 
 
@@ -158,16 +168,12 @@ public class PlayerController : MonoBehaviour, Deathable
             // Запускаем анимацию стрельбы
             EnterAnimShot();
 
-            AudioSource audio = GetComponent<AudioSource>();
+            audioSource.volume = 0.2f;
 
-            audio.clip = shotSound;
-
-            audio.volume = 0.2f;
-
-            audio.PlayOneShot(shotSound);
+            audioSource.PlayOneShot(shotSound);
 
             //После спауна пули отнимаем один заряд
-            currentWeapon.AddBullets(-1);    
+            currentWeapon.AddBullets(-1);
         }
     }
 

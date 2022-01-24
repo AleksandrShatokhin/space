@@ -9,12 +9,8 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public GameObject explosionEffect;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioClip shootSound;
+    public AudioClip deathSound;
 
     public virtual void Death()
     {
@@ -24,6 +20,7 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
         {
             GameObject expolion = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
             Destroy(expolion, 2);
+            DeathSound();
         }
 
         Destroy(gameObject);
@@ -39,4 +36,16 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     {
         GetComponent<HealtComponent>().Change(-damage);
     }
+
+
+    public void ShootSound()
+    {
+        GameController.GetInstance().PlaySound(shootSound, .4f);
+    }
+
+    public void DeathSound()
+    {
+        GameController.GetInstance().PlaySound(deathSound, 1.0f);
+    }
+
 }

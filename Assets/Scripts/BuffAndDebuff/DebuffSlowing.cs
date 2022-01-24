@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebuffSlowing : MonoBehaviour
+public class DebuffSlowing : Influencer
 {
     private Transform targetPlayer;
     private float distance;
@@ -67,6 +67,7 @@ public class DebuffSlowing : MonoBehaviour
                 TimerController.timerStatrForSlowing = 10.0f;
                 Destroy(gameObject);
             }
+            ActivateSound();
         }
 
         // проверка на столкновение со всевозможными снарядами

@@ -60,6 +60,8 @@ public class EnemyBomber : EnemyBase
 
         Instantiate(bombPrefab, gun.transform.position, transform.rotation);
         animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
+
+        ShootSound();
     }
 
     public void AnimDefault()

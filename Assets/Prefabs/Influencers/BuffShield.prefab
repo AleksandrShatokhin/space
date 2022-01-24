@@ -121,4 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee93d282aa866e14686d8a2c2f0cf616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateSound: {fileID: 8300000, guid: 994f938af457b40d792bb2634bf31d55, type: 3}
   shield: {fileID: 3793889367936125265, guid: c0787f79dce45fd4aa5014f9551aacb6, type: 3}

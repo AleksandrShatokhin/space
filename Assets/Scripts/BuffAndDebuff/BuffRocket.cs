@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffRocket : MonoBehaviour
+public class BuffRocket : Influencer
 {
     private int quantityRt;
 
@@ -19,6 +19,7 @@ public class BuffRocket : MonoBehaviour
             PlayerController.quantityRockets += quantityRt;
             Destroy(gameObject);
             MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
+            ActivateSound();
         }
 
         // проверка на столкновение со всевозможными снарядами
