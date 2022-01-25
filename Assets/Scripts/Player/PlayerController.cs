@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
         audioSource = GetComponent<AudioSource>();
 
-        audioSource.volume = 0.3f;
+        audioSource.volume = 0.1f;
         audioSource.clip = engineSound;
         audioSource.Play();
     }

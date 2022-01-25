@@ -1,42 +1,21 @@
-﻿<Properties StartupConfiguration="{1292CDBC-3EDF-2CBA-776E-71BAEA7E57F5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utilities/HealtComponent.cs">
+﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="242" Column="46" />
-      <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemies/EnemyShip.cs" Line="80" Column="10" />
-      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" Line="37" Column="44" />
-      <File FileName="Assets/Scripts/Projectiles/Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" Line="26" Column="78" />
-      <File FileName="Assets/Scripts/Projectiles/BombEnemyShip.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Projectiles/ProjectileRoket.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Utilities/HealtComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="18" Column="32" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/NewMonoBehaviour.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Space" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Base" expanded="True" />
-                <Node name="BuffAndDebuff" expanded="True" />
-                <Node name="Enemies" expanded="True" />
-                <Node name="Game" expanded="True" />
-                <Node name="Player" expanded="True" />
-                <Node name="Projectiles" expanded="True" />
-                <Node name="Utilities" expanded="True">
-                  <Node name="HealtComponent.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="Space" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="acea1a0e-820b-4c06-a73a-e657d8c5e5aa" />
+  <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="50fb8af2-c44c-49ab-99e8-ec6dfdcad885" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="50fb8af2-c44c-49ab-99e8-ec6dfdcad885" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

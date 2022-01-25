@@ -99,6 +99,7 @@
     <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
     <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
     <Compile Include="Assets/Scripts/BuffAndDebuff/Influencer.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

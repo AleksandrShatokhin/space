@@ -35,13 +35,8 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public void AddDamage(float damage)
     {
-        bool isDead = GetComponent<HealtComponent>().Change(-damage);
-
-
-        if (!isDead)
-        {
-            HitSound();
-        }
+        HitSound();
+        _ = GetComponent<HealtComponent>().Change(-damage);
     }
 
 
