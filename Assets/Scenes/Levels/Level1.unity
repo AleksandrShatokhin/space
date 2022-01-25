@@ -16404,6 +16404,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1176887504}
     - target: {fileID: 1852501022, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: hitPlayer
+      value: 
+      objectReference: {fileID: 8300000, guid: 29ddcdb496ab54f7ab973be6531a90ba, type: 3}
+    - target: {fileID: 1852501022, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
       propertyPath: particlePlayerExplosion
       value: 
       objectReference: {fileID: 7686593279755968259, guid: 82692079c5fab48998ff241349c7c889, type: 3}

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public AudioClip shotSound;
     public AudioClip engineSound;
     public AudioClip playerExplosion;
+    public AudioClip hitPlayer;
 
 
     public GameObject leftGun;
@@ -224,6 +225,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public void AddDamage(float dmg)
     {
+        GameController.GetInstance().PlaySound(hitPlayer);
         GetComponent<HealtComponent>().Change(-dmg);
         //healthBar.SetValue(health.GetHealth());
     }
