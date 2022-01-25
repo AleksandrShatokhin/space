@@ -51,6 +51,10 @@ public class GameController : MonoBehaviour
     //Можно отключить извне для тестов
     public bool shouldSpawnWave = true;
 
+
+    public AudioClip failSound;
+    public AudioClip successSound;
+
     
     // Start is called before the first frame update
     void Start()
@@ -64,7 +68,6 @@ public class GameController : MonoBehaviour
 
 
         audioSource = GetComponent<AudioSource>();
-        
     }
 
     // Update is called once per frame
@@ -124,8 +127,9 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        float waitSec = 2;
+        float waitSec = 1;
         isGameOver = true;
+        //PlaySound(failSound);
         StartCoroutine(PostGame(waitSec));
     }
 
@@ -133,6 +137,7 @@ public class GameController : MonoBehaviour
     {
         float waitSec = 2;
         isLevelEnded = true;
+        PlaySound(successSound);
         StartCoroutine(PostGame(waitSec));
     }
 

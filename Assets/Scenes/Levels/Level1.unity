@@ -10567,6 +10567,8 @@ MonoBehaviour:
   influencerSpawnRate: 5
   influencerChance: 1
   shouldSpawnWave: 1
+  failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}
+  successSound: {fileID: 8300000, guid: f71b642f910e04954bb891a908773e95, type: 3}
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16161,7 +16163,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}

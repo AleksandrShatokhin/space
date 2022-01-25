@@ -238,17 +238,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978b8cd7dc34a4071b176021723acf94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotSound: {fileID: 8300000, guid: ccd413cd7aa38408d8eb1d01835bc5f0, type: 3}
+  engineSound: {fileID: 8300000, guid: ad12a0e09275a4e2dad749e11eb7096b, type: 3}
+  playerExplosion: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
   leftGun: {fileID: 5781283224084078266}
   rightGun: {fileID: 9124307544271134014}
-  shotSound: {fileID: 8300000, guid: ccd413cd7aa38408d8eb1d01835bc5f0, type: 3}
-  engineSound: {fileID: 0}
+  particlePlayerExplosion: {fileID: 0}
   tilt: 1.5
   currentProjectile: {fileID: 3805352292494200675, guid: ebd2bbd9d0faa47fe9b79d117b09933e, type: 3}
   rocketProjectile: {fileID: 469008620771482995, guid: 248e90a01c63e654a9fdc152dc59c16c, type: 3}
   shield: {fileID: 3793889367936125265, guid: c0787f79dce45fd4aa5014f9551aacb6, type: 3}
   health: {fileID: 0}
   healthBar: {fileID: 0}
-  blastWave: {fileID: 0}
+  blastWave: {fileID: 3746259870214434393, guid: 28f7fc075c67cf244b5c6e3b1847edfc, type: 3}
 --- !u!114 &1852501024
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,10 +6,16 @@ public class PlayerController : MonoBehaviour, Deathable
 {
 
 
-    public GameObject leftGun;
-    public GameObject rightGun;
     public AudioClip shotSound;
     public AudioClip engineSound;
+    public AudioClip playerExplosion;
+
+
+    public GameObject leftGun;
+    public GameObject rightGun;
+    public GameObject particlePlayerExplosion;
+
+    
 
     private GameController game;
 
@@ -186,6 +192,9 @@ public class PlayerController : MonoBehaviour, Deathable
     //Например, признак конца игры
     public void Death()
     {
+        GameObject explosion = Instantiate(particlePlayerExplosion, this.transform.position, Quaternion.identity);
+        Destroy(explosion, 3);
+        GameController.GetInstance().PlaySound(playerExplosion, 2.0f);
         GameController.GetInstance().GameOver();
         Destroy(this.gameObject);
     }
@@ -208,6 +217,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
     void Deathable.Kill()
     {
+        
         Death();
     }
 
