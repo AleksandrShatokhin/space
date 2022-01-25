@@ -129,7 +129,7 @@ public class GameController : MonoBehaviour
     {
         float waitSec = 1;
         isGameOver = true;
-        //PlaySound(failSound);
+        PlaySound(failSound);
         StartCoroutine(PostGame(waitSec));
     }
 
