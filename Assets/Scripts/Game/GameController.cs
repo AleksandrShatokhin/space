@@ -124,14 +124,16 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        float waitSec = 2;
         isGameOver = true;
-        _ = Instantiate(postGame);
+        StartCoroutine(PostGame(waitSec));
     }
 
     public void LevelEnded()
     {
+        float waitSec = 2;
         isLevelEnded = true;
-        _ = Instantiate(postGame);
+        StartCoroutine(PostGame(waitSec));
     }
 
     void Restart()
@@ -241,6 +243,13 @@ public class GameController : MonoBehaviour
 
 
         audioSource.PlayOneShot(clip, volume);
+    }
+
+
+    IEnumerator PostGame(float time = 2)
+    {
+        yield return new WaitForSeconds(time);
+        _ = Instantiate(postGame);
     }
 
 }
