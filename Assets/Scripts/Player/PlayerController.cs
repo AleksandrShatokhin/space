@@ -107,13 +107,18 @@ public class PlayerController : MonoBehaviour, Deathable
 
     void Update()
     {
-        SwitchProjectile();
-
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            SwitchProjectile();
+        }
     }
 
     private void LateUpdate()
     {
-        Shoot();
+        if (Input.GetKeyDown("space"))
+        {
+            Shoot();
+        }
         GameObject.Find("Game").GetComponent<TimerController>().TimerForSlowing();
     }
 
@@ -168,8 +173,7 @@ public class PlayerController : MonoBehaviour, Deathable
             return;
         }
 
-        if (Input.GetKeyDown("space"))
-        {
+        
             _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
 
             // Запускаем анимацию стрельбы
@@ -181,7 +185,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
             //После спауна пули отнимаем один заряд
             currentWeapon.AddBullets(-1);
-        }
+        
     }
 
     private GameObject GetGun()
@@ -235,11 +239,10 @@ public class PlayerController : MonoBehaviour, Deathable
         GetComponent<HealtComponent>().Change(hp);
     }
 
-    void SwitchProjectile()
+    public void SwitchProjectile()
     {
         // здесь воодим переключение снарядов для выстрела
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
+
             int nextWeaponIndex = (int)currentWeapon.id + 1;
 
             if (nextWeaponIndex >= weapons.Count)
@@ -250,9 +253,6 @@ public class PlayerController : MonoBehaviour, Deathable
             {
                 currentWeapon = weapons[nextWeaponIndex];
             }
-
-        }
-
     }
 
     // функции на выход из анимаций стрельбы пушек (Event на анимации)
