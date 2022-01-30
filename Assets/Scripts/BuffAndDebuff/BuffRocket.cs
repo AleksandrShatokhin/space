@@ -13,10 +13,12 @@ public class BuffRocket : Influencer
     
     void OnTriggerEnter(Collider other)
     {
+        //В списке всего оружия найти ссылку на Ракетницу и добавить снаряды
+        GameController.GetInstance().GetPlayer().weapons.Find(weapon => weapon.id == Weapons.Rocket).AddBullets(quantityRt);
+
         // проверка на столкновение с Игроком
         if (other.gameObject.tag == "Player")
         {
-            PlayerController.quantityRockets += quantityRt;
             Destroy(gameObject);
             MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
             ActivateSound();

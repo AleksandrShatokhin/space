@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, Deathable
 {
-
-
-    public AudioClip shotSound;
     public AudioClip engineSound;
     public AudioClip playerExplosion;
     public AudioClip hitPlayer;
+
+    public AudioClip blasterSound;
+    public AudioClip rocketSound;
 
 
     public GameObject leftGun;
@@ -65,11 +65,11 @@ public class PlayerController : MonoBehaviour, Deathable
         gunSwitcher = new Switcher();
 
         animPlayer = GetComponent<Animator>();
-
+        
         weapons = new List<Weapon>
         {
-            new Weapon(Weapons.Laser, currentProjectile, 5, 5, true),
-            new Weapon(Weapons.Rocket, rocketProjectile, 5, 5, false)
+            new Weapon(Weapons.Laser, currentProjectile, 5, 5, blasterSound, true),
+            new Weapon(Weapons.Rocket, rocketProjectile, 5, 5, rocketSound, false)
         };
 
         //currentWeapon = new Weapon(currentProjectile, 5, 5, true);
@@ -181,7 +181,8 @@ public class PlayerController : MonoBehaviour, Deathable
 
             audioSource.volume = 0.2f;
 
-            audioSource.PlayOneShot(shotSound);
+            //Звук оружия брать из самого оружия
+            audioSource.PlayOneShot(currentWeapon.GetShootingSound());
 
             //После спауна пули отнимаем один заряд
             currentWeapon.AddBullets(-1);

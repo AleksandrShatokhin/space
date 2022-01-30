@@ -4,7 +4,7 @@
       <File FileName="Assets/Standard Assets/ParticleSystems/Scripts/ExplosionPhysicsForce.cs" Line="8" Column="51" />
       <File FileName="Assets/Scripts/Player/PlayerController.cs" />
       <File FileName="Assets/Scripts/BuffAndDebuff/NewMonoBehaviour.cs" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="27" Column="65" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="15" Column="109" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

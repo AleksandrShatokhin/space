@@ -25,7 +25,11 @@ public class Influencer : MonoBehaviour
 
     public void OnDestroy()
     {
+        if (!destroySound)
+        {
+            return;
+        }
+
         GameController.GetInstance().PlaySound(destroySound, 4);
-        Debug.Log("OnDestroyCalled");
     }
 }
