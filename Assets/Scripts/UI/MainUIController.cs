@@ -15,9 +15,13 @@ public class MainUIController : MonoBehaviour
     private Vector3 maxScale = new Vector3(2.0f, 2.0f, 2.0f);
     private Vector3 startTextScale;
 
+    public GameObject player;
     public GameObject childImage;
-    private Image imageProjectile;
+    private Image imageProjectile, imageButtonSwitch;
     public Sprite defaultPr, rocketPr;
+
+    public Button shotButton;
+    public Button switchWeaponButton;
 
     void Start()
     {
@@ -27,6 +31,9 @@ public class MainUIController : MonoBehaviour
 
         // изображение выбранного вида снарядов игроком
         imageProjectile = childImage.GetComponent<Image>();
+
+        shotButton.onClick.AddListener(ShotButtonClick);
+        switchWeaponButton.onClick.AddListener(SwitchWeaponButton);
     }
 
     void ClearText() // пока сделал метод для очистки текста (использую при старте игры)
@@ -153,5 +160,15 @@ public class MainUIController : MonoBehaviour
             imageProjectile.sprite = defaultPr;
             quantityRocketsText.text = null;
         }
+    }
+
+    void ShotButtonClick()
+    {
+        player.GetComponent<PlayerController>().Shoot();
+    }
+
+    void SwitchWeaponButton()
+    {
+        player.GetComponent<PlayerController>().SwitchProjectile();
     }
 }
