@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/ParticleSystems/Scripts/ExplosionPhysicsForce.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="18" Column="32" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/NewMonoBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/ParticleSystems/Scripts/ExplosionPhysicsForce.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/NewMonoBehaviour.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,7 @@
   <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="50fb8af2-c44c-49ab-99e8-ec6dfdcad885" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="50fb8af2-c44c-49ab-99e8-ec6dfdcad885" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5172ba11-fa48-4e31-bfe3-3aa9bb47c853" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
