@@ -27,7 +27,7 @@ public class DebuffDisableShot : Influencer
         if (distance < 10)
         {
             transform.LookAt(targetPlayer);
-            transform.position = transform.position + transform.forward * 1.0f * Time.deltaTime;
+            transform.position = transform.position + 1.0f * Time.deltaTime * transform.forward;
         }
         else transform.rotation = rotDebuff; // повернем дебафф в прежнее направление
     }

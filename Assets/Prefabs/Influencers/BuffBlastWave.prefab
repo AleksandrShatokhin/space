@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateSound: {fileID: 8300000, guid: 994f938af457b40d792bb2634bf31d55, type: 3}
+  destroySound: {fileID: 8300000, guid: b875dc536116a4d56b411584d19315c6, type: 3}
 --- !u!114 &6396367849970775487
 MonoBehaviour:
   m_ObjectHideFlags: 0

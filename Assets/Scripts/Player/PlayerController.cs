@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour, Deathable
             Shoot();
         }
         GameObject.Find("Game").GetComponent<TimerController>().TimerForSlowing();
+        GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
     }
 
     // Update is called once per frame
@@ -162,7 +163,6 @@ public class PlayerController : MonoBehaviour, Deathable
         //Проверить, что стрельба не отключена
         if (isDisableShot)    
         {
-            GameObject.Find("Game").GetComponent<TimerController>().TimerForDisableShot();
             return;
         }    
 
