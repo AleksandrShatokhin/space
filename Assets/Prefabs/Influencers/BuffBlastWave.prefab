@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6c4e9c642a5274887babe7d47cba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateSound: {fileID: 8300000, guid: 994f938af457b40d792bb2634bf31d55, type: 3}
+  activateSound: {fileID: 8300000, guid: 17be859c6982d48928ec47c874da5839, type: 3}
   destroySound: {fileID: 8300000, guid: b875dc536116a4d56b411584d19315c6, type: 3}
 --- !u!114 &6396367849970775487
 MonoBehaviour:

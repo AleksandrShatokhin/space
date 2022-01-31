@@ -13,13 +13,12 @@ public class Influencer : MonoBehaviour
         if (!destroySound)
         {
             destroySound = (AudioClip)AssetDatabase.LoadAssetAtPath("Assets/Sounds/S_InfluencerDestroyed.mp3", typeof(AudioClip));
-            Debug.Log(destroySound);
         }
     }
 
     public void ActivateSound()
     {
-        GameController.GetInstance().PlaySound(activateSound);
+        GameController.GetInstance().PlaySound(activateSound, 0.5f);
     }
 
 
