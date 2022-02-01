@@ -18,7 +18,7 @@ public class ParticleSistemBlastWave : MonoBehaviour
 
         transform.position = player.position;
 
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 5.0f);
     }
 
     void OnParticleCollision(GameObject other)

@@ -7,11 +7,56 @@ public class MoveJoyStick : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Transform joystick, cursor;
-
+    
+    private float deviationCursor = 0.7f;
+    
     private Vector3 pointA, pointB;
 
     [SerializeField] private bool isTouchScreen = false;
     public Vector3 direction;
+
+    void Start()
+    {
+        FindOutSize();
+    }
+
+    private void FindOutSize()
+    {
+        if (Screen.height == 1280 && Screen.width == 720)
+        {
+            joystick.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 400);
+            cursor.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
+        }
+        else
+        if (Screen.height == 1920 && Screen.width == 1080)
+        {
+            joystick.GetComponent<RectTransform>().sizeDelta = new Vector2(550, 550);
+            cursor.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+        }
+        else
+        if (Screen.height == 2160 && Screen.width == 1080)
+        {
+            joystick.GetComponent<RectTransform>().sizeDelta = new Vector2(600, 600);
+            cursor.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+        }
+        else
+        if (Screen.height == 2560 && Screen.width == 1440)
+        {
+            joystick.GetComponent<RectTransform>().sizeDelta = new Vector2(700, 700);
+            cursor.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+        }
+        else
+        if (Screen.height == 2960 && Screen.width == 1440)
+        {
+            joystick.GetComponent<RectTransform>().sizeDelta = new Vector2(800, 800);
+            cursor.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+        }
+        else
+        {
+            joystick.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
+            cursor.GetComponent<RectTransform>().sizeDelta = new Vector2(50, 50);
+        }
+    }
 
     public void CheckTouch(float tilt, float speed)
     {
@@ -22,7 +67,7 @@ public class MoveJoyStick : MonoBehaviour
         // необходимые переменные для ограничения движения курсора (стика)
         Vector3 offset = pointB - pointA;
 
-        direction = Vector3.ClampMagnitude(offset, 0.6f);
+        direction = Vector3.ClampMagnitude(offset, deviationCursor);
 
         // при нажатии кнопки мыши (по экрану первое касание)
         if (Input.GetKeyDown(KeyCode.Mouse0))

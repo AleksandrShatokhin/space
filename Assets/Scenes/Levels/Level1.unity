@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a9f3b4a426781c64993c4554a610f92f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5314,7 +5314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78689605, y: 0}
   m_AnchorMax: {x: 0.97231185, y: 0.009771987}
-  m_AnchoredPosition: {x: 0, y: 112.5}
+  m_AnchoredPosition: {x: 0, y: 112.500305}
   m_SizeDelta: {x: 0, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469889000
@@ -10687,7 +10687,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
   failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}
   successSound: {fileID: 8300000, guid: f71b642f910e04954bb891a908773e95, type: 3}
 --- !u!224 &716065760
@@ -10930,6 +10930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerText: {fileID: 506122259}
   quantityRocketsText: {fileID: 1910747281}
+  screenText: {fileID: 0}
   player: {fileID: 794347863}
   childImage: {fileID: 469888998}
   defaultPr: {fileID: 21300000, guid: ed3f7bb2c2a46ef4f801a7d5864b04dc, type: 3}
@@ -16729,6 +16730,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1852501022, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: blastWave
+      value: 
+      objectReference: {fileID: 9150349117652317483, guid: e00f49939a28add4288156e4544bf5d9, type: 3}
     - target: {fileID: 1852501022, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
       propertyPath: healthBar
       value: 
