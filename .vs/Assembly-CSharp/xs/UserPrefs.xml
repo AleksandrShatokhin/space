@@ -1,14 +1,15 @@
-﻿<Properties StartupConfiguration="{C1BF62FA-C5C9-41A2-2CDF-B0DCBC002D60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BuffAndDebuff/BuffRocket.cs">
+﻿<Properties StartupConfiguration="{BDC808D3-B19E-126C-38E4-A5EFB7330BFD}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs">
     <Files>
       <File FileName="Assets/Scripts/Enemies/AsteroidEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="71" Column="84" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/DebuffDisableShot.cs" Line="83" Column="50" />
-      <File FileName="Assets/Scripts/Game/TimerController.cs" Line="38" Column="28" />
-      <File FileName="Assets/Scripts/Utilities/Weapon.cs" Line="22" Column="128" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="33" Column="65" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/BuffRocket.cs" Line="24" Column="29" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="33" Column="6" />
       <File FileName="Assets/Scripts/Game/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" Line="29" Column="29" />
+      <File FileName="Assets/Scripts/Projectiles/Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Projectiles/ProjectileEnemyShip.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/BuffRocket.cs" Line="30" Column="12" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,29 +19,28 @@
               <Node name="Prefabs" expanded="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="BuffAndDebuff" expanded="True">
-                  <Node name="BuffRocket.cs" selected="True" />
+                  <Node name="BlastWaveController.cs" selected="True" />
                 </Node>
                 <Node name="Enemies" expanded="True" />
                 <Node name="Game" expanded="True" />
                 <Node name="Player" expanded="True" />
+                <Node name="Projectiles" expanded="True" />
                 <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>timerStatrForDisableShot</Value>
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5172ba11-fa48-4e31-bfe3-3aa9bb47c853" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0309000d-7f5c-4949-a707-34bcd4694b69" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/BuffAndDebuff/BuffRocket.cs" relfile="Assets/Scripts/BuffAndDebuff/BuffRocket.cs" line="30" column="1" />
+      <Breakpoint file="/Users/dmitrysitnik/Unity/Space/Space/Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" relfile="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" line="26" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
