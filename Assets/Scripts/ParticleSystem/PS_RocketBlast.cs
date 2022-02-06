@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PS_RocketBlast : MonoBehaviour
 {
-    private float damage = 2.0f;
+    private float damage = 3.0f;
     private bool isCollision;
 
     void Start()
@@ -14,7 +14,7 @@ public class PS_RocketBlast : MonoBehaviour
 
     void Update()
     {
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 2);
     }
 
     void OnParticleCollision(GameObject collision)
