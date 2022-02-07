@@ -5443,7 +5443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78689605, y: 0}
   m_AnchorMax: {x: 0.97231185, y: 0.009771987}
-  m_AnchoredPosition: {x: 0, y: 112.500175}
+  m_AnchoredPosition: {x: 0, y: 112.50003}
   m_SizeDelta: {x: 0, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469889000
@@ -17974,6 +17974,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1176887504}
+    - target: {fileID: 1852501022, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
+      propertyPath: laserProjectile
+      value: 
+      objectReference: {fileID: 1490547156111874694, guid: 066b01a2c5cd24c3baa88f98cc504d1e, type: 3}
     - target: {fileID: 3404361760265040575, guid: cb037c578ccd54be5a5345ac85aae395, type: 3}
       propertyPath: m_RootOrder
       value: 8

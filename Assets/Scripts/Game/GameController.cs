@@ -68,6 +68,9 @@ public class GameController : MonoBehaviour
 
 
         audioSource = GetComponent<AudioSource>();
+
+
+        StartCoroutine(AddBullets());
     }
 
     // Update is called once per frame
@@ -227,13 +230,11 @@ public class GameController : MonoBehaviour
 
             foreach (var weapon in player.weapons)
             {
-                if (player.GetWeapon().GettingBulletsByTime())
+                if (weapon.GettingBulletsByTime())
                 {
-                    player.GetWeapon().AddBullets(1);
+                    weapon.AddBullets(1);
                 }
             }
-
-            
         }
     }
 
@@ -244,7 +245,6 @@ public class GameController : MonoBehaviour
         if (!clip) {
             return;
         }
-
 
 
         audioSource.PlayOneShot(clip, volume);

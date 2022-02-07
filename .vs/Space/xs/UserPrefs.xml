@@ -1,12 +1,4 @@
 ﻿<Properties StartupConfiguration="{1292CDBC-3EDF-2CBA-776E-71BAEA7E57F5}|">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="9c8be0fc-2191-443a-9208-e259046ec6c0" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5999a5b1-8760-4e31-b31c-9a3089b3d93e" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utilities/Rotator.cs">
     <Files>
       <File FileName="Assets/Scripts/Utilities/Rotator.cs" Line="5" Column="37" />
@@ -16,6 +8,7 @@
         <State name="__root__">
           <Node name="Space" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Materials" expanded="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="BuffAndDebuff" expanded="True" />
                 <Node name="Game" expanded="True" />
@@ -37,4 +30,12 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5999a5b1-8760-4e31-b31c-9a3089b3d93e" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Analytics PreferredExecutionTarget="412ed31a-62c7-4541-8f66-05610e143361" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

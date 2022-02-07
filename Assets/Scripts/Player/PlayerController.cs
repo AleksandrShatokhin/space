@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public float tilt = 1.5f;
     //bool leftUsed = false;
 
-    public GameObject currentProjectile, rocketProjectile;
+    public GameObject laserProjectile, rocketProjectile;
     Rigidbody rb;
 
     public static float speedPlayer = 18.0f;
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour, Deathable
         
         weapons = new List<Weapon>
         {
-            new Weapon(Weapons.Laser, currentProjectile, 5, 5, blasterSound, true),
+            new Weapon(Weapons.Laser, laserProjectile, 5, 5, blasterSound, true),
             new Weapon(Weapons.Rocket, rocketProjectile, 5, 5, rocketSound, false)
         };
 
@@ -100,9 +100,6 @@ public class PlayerController : MonoBehaviour, Deathable
 
     private void Awake()
     {
-
-
-        StartCoroutine(AddBullets());
     }
 
     void Update()
@@ -208,18 +205,18 @@ public class PlayerController : MonoBehaviour, Deathable
 
     // Для теста реализовать в Player'е
     //По идее надо вынести в  GameContoller
-    IEnumerator AddBullets()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1.0f);
+    //IEnumerator AddBullets()
+    //{
+    //    while (true)
+    //    {
+    //        yield return new WaitForSeconds(1.0f);
 
-            if (currentWeapon.GettingBulletsByTime())
-            {
-                currentWeapon.AddBullets(1);
-            }
-        }
-    }
+    //        if (currentWeapon.GettingBulletsByTime())
+    //        {
+    //            currentWeapon.AddBullets(1);
+    //        }
+    //    }
+    //}
 
     void Deathable.Kill()
     {
