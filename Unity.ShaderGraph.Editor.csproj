@@ -615,9 +615,9 @@
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Drawing/Controls/EnumConversionControl.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Nodes/Utility/RedirectNodeData.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Drawing/Views/PropertyNodeView.cs" />
-    <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Nodes/Math/Wave/NoiseSineWaveNode.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Drawing/Controls/ChannelEnumMaskControl.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Interface/IConditional.cs" />
+    <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Nodes/Math/Wave/NoiseSineWaveNode.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Drawing/Inspector/PropertyDrawers/Texture2DArrayPropertyDrawer.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Nodes/Input/Gradient/GradientNode.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Util/CompatibilityExtensions.cs" />
@@ -642,7 +642,6 @@
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Graphs/Texture2DInputMaterialSlot.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Nodes/Utility/Logic/AndNode.cs" />
     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Data/Nodes/Input/Basic/ColorNode.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.shadergraph@10.6.0/Editor/Resources/Shaders/BlitNoAlpha.shader" />
@@ -966,10 +965,10 @@
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>Library/PackageCache/com.unity.analytics@3.6.11/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>Library/PackageCache/com.unity.analytics@3.6.11/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
@@ -984,7 +983,7 @@
       <HintPath>Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>Library/PackageCache/com.unity.analytics@3.6.11/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library/PackageCache/com.unity.render-pipelines.core@10.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>

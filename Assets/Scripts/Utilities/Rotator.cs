@@ -23,6 +23,7 @@ public class Rotator : MonoBehaviour
     void LateUpdate()
     {
         transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
-     
+        
     }
+        
 }

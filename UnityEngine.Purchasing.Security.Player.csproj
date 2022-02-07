@@ -56,26 +56,25 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/GooglePlayValidator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/Util.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/GooglePlayReceipt.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/Oid.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/RelativeOid.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/Asn1Util.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Certificate.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/Asn1Node.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/AssemblyInfo.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Obfuscator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/AppleValidator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/Asn1Tag.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/CrossPlatformValidator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/Asn1Processor/Asn1Parser.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/PKCS7.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/RSAPubKey.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/GooglePlayValidator.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/Util.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/GooglePlayReceipt.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/Oid.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/RelativeOid.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/Asn1Util.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Certificate.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/Asn1Node.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/AssemblyInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Obfuscator.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/AppleValidator.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/Asn1Tag.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/CrossPlatformValidator.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/Asn1Processor/Asn1Parser.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/PKCS7.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/RSAPubKey.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Security/UnityEngine.Purchasing.Security.asmdef" />
+    <None Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Security/UnityEngine.Purchasing.Security.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

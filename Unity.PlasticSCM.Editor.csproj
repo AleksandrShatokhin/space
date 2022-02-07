@@ -312,7 +312,6 @@
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@1.11.2/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceViewState.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@1.11.2/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/OrganizationPanel.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@1.11.2/Editor/PlasticSCM/WorkspaceWindow.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.collab-proxy@1.11.2/Editor/PlasticSCM/Assets/Styles/DownloadPlasticExeWindow.uss" />

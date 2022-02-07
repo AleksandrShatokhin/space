@@ -60,7 +60,6 @@
     <Compile Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/CameraOffset.cs" />
     <Compile Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/ArmModels/TransitionArmModel.cs" />
     <Compile Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/ArmModels/SwingArmModel.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/LegacyInputHelpers.asmdef" />

@@ -56,12 +56,11 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/AppleMacos/AssemblyInfo.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/AppleMacos/OSXStoreBindings.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/AppleMacos/AssemblyInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/AppleMacos/OSXStoreBindings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/AppleMacos/UnityEngine.Purchasing.AppleMacos.asmdef" />
+    <None Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/AppleMacos/UnityEngine.Purchasing.AppleMacos.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

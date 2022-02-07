@@ -56,14 +56,13 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Common/INativeStore.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Common/MiniJSON.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Common/AssemblyInfo.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Common/VersionCheck.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Common/INativeStore.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Common/MiniJSON.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Common/AssemblyInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Common/VersionCheck.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library/PackageCache/com.unity.purchasing@3.2.2/Runtime/Common/Purchasing.Common.asmdef" />
+    <None Include="Library/PackageCache/com.unity.purchasing@3.2.3/Runtime/Common/Purchasing.Common.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

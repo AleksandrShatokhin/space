@@ -92,7 +92,6 @@
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Monetization/PlacementContentStateChangeEventArgs.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Monetization/Monetization.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Monetization/JavaEnumUtilities.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Monetization/UnityEngine.Monetization.asmdef" />

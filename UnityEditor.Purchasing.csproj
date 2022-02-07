@@ -56,30 +56,29 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/GooglePlayProductCatalogExporter.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/Importer.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/UdpSynchronizationApi.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/ApplePriceTiers.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/WindowsRuntimeWorkaround.cs.template.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/CloudCatalogUploader.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/ProductCatalogEditor.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/RichEditorWindow.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/UnityPurchasingEditor.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/IAPButtonEditor.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/AssemblyInfo.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/ObfuscatorWindow.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/AppleXMLProductCatalogExporter.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/CloudJSONProductCatalogExporter.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/WinRTPatcher.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/AppleCapabilities.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/TangleObfuscator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/UdpInstaller.cs" />
-    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/BuildPreprocessor.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/GooglePlayProductCatalogExporter.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/Importer.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/UdpSynchronizationApi.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/ApplePriceTiers.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/WindowsRuntimeWorkaround.cs.template.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/CloudCatalogUploader.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/ProductCatalogEditor.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/RichEditorWindow.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/UnityPurchasingEditor.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/IAPButtonEditor.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/AssemblyInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/ObfuscatorWindow.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/AppleXMLProductCatalogExporter.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/CloudJSONProductCatalogExporter.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/WinRTPatcher.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/AppleCapabilities.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/TangleObfuscator.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/UdpInstaller.cs" />
+    <Compile Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/BuildPreprocessor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/UnityEditor.Purchasing.asmdef" />
-    <None Include="Library/PackageCache/com.unity.purchasing@3.2.2/Editor/IAPGeneratedCredentials.cs.template" />
+    <None Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/UnityEditor.Purchasing.asmdef" />
+    <None Include="Library/PackageCache/com.unity.purchasing@3.2.3/Editor/IAPGeneratedCredentials.cs.template" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -59,7 +59,6 @@
     <Compile Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/TrackedPoseDriver/AssemblyInfo.cs" />
     <Compile Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/TrackedPoseDriver/BasePoseProvider.cs" />
     <Compile Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8/Runtime/TrackedPoseDriver/UnityEngine.SpatialTracking.asmdef" />

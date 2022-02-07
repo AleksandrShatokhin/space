@@ -71,7 +71,6 @@
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Editor/DevX/EditorGameServices/AdsServiceEnabler.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Editor/DevX/Settings/AdsServiceTopMenu.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Editor/DevX/EditorGameServices/Analytics/EditorGameServiceAnalyticsSender.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.ads@3.7.5/Editor/DevX/StyleSheets/AdsService.uss" />

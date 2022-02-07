@@ -126,7 +126,6 @@
     <Compile Include="Library/PackageCache/com.unity.timeline@1.4.8/Runtime/Events/Signals/SignalEmitter.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.4.8/Runtime/Playables/TimeControlPlayable.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.4.8/Runtime/Utilities/Extrapolation.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.timeline@1.4.8/Runtime/Unity.Timeline.asmdef" />

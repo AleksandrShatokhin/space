@@ -104,8 +104,8 @@
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Enums/UnityAdsCompletionState.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/BannerOptions.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Utilities/MiniJSON.cs" />
-    <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Configuration.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Platform/iOS/IosInitializationListener.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Configuration.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Utilities/EnumUtilities.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Listeners/IUnityAdsShowListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Platform/Android/AndroidShowListener.cs" />
@@ -113,7 +113,6 @@
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Platform/Android/AndroidBanner.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/Enums/PlacementState.cs" />
     <Compile Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/MetaData.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.ads@3.7.5/Runtime/Advertisement/UnityEngine.Advertisements.asmdef" />
