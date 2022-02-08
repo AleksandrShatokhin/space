@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4208134339366570092}
   - component: {fileID: 2126469417687694502}
   - component: {fileID: 739479890811950635}
-  - component: {fileID: 739479890811950634}
   - component: {fileID: 739479890811950612}
+  - component: {fileID: 3465205082669727102}
   m_Layer: 8
   m_Name: rocket
   m_TagString: PlayerProjectile
@@ -101,20 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &739479890811950634
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469008620771482995}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.01
-  m_Height: 0.022720078
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.00043911455}
 --- !u!114 &739479890811950612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +115,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 15
   rocketSpeed: 8
+  damage: 1
   blastRocket: {fileID: 5366260612528004933, guid: 1abd372462b8e314bbe4169664c981bc, type: 3}
+--- !u!65 &3465205082669727102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469008620771482995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.1, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &739479890418763474
 GameObject:
   m_ObjectHideFlags: 0
