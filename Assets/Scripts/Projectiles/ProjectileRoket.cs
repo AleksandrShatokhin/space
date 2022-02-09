@@ -5,6 +5,14 @@ using UnityEngine;
 public class ProjectileRoket : Projectile
 {
     public GameObject blastRocket;
+    private Collider colPlayer;
+
+    private void Start()
+    {
+        // добавлю игнорирование столкновения с игроком, чтоб не взрывалась рокета от игрока
+        colPlayer = GameObject.Find("Player").GetComponent<Collider>();
+        Physics.IgnoreCollision(colPlayer, this.GetComponent<Collider>(), true);
+    }
 
     override protected void FixedUpdate()
     {
@@ -13,11 +21,6 @@ public class ProjectileRoket : Projectile
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            return;
-        }
-
         Destroy(gameObject);
         Instantiate(blastRocket, gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
     }

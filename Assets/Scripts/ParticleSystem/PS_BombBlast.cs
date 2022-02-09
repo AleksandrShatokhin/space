@@ -27,6 +27,6 @@ public class PS_BombBlast : MonoBehaviour
 
     private void FixedUpdate()
     {
-        blastColBomb.radius += 0.2f;
+        blastColBomb.radius += 0.02f;
     }
 }

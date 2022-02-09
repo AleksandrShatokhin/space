@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlastCollider : PS_RocketBlast
 {
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6) // слой 6 - это enemy
         {

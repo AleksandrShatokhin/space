@@ -9,6 +9,7 @@ public class PS_RocketBlast : MonoBehaviour
 
     void Start()
     {
+        blastCol = GetComponentInChildren<SphereCollider>();
         blastCol.enabled = false;
 
         StartCoroutine(Blast());
