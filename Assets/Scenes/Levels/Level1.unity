@@ -5443,7 +5443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78689605, y: 0}
   m_AnchorMax: {x: 0.97231185, y: 0.009771987}
-  m_AnchoredPosition: {x: 0, y: 112.50003}
+  m_AnchoredPosition: {x: 0, y: 112.499954}
   m_SizeDelta: {x: 0, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469889000
@@ -10925,7 +10925,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 0
+  shouldSpawnWave: 1
   failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}
   successSound: {fileID: 8300000, guid: f71b642f910e04954bb891a908773e95, type: 3}
 --- !u!224 &716065760
