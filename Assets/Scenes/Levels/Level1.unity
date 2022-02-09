@@ -10925,7 +10925,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 0
+  shouldSpawnWave: 1
   failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}
   successSound: {fileID: 8300000, guid: f71b642f910e04954bb891a908773e95, type: 3}
 --- !u!224 &716065760

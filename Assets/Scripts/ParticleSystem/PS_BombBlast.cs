@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class PS_BombBlast : MonoBehaviour
 {
-    private float damage = 2.0f;
-    private bool isCollision; //этой переменной ограничу воздействие частиц только первой частицей
+    protected float damage = 2.0f;
+    protected bool isCollision; //этой переменной ограничу воздействие частиц только первой частицей
+    private SphereCollider blastColBomb;
 
     void Start()
     {
+        blastColBomb = GetComponentInChildren<SphereCollider>();
+
         isCollision = false;
+        blastColBomb.radius = 1;
+
+        //StartCoroutine(Blast());
     }
 
     void Update()
     {
         Destroy(transform.parent.gameObject, 1);
+
+        
     }
 
-    void OnParticleCollision(GameObject other)
+    private void FixedUpdate()
     {
-        if (other.gameObject.tag == "Player" && isCollision == false)
-        {
-            isCollision = true;
-            other.gameObject.GetComponent<PlayerController>().AddDamage(damage);
-        }
+        blastColBomb.radius += 0.2f;
     }
 }

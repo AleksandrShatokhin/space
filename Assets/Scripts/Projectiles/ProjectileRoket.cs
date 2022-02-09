@@ -13,6 +13,11 @@ public class ProjectileRoket : Projectile
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Player")
+        {
+            return;
+        }
+
         Destroy(gameObject);
         Instantiate(blastRocket, gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
     }
