@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeartAction : MonoBehaviour
 {
     private byte hp = 1;
+    public AudioClip activateSound;
 
     void Start()
     {
@@ -21,8 +22,8 @@ public class HeartAction : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-
             other.gameObject.GetComponent<PlayerController>().AddHealth(hp);
+            GameController.GetInstance().PlaySound(activateSound, 1.0f);
         }
     }
 }
