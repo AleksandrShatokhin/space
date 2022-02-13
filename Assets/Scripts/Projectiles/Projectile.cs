@@ -10,6 +10,12 @@ public abstract class Projectile : MonoBehaviour
     public float rocketSpeed = 8.0f;
     public float damage = 1.0f;
 
+    public GameObject flaresEffect;
+    public float flaresDestroyTime = 0.3f;
+
+
+    public AudioClip explosionSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +33,18 @@ public abstract class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * rocketSpeed);
     }
 
+
+    virtual protected void OnCollisionEnter(Collision collision)
+    {
+        
+    }
+
+    protected void FlaresEffect(Vector3 position)
+    {
+        //в месте соприкосновения создать эффект искр
+        GameObject flares = Instantiate(flaresEffect, position, Quaternion.identity);
+        Destroy(flares, flaresDestroyTime);
+    }
 
     //abstract protected void OnCollisionEnter(Collision collision);
 }

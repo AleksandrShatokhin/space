@@ -9,7 +9,7 @@ public class ProjectileRoket : Projectile
 
     private void Start()
     {
-        // добавлю игнорирование столкновения с игроком, чтоб не взрывалась рокета от игрока
+        // ??????? ????????????? ???????????? ? ???????, ???? ?? ?????????? ?????? ?? ??????
         colPlayer = GameObject.Find("Player").GetComponent<Collider>();
         Physics.IgnoreCollision(colPlayer, this.GetComponent<Collider>(), true);
     }
@@ -19,9 +19,11 @@ public class ProjectileRoket : Projectile
         base.Rocket();
     }
 
-    void OnCollisionEnter(Collision collision)
+    override protected void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
         Instantiate(blastRocket, gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
+
+        GameController.GetInstance().PlaySound(explosionSound, 0.2f);
     }
 }

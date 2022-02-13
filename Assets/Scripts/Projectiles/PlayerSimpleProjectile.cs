@@ -18,12 +18,15 @@ public class PlayerSimpleProjectile : Projectile
         base.FixedUpdate();
     }
 
-    void OnCollisionEnter(Collision collision)
+    override protected void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 6) // слой 6 - это enemy
         {
             //collision.gameObject.GetComponent<EnemyBase>().Death();
             collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
+
+            ContactPoint contact = collision.GetContact(0);
+            FlaresEffect(contact.point);
         }
 
         Destroy(gameObject);

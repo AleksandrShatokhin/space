@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombBlast: {fileID: 5014036446773065016, guid: 69b01e42c3be47744a9f3a716f1a777f, type: 3}
+  explosionSound: {fileID: 8300000, guid: dd2ced0dfc58c44b2b53b263776dd9a3, type: 3}
 --- !u!54 &1576971607692184323
 Rigidbody:
   m_ObjectHideFlags: 0

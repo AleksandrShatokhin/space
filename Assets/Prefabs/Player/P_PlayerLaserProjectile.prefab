@@ -49,6 +49,8 @@ MonoBehaviour:
   projectileSpeed: 15
   rocketSpeed: 8
   damage: 1
+  flaresEffect: {fileID: 100006, guid: c030960b6b50d4e3fa27ca3b31a8dc0d, type: 3}
+  flaresDestroyTime: 0.2
 --- !u!135 &5998940806260446460
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ public class BombEnemyShip : MonoBehaviour
     private int counter = 3;
 
 
+    public AudioClip explosionSound;
+
+
     void Start()
     {
         targetPos = GameObject.Find("Player").GetComponent<Transform>();
@@ -79,5 +82,10 @@ public class BombEnemyShip : MonoBehaviour
     { // пока реализую, что при соприкосновении с игроком взрыв происходит сразу (бомба взрывается)
         if (collision.gameObject.tag == "Player")
             counter = 0;
+    }
+
+    private void OnDestroy()
+    {
+        GameController.GetInstance().PlaySound(explosionSound, 0.5f);
     }
 }
