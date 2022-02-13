@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PS_RocketBlast : MonoBehaviour
 {
-    private float damage = 3.0f;
-    private bool isCollision;
+    protected float damage = 3.0f;
+    [SerializeField] private SphereCollider blastCol;
 
     void Start()
     {
-        isCollision = false;
+        blastCol = GetComponentInChildren<SphereCollider>();
+        blastCol.enabled = false;
+
+        StartCoroutine(Blast());
     }
 
     void Update()
@@ -17,12 +20,18 @@ public class PS_RocketBlast : MonoBehaviour
         Destroy(gameObject, 2);
     }
 
-    void OnParticleCollision(GameObject collision)
+    IEnumerator Blast()
     {
-        if (collision.gameObject.layer == 6 && isCollision == false) // слой 6 - это enemy
-        {
-            isCollision = true;
-            collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
-        }
+        yield return new WaitForSeconds(0.1f);
+        blastCol.enabled = true;
     }
+
+    //void OnParticleCollision(GameObject collision)
+    //{
+    //    if (collision.gameObject.layer == 6 && isCollision == false) // слой 6 - это enemy
+    //    {
+    //        isCollision = true;
+    //        collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
+    //    }
+    //}
 }

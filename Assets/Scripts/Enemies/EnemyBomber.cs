@@ -30,6 +30,12 @@ public class EnemyBomber : EnemyBase
 
     void MoveBomber()
     {
+        // Первое сырое решение. Отключить логику врага, если игра закончена
+        if (GameController.GetInstance().IsGameOver())
+        {
+            return;
+        }
+
         // проверим относительное положение позиций player и enemyship и после зададим поворот в сторону player
         Vector3 relativePos = targetLookAtPlayer.position - transform.position;
         Quaternion rotationEnemyBomber = Quaternion.LookRotation(relativePos, Vector3.up);
