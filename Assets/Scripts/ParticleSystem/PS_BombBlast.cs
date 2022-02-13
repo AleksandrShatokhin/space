@@ -20,7 +20,7 @@ public class PS_BombBlast : MonoBehaviour
 
     void Update()
     {
-        Destroy(transform.parent.gameObject, 1);
+        Destroy(transform.parent.gameObject, 1.5f);
 
         
     }
