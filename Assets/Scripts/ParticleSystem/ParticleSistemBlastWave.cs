@@ -6,19 +6,6 @@ public class ParticleSistemBlastWave : MonoBehaviour
 {
     [SerializeField] private SphereCollider colBlastWave;
 
-    private void Start()
-    {
-        //colBlastWave = GetComponentInChildren<SphereCollider>();
-        colBlastWave.enabled = false;
-
-        StartCoroutine(CorBlastWave());
-    }
-
-    IEnumerator CorBlastWave()
-    {
-        yield return new WaitForSeconds(2.0f);
-        colBlastWave.enabled = true;
-    }
 
     // данный формат потенциально вывести на создание объекта
     void Update()
@@ -26,6 +13,15 @@ public class ParticleSistemBlastWave : MonoBehaviour
         transform.rotation = Quaternion.Euler(-90, 0, 0);
 
         Destroy(gameObject, 3.0f);
+    }
+
+    private void FixedUpdate()
+    {
+        // зададим расширение коллайдера объекта
+        if (colBlastWave.radius < 9.9)
+        {
+            colBlastWave.radius += 0.065f;
+        }
     }
 
     //void OnParticleCollision(GameObject other)
