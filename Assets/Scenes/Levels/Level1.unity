@@ -5443,7 +5443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78689605, y: 0}
   m_AnchorMax: {x: 0.97231185, y: 0.009771987}
-  m_AnchoredPosition: {x: -9.419983, y: 111.049904}
+  m_AnchoredPosition: {x: -9.419983, y: 111.0499}
   m_SizeDelta: {x: 14.05, y: 192.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469889000
@@ -10925,7 +10925,7 @@ MonoBehaviour:
   waitOnStart: 2
   influencerSpawnRate: 5
   influencerChance: 1
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
   failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}
   successSound: {fileID: 8300000, guid: f71b642f910e04954bb891a908773e95, type: 3}
 --- !u!224 &716065760
@@ -11410,7 +11410,7 @@ MonoBehaviour:
   player: {fileID: 794347863}
   childImage: {fileID: 469888998}
   defaultPr: {fileID: 21300000, guid: 8d1fe51ec81ca424b9c4bd524a5a691b, type: 3}
-  rocketPr: {fileID: 21300000, guid: bd3926ac4602d29448192b5a2ced8268, type: 3}
+  rocketPr: {fileID: 21300000, guid: e748cfe54a1d63a4286bf215b872c0a0, type: 3}
   shotButton: {fileID: 1570415325}
   switchWeaponButton: {fileID: 469889000}
 --- !u!1 &1051853178
