@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public AudioClip blasterSound;
     public AudioClip rocketSound;
+    public AudioClip waveSound;
 
 
     public GameObject leftGun;
@@ -152,6 +153,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public void StartBlastWave() // метод запуска взрывной волны (вызывается инфлюенсом)
     {
         Instantiate(blastWave, transform.position, blastWave.transform.rotation);
+        GameController.GetInstance().PlaySound(waveSound, 0.7f);
     }
 
 
