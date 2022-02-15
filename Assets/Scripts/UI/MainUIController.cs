@@ -158,7 +158,7 @@ public class MainUIController : MonoBehaviour
         else if(currentWeapon == Weapons.Laser)
         {
             imageProjectile.sprite = defaultPr;
-            quantityRocketsText.text = null;
+            quantityRocketsText.text = "∞";
         }
     }
 
