@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BlastWaveCollider : MonoBehaviour
 {
+    private float damage = 3.0f;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player")
@@ -11,7 +13,7 @@ public class BlastWaveCollider : MonoBehaviour
 
             if (other.gameObject.layer == 6)
             {
-                other.gameObject.GetComponent<EnemyBase>().Death();
+                other.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
             }
         }
     }
