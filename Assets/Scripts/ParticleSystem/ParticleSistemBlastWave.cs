@@ -12,15 +12,21 @@ public class ParticleSistemBlastWave : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(-90, 0, 0);
 
-        Destroy(gameObject, 3.0f);
+        Destroy(gameObject, 2.0f);
+        Destroy(colBlastWave, 1.35f);
     }
 
     private void FixedUpdate()
     {
-        // зададим расширение коллайдера объекта
-        if (colBlastWave.radius < 9.9)
+        if (!colBlastWave)
         {
-            colBlastWave.radius += 0.065f;
+            return;
+        }
+
+        // зададим расширение коллайдера объекта
+        if (colBlastWave.radius < 7.0f)
+        {
+            colBlastWave.radius += 0.1f;
         }
     }
 
