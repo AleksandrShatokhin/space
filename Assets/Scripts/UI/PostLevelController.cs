@@ -34,7 +34,7 @@ public class PostLevelController : MonoBehaviour
         }
 
 
-        if (GameController.GetInstance().IsGameOver())
+        if (GameController.GetInstance().IsGameOver() && !GameController.GetInstance().IsLevelEnded())
         {
             nextGO.SetActive(false);
         }
