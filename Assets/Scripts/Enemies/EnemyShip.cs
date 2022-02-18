@@ -19,13 +19,27 @@ public class EnemyShip : EnemyBase
     void Start()
     {
         //задаем стрельбу вражеского корабля
-        InvokeRepeating("EnemyShoot", Random.Range(5, 7), Random.Range(1, 5));
+        StartCoroutine(Shooting());
 
         startPosEnemyShip = transform.position;
         newPosEnemyShip = new Vector3(Random.Range(-15, 15), 0, Random.Range(13, 0));
 
         //понадобилось обратиться к игровому объекту на сцене, так как при забрасывании вражеского корабля в иерархию цель слежения не задается
         targetLookAtPlayer = GameObject.Find("Player").GetComponent<Transform>();
+    }
+
+    // Задаем стрельбу вражескому персонажу
+    IEnumerator Shooting()
+    {
+        while (true)
+        {
+            Quaternion startRot = leftEnemyGun.transform.rotation;
+            Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
+
+            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+
+            ShootSound();
+        }
     }
 
     void Update()
@@ -55,20 +69,20 @@ public class EnemyShip : EnemyBase
         }
     }
 
-    void EnemyShoot()
-    {
-        // Первое сырое решение. Отключить логику врага, если игра закончена
-        if (GameController.GetInstance().IsGameOver())
-        {
-            return;
-        }
-        // для стрельбы понадобилось проверять в какую сторону повернуты пушки и после чего вызывать снаряд
-        Quaternion startRot = leftEnemyGun.transform.rotation;
-        Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
+    //void EnemyShoot()
+    //{
+    //    // Первое сырое решение. Отключить логику врага, если игра закончена
+    //    if (GameController.GetInstance().IsGameOver())
+    //    {
+    //        return;
+    //    }
+    //    // для стрельбы понадобилось проверять в какую сторону повернуты пушки и после чего вызывать снаряд
+    //    Quaternion startRot = leftEnemyGun.transform.rotation;
+    //    Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
 
-        ShootSound();
+    //    ShootSound();
 
-    }
+    //}
 
     private GameObject EnemyGetGun()  // чередование правой и левой пушек для выстрела
     {
