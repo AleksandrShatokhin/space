@@ -61,6 +61,7 @@ public class DebuffSlowing : Influencer
                 PlayerController.speedPlayer = 10.0f;
                 Destroy(gameObject);
                 MainUIController.isPickedUpSlowing = true; // для вызова тектса на экран игроку
+                DoEffect();
             }
             else
             {

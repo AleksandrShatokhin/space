@@ -10923,7 +10923,7 @@ MonoBehaviour:
   enemiesInWave: 8
   numberOfWaves: 2
   waitOnStart: 2
-  influencerSpawnRate: 5
+  influencerSpawnRate: 1
   influencerChance: 1
   shouldSpawnWave: 1
   failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}

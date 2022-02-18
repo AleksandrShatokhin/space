@@ -29,6 +29,7 @@ public class BlastWaveController : Influencer
             Destroy(gameObject);
             MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
             ActivateSound();
+            DoEffect();
         }
 
         // проверка на столкновение со всевозможными снарядами

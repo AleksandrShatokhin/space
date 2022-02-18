@@ -22,6 +22,7 @@ public class BuffRocket : Influencer
             Destroy(gameObject);
             MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
             ActivateSound();
+            DoEffect();
         }
 
         // проверка на столкновение со всевозможными снарядами
