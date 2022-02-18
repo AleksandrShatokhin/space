@@ -28,6 +28,7 @@ public class BuffShield : Influencer
             Instantiate(shield, transform.position, transform.rotation);
             MainUIController.isPickedUpShield = true; // для вызова тектса на экран игроку
             ActivateSound();
+            DoEffect();
         }
 
         // проверка на столкновение со всевозможными снарядами

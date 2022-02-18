@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/PostLevelController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BuffAndDebuff/Influencer.cs">
     <Files>
-      <File FileName="Temp/GeneratedFromGraph-Shield.shader" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Utilities/Rotator.cs" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="26" Column="44" />
-      <File FileName="Assets/Scripts/Player/PlayerController.cs" />
-      <File FileName="Assets/Scripts/UI/MainUIController.cs" Line="161" Column="42" />
-      <File FileName="Assets/Scripts/UI/HealthBarComponent.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/PostLevelController.cs" Line="33" Column="40" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/DebuffDisableShot.cs" Line="65" Column="28" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/DebuffSlowing.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/BuffShield.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/BuffRocket.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,10 +15,12 @@
             <Node name="Assembly-CSharp" expanded="True">
               <Node name="Assets" expanded="True">
                 <Node name="Scripts" expanded="True">
-                  <Node name="Game" expanded="True" />
-                  <Node name="UI" expanded="True">
-                    <Node name="PostLevelController.cs" selected="True" />
+                  <Node name="BuffAndDebuff" expanded="True">
+                    <Node name="DebuffSlowing.cs" selected="True" />
                   </Node>
+                  <Node name="Game" expanded="True" />
+                  <Node name="Player" expanded="True" />
+                  <Node name="UI" expanded="True" />
                 </Node>
               </Node>
             </Node>

@@ -62,6 +62,7 @@ public class DebuffDisableShot : Influencer
                 PlayerController.isDisableShot = true;
                 Destroy(gameObject);
                 MainUIController.isPickedUpDisableShot = true;
+                DoEffect();
             }
             else
             {

@@ -6,6 +6,7 @@ public class Influencer : MonoBehaviour
 {
     public AudioClip activateSound;
     public AudioClip destroySound;
+    public GameObject activateEffect;
 
 
     private void Awake()
@@ -30,5 +31,15 @@ public class Influencer : MonoBehaviour
         }
 
         GameController.GetInstance().PlaySound(destroySound, 4);
+    }
+
+
+    public void DoEffect()
+    {
+        if (activateEffect)
+        {
+            GameObject effect = Instantiate(activateEffect, this.gameObject.transform.position, Quaternion.identity);
+            Destroy(effect, 2);
+        }
     }
 }

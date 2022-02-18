@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3756366886522876489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 835b3883b5352cb45a230733082c7e14, type: 2}
+  - {fileID: 2100000, guid: 4ec29e6ee55464825a2aef4595690ed2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,4 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateSound: {fileID: 8300000, guid: 17be859c6982d48928ec47c874da5839, type: 3}
   destroySound: {fileID: 8300000, guid: b875dc536116a4d56b411584d19315c6, type: 3}
+  activateEffect: {fileID: 3618522286908537195, guid: ab3879530ee1343fe813ef6506cc88e2, type: 3}
   shield: {fileID: 1086924875433987529, guid: cf372b7cd54c74c99980c4fe20cca680, type: 3}
