@@ -6,7 +6,7 @@
       <File FileName="Assets/Scripts/BuffAndDebuff/BuffShield.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BuffAndDebuff/BuffRocket.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BuffAndDebuff/Influencer.cs" Line="42" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +16,7 @@
               <Node name="Assets" expanded="True">
                 <Node name="Scripts" expanded="True">
                   <Node name="BuffAndDebuff" expanded="True">
-                    <Node name="DebuffSlowing.cs" selected="True" />
+                    <Node name="Influencer.cs" selected="True" />
                   </Node>
                   <Node name="Game" expanded="True" />
                   <Node name="Player" expanded="True" />
