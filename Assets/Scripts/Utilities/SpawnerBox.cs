@@ -12,12 +12,6 @@ public class SpawnerBox : MonoBehaviour
         bc = GetComponent<BoxCollider>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-       
-    }
-
 
 
     Vector3 GetRandomPointInBounds()
@@ -35,11 +29,6 @@ public class SpawnerBox : MonoBehaviour
 
     public GameObject Spawn(GameObject go)
     {
-        //if (!bc)
-        //{
-        //    return null; 
-        //}
-
         Quaternion q = new Quaternion(0,180,0,0);
         return Instantiate(go, GetRandomPointInBounds(), q);
     }

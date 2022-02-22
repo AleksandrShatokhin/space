@@ -7,16 +7,6 @@ public class HeartAction : MonoBehaviour
     private byte hp = 1;
     public AudioClip activateSound;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

@@ -15,9 +15,4 @@ public class RandomRotator : MonoBehaviour
         rb.angularVelocity = Random.insideUnitSphere * rotateSpeed;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
 }
