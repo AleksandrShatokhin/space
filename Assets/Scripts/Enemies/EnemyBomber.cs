@@ -20,7 +20,7 @@ public class EnemyBomber : EnemyBase
         targetLookAtPlayer = GameObject.Find("Player").GetComponent<Transform>();
 
         //задаем стрельбу вражеского корабля
-        InvokeRepeating("BomberShoot", Random.Range(5, 7), Random.Range(2, 5));
+        StartCoroutine(Shooting());
     }
 
     void Update()
@@ -56,19 +56,33 @@ public class EnemyBomber : EnemyBase
         }
     }
 
-    void BomberShoot()
+    // Задаем стрельбу вражескому бомбардировщику
+    IEnumerator Shooting()
     {
-        // Первое сырое решение. Отключить логику врага, если игра закончена
-        if (GameController.GetInstance().IsGameOver())
+        while (true)
         {
-            return;
+            Instantiate(bombPrefab, gun.transform.position, transform.rotation);
+            animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
+
+            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+
+            ShootSound();
         }
-
-        Instantiate(bombPrefab, gun.transform.position, transform.rotation);
-        animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
-
-        ShootSound();
     }
+
+    //void BomberShoot()
+    //{
+    //    // Первое сырое решение. Отключить логику врага, если игра закончена
+    //    if (GameController.GetInstance().IsGameOver())
+    //    {
+    //        return;
+    //    }
+
+    //    Instantiate(bombPrefab, gun.transform.position, transform.rotation);
+    //    animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
+
+    //    ShootSound();
+    //}
 
     public void AnimDefault()
     {   // фунция вызывается по Event на анимационном клипе
