@@ -66,6 +66,7 @@ public class DebuffDisableShot : Influencer
         if(other.gameObject.tag == "Asteroid")
         {
             Destroy(gameObject);
+
         }
     }
 }
