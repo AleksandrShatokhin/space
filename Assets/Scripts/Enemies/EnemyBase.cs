@@ -61,12 +61,6 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
         GameController.GetInstance().PlaySound(hitSound, 0.5f);
     }
 
-
-    protected void Shoot()
-    {   
-        //Instantiate(Projectile, , Quaternion.identity);
-    }
-
     virtual protected Vector3 GetProjectilePosition()
     {
         return gameObject.transform.position;
@@ -85,8 +79,6 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
         while (true)
         {
-
-            //Quaternion startRot = leftEnemyGun.transform.rotation;
             Instantiate(projectileEnemy, GetProjectilePosition(), GetProjectileRotation());
 
             PlayAnimation();

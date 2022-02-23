@@ -7,28 +7,6 @@ public class AsteroidEnemy : EnemyBase
     public GameObject heartPrefab;
     public int counterAsteroid;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    private void Awake()
-    {
-        
-    }
-
-    void FixedUpdate()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         //Если астероид попал в игрока, то убиваем игрока.

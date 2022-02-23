@@ -29,17 +29,4 @@ public class ParticleSistemBlastWave : MonoBehaviour
             colBlastWave.radius += 0.1f;
         }
     }
-
-    //void OnParticleCollision(GameObject other)
-    //{
-    //    if (other.gameObject.tag != "Player")
-    //    {
-
-    //        if (other.gameObject.layer == 6)
-    //        {
-    //            other.gameObject.GetComponent<EnemyBase>().Death();
-    //        }
-    //    }
-    //}
-
 }

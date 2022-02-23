@@ -14,15 +14,11 @@ public class PS_BombBlast : MonoBehaviour
 
         isCollision = false;
         blastColBomb.radius = 1;
-
-        //StartCoroutine(Blast());
     }
 
     void Update()
     {
         Destroy(transform.parent.gameObject, 1.5f);
-
-        
     }
 
     private void FixedUpdate()

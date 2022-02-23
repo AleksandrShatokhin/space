@@ -12,8 +12,6 @@ public class SpawnerBox : MonoBehaviour
         bc = GetComponent<BoxCollider>();
     }
 
-
-
     Vector3 GetRandomPointInBounds()
     {
         Vector3 randomPoint;
@@ -24,8 +22,6 @@ public class SpawnerBox : MonoBehaviour
 
         return randomPoint;
     }
-
-
 
     public GameObject Spawn(GameObject go)
     {

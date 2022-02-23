@@ -38,19 +38,6 @@ public class EnemyShip : EnemyBase
 
     protected override Quaternion GetProjectileRotation() => leftEnemyGun.transform.rotation;
 
-    //// Задаем стрельбу вражескому персонажу
-    //IEnumerator Shooting()
-    //{
-    //    while (true)
-    //    {
-    //        Quaternion startRot = leftEnemyGun.transform.rotation;
-    //        Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
-
-    //        yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
-
-    //        ShootSound();
-    //    }
-    //}
 
     void Update()
     {
@@ -79,20 +66,6 @@ public class EnemyShip : EnemyBase
         }
     }
 
-    //void EnemyShoot()
-    //{
-    //    // Первое сырое решение. Отключить логику врага, если игра закончена
-    //    if (GameController.GetInstance().IsGameOver())
-    //    {
-    //        return;
-    //    }
-    //    // для стрельбы понадобилось проверять в какую сторону повернуты пушки и после чего вызывать снаряд
-    //    Quaternion startRot = leftEnemyGun.transform.rotation;
-    //    Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
-
-    //    ShootSound();
-
-    //}
 
     private GameObject EnemyGetGun()  // чередование правой и левой пушек для выстрела
     {

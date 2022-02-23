@@ -70,34 +70,6 @@ public class EnemyBomber : EnemyBase
         animShot.SetBool("isShot", true); //запустим анимацию отскока чуть назад при выстреле
     }
 
-    // Задаем стрельбу вражескому бомбардировщику
-    //IEnumerator Shooting()
-    //{
-    //    while (true)
-    //    {
-    //        Instantiate(bombPrefab, gun.transform.position, transform.rotation);
-    //        animShot.SetBool("isShot", true); //запустим анимацию отскока чуть назад при выстреле
-
-    //        yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
-
-    //        ShootSound();
-    //    }
-    //}
-
-    //void BomberShoot()
-    //{
-    //    // Первое сырое решение. Отключить логику врага, если игра закончена
-    //    if (GameController.GetInstance().IsGameOver())
-    //    {
-    //        return;
-    //    }
-
-    //    Instantiate(bombPrefab, gun.transform.position, transform.rotation);
-    //    animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
-
-    //    ShootSound();
-    //}
-
     public void AnimDefault()
     {   // фунция вызывается по Event на анимационном клипе
         // по окончании анимации происходит возват условий в default

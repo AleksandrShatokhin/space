@@ -25,13 +25,4 @@ public class PS_RocketBlast : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         blastCol.enabled = true;
     }
-
-    //void OnParticleCollision(GameObject collision)
-    //{
-    //    if (collision.gameObject.layer == 6 && isCollision == false) // слой 6 - это enemy
-    //    {
-    //        isCollision = true;
-    //        collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
-    //    }
-    //}
 }

@@ -57,7 +57,9 @@ public class BombEnemyShip : MonoBehaviour
     void ColorBlink() //задам мерцание объекту
     {
         if (timer >= 0.0f)
+        {
             timer = timer - 0.1f;
+        }
         else
         {
             timer = 10.0f;
@@ -65,9 +67,14 @@ public class BombEnemyShip : MonoBehaviour
         }
 
         if (timer >= 5.0f)
+        {
             isRed = true;
+        }
         else
+        {
             isRed = false;
+        }
+
 
         switch (isRed)
         {

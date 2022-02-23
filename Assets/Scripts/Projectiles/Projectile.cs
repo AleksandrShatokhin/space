@@ -45,6 +45,4 @@ public abstract class Projectile : MonoBehaviour
         GameObject flares = Instantiate(flaresEffect, position, Quaternion.identity);
         Destroy(flares, flaresDestroyTime);
     }
-
-    //abstract protected void OnCollisionEnter(Collision collision);
 }

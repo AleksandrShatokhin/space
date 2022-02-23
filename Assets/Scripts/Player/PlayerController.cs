@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, Deathable
 {
+    //Аудио
+    private AudioSource audioSource;
     public AudioClip engineSound;
     public AudioClip playerExplosion;
     public AudioClip hitPlayer;
@@ -12,53 +14,35 @@ public class PlayerController : MonoBehaviour, Deathable
     public AudioClip rocketSound;
     public AudioClip waveSound;
 
-
+    public GameObject laserProjectile, rocketProjectile;
     public GameObject leftGun;
     public GameObject rightGun;
+
+    //Эффекты
     public GameObject particlePlayerExplosion;
 
-    
-
-    private GameController game;
-
+    //Анимация
     private Animator animPlayer;
 
+    //Настройки игрока
     //Регулировка угла наклона 
     public float tilt = 1.5f;
-    //bool leftUsed = false;
-
-    public GameObject laserProjectile, rocketProjectile;
-    Rigidbody rb;
-
     public static float speedPlayer = 18.0f;
-    float forwardInput = 0;
-    float horizontalInput = 0;
-
     public static bool isDisableShot = false; //для дебаффа отключения стрельбы
-
     public static bool isShield = false; // переменные для баффа щита
-    public GameObject shield;
 
-    public static bool isRocket;
-    public static int quantityRockets;
-
-
+    //Арсенал
     private Switcher gunSwitcher;
     private Weapon currentWeapon;
-
     public List<Weapon> weapons;
 
-
+    //Здоровье игрока
     public HealtComponent health;
     public HealthBarComponent healthBar;
 
-    private GameObject joystick;
-
-    private Transform spawnPosBlastWave;
     public GameObject blastWave;
-
-    private AudioSource audioSource;
-
+    private Rigidbody rb;
+    private GameObject joystick;
 
     void Start()
     {
@@ -66,41 +50,27 @@ public class PlayerController : MonoBehaviour, Deathable
         gunSwitcher = new Switcher();
 
         animPlayer = GetComponent<Animator>();
-        
+
         weapons = new List<Weapon>
         {
             new Weapon(Weapons.Laser, laserProjectile, 5, 5, blasterSound, true),
             new Weapon(Weapons.Rocket, rocketProjectile, 5, 15, rocketSound, false)
         };
 
-        //currentWeapon = new Weapon(currentProjectile, 5, 5, true);
         currentWeapon = weapons[0];
 
         //Получить ссылку на компонент здоровья, для удобства использования
         health = GetComponent<HealtComponent>();
-        //health.SetDeathable(this);
-
-        isRocket = false;
-        quantityRockets = 5;
 
 
         healthBar.SetValue(health.GetHealth());
 
         joystick = GameObject.Find("JoyStick");
 
-        spawnPosBlastWave = gameObject.transform.GetChild(2);
-
-
         audioSource = GetComponent<AudioSource>();
-
         audioSource.volume = 0.1f;
         audioSource.clip = engineSound;
         audioSource.Play();
-    }
-
-
-    private void Awake()
-    {
     }
 
     void Update()
@@ -125,16 +95,11 @@ public class PlayerController : MonoBehaviour, Deathable
     void FixedUpdate()
     {
         PlayerShipMove();
-
         joystick.GetComponent<MoveJoyStick>().CheckTouch(this.tilt, speedPlayer);
     }
 
     void PlayerShipMove()
     {
-        //Получить данные по вводу от игркоа
-        forwardInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
-
         ////Переместить игрока 
         //Реализовал новую механику перемещения используя RigidBody игрока
         //При использовании напрямую Transofrm получаю странное поведение при поворотах игрока
@@ -144,7 +109,6 @@ public class PlayerController : MonoBehaviour, Deathable
         //Задать вектор движения и умножить на скорость игрока. 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rb.velocity = movement * speedPlayer;
-
 
         //Задать вращение при движении по оси X. Угол наклона регулируется через параметр tilt
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
@@ -160,10 +124,10 @@ public class PlayerController : MonoBehaviour, Deathable
     public void Shoot()
     {
         //Проверить, что стрельба не отключена
-        if (isDisableShot)    
+        if (isDisableShot)
         {
             return;
-        }    
+        }
 
         //варианты ведения стрельбы
         //Проверить, что есть снаряды в текущем оружии
@@ -172,20 +136,19 @@ public class PlayerController : MonoBehaviour, Deathable
             return;
         }
 
-        
-            _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
+        _ = Instantiate(currentWeapon.GetProjectile(), GetGun().transform.position, Quaternion.identity);
 
-            // Запускаем анимацию стрельбы
-            EnterAnimShot();
+        // Запускаем анимацию стрельбы
+        EnterAnimShot();
 
-            audioSource.volume = 0.2f;
+        audioSource.volume = 0.2f;
 
-            //Звук оружия брать из самого оружия
-            audioSource.PlayOneShot(currentWeapon.GetShootingSound());
+        //Звук оружия брать из самого оружия
+        audioSource.PlayOneShot(currentWeapon.GetShootingSound());
 
-            //После спауна пули отнимаем один заряд
-            currentWeapon.AddBullets(-1);
-        
+        //После спауна пули отнимаем один заряд
+        currentWeapon.AddBullets(-1);
+
     }
 
     private GameObject GetGun()
@@ -204,25 +167,9 @@ public class PlayerController : MonoBehaviour, Deathable
         Destroy(this.gameObject);
     }
 
-
-    // Для теста реализовать в Player'е
-    //По идее надо вынести в  GameContoller
-    //IEnumerator AddBullets()
-    //{
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(1.0f);
-
-    //        if (currentWeapon.GettingBulletsByTime())
-    //        {
-    //            currentWeapon.AddBullets(1);
-    //        }
-    //    }
-    //}
-
     void Deathable.Kill()
     {
-        
+
         Death();
     }
 
@@ -231,7 +178,6 @@ public class PlayerController : MonoBehaviour, Deathable
     {
         GameController.GetInstance().PlaySound(hitPlayer);
         GetComponent<HealtComponent>().Change(-dmg);
-        //healthBar.SetValue(health.GetHealth());
     }
 
     public void AddHealth(byte hp)
@@ -243,16 +189,16 @@ public class PlayerController : MonoBehaviour, Deathable
     {
         // здесь воодим переключение снарядов для выстрела
 
-            int nextWeaponIndex = (int)currentWeapon.id + 1;
+        int nextWeaponIndex = (int)currentWeapon.id + 1;
 
-            if (nextWeaponIndex >= weapons.Count)
-            {
-                currentWeapon = weapons[0];
-            }
-            else
-            {
-                currentWeapon = weapons[nextWeaponIndex];
-            }
+        if (nextWeaponIndex >= weapons.Count)
+        {
+            currentWeapon = weapons[0];
+        }
+        else
+        {
+            currentWeapon = weapons[nextWeaponIndex];
+        }
     }
 
     // функции на выход из анимаций стрельбы пушек (Event на анимации)

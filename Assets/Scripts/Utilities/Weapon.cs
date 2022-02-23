@@ -27,9 +27,7 @@ public class Weapon
         this.maxBullets = maxBullets;
         addBulletsByTime = addBullets;
         this.shootSound = shootSound;
-    }
-
-   
+    } 
 
     public void AddBullets(int newBullets)
     {

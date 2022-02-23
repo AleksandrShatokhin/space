@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GarbageCollector : MonoBehaviour
 {
-
     private void OnCollisionEnter(Collision collision)
     {
         //Если это враг, то мы должны подсчитать как уничтоженного

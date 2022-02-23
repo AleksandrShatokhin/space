@@ -1,19 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
+    //Синглтон на GameController
     static private GameController instance;
-    private PlayerController player;
     static public GameController GetInstance() => instance;
+    private PlayerController player;
 
-
-    private AudioSource audioSource;
 
     public SpawnerBox spawner;
+
+    //Ссылка на префаб меню
     public GameObject postGame;
 
     //Массив для противников
@@ -41,7 +40,6 @@ public class GameController : MonoBehaviour
 
     private GameObject lastEnemy;
 
-
     //Состояния игры
     private bool isGameOver = false;
     private bool isLevelEnded = false;
@@ -51,11 +49,11 @@ public class GameController : MonoBehaviour
     //Можно отключить извне для тестов
     public bool shouldSpawnWave = true;
 
-
+    //Аудио свойства
+    private AudioSource audioSource;
     public AudioClip failSound;
     public AudioClip successSound;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +61,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(SpawnWave());
         allEnemies = enemiesInWave * numberOfWaves;
 
+        //Сохранить ссылку на игрока
         player = GameObject.Find("Player").GetComponent<PlayerController>();
 
         StartCoroutine(AddBullets());
@@ -70,18 +69,14 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        //Сохранить ссылку на игрока для дальнейшего использования
-        
+        audioSource = GetComponent<AudioSource>();    
     }
 
     // Update is called once per frame
     void Update()
     {
-
         //Проверка на нажатие клавиши R для перезапуска
         Restart();
-
         //Проверка, что уровень завершен
         CheckIfLevelEnd();
     }
