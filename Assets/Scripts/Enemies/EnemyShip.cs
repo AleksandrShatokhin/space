@@ -25,22 +25,32 @@ public class EnemyShip : EnemyBase
         newPosEnemyShip = new Vector3(Random.Range(-15, 15), 0, Random.Range(13, 0));
 
         //понадобилось обратиться к игровому объекту на сцене, так как при забрасывании вражеского корабля в иерархию цель слежения не задается
-        targetLookAtPlayer = GameObject.Find("Player").GetComponent<Transform>();
-    }
-
-    // Задаем стрельбу вражескому персонажу
-    IEnumerator Shooting()
-    {
-        while (true)
+        GameObject player = GameObject.Find("Player");
+        if (player)
         {
-            Quaternion startRot = leftEnemyGun.transform.rotation;
-            Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
-
-            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
-
-            ShootSound();
+            targetLookAtPlayer = player.transform;
         }
+
     }
+
+    protected override Vector3 GetProjectilePosition() => EnemyGetGun().transform.position;
+    
+
+    protected override Quaternion GetProjectileRotation() => leftEnemyGun.transform.rotation;
+
+    //// Задаем стрельбу вражескому персонажу
+    //IEnumerator Shooting()
+    //{
+    //    while (true)
+    //    {
+    //        Quaternion startRot = leftEnemyGun.transform.rotation;
+    //        Instantiate(EnemyShipProjectile, EnemyGetGun().transform.position, startRot);
+
+    //        yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+
+    //        ShootSound();
+    //    }
+    //}
 
     void Update()
     {

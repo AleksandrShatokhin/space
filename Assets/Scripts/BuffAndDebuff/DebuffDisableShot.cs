@@ -32,26 +32,7 @@ public class DebuffDisableShot : Influencer
         else transform.rotation = rotDebuff; // повернем дебафф в прежнее направление
     }
 
-
-    /*void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (GameObject.Find("Game").GetComponent<TimerController>().isDisable == false)
-            {
-                GameObject.Find("Game").GetComponent<TimerController>().isDisable = true;
-                GameObject.Find("Player").GetComponent<PlayerController>().isDisableShot = true;
-                Destroy(gameObject);
-            }
-            else
-            {
-                GameObject.Find("Game").GetComponent<TimerController>().timerStatrForDisableShot = 10.0f;
-                Destroy(gameObject);
-            }
-        }
-    }Пока убрал данный формат. Тестируем через триггер*/
-
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         //проверка столкновения с игроком
         if (other.gameObject.tag == "Player")

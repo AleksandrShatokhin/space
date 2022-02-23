@@ -6,30 +6,21 @@ public class BlastWaveController : Influencer
 {
     private GameObject player;
 
-    /*void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            blastWave.Play();
-            Destroy(gameObject);
-        }
-    }Пока убрал данный формат. Тестируем через триггер*/
-
     private void Start()
     {
         player = GameObject.Find("Player");
     }
 
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
+        base.OnTriggerEnter(other);
+
         //проверка на столкновение с игроком
         if (other.gameObject.tag == "Player")
         {
             player.GetComponent<PlayerController>().StartBlastWave();
             Destroy(gameObject);
             MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
-            ActivateSound();
-            DoEffect();
         }
 
         // проверка на столкновение со всевозможными снарядами

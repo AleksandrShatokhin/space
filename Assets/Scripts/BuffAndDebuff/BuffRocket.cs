@@ -11,7 +11,7 @@ public class BuffRocket : Influencer
         quantityRt = Random.Range(2, 5);
     }
     
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         //В списке всего оружия найти ссылку на Ракетницу и добавить снаряды
         GameController.GetInstance().GetPlayer().weapons.Find(weapon => weapon.id == Weapons.Rocket).AddBullets(quantityRt);

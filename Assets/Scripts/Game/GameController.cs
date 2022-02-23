@@ -63,14 +63,16 @@ public class GameController : MonoBehaviour
         StartCoroutine(SpawnWave());
         allEnemies = enemiesInWave * numberOfWaves;
 
-        //Сохранить ссылку на игрока для дальнейшего использования
         player = GameObject.Find("Player").GetComponent<PlayerController>();
 
-
-        audioSource = GetComponent<AudioSource>();
-
-
         StartCoroutine(AddBullets());
+    }
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        //Сохранить ссылку на игрока для дальнейшего использования
+        
     }
 
     // Update is called once per frame
@@ -236,13 +238,14 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+
     }
 
 
     public void PlaySound(AudioClip clip, float volume = 1.0f)
     {
 
-        if (!clip) {
+        if (!clip || !audioSource) {
             return;
         }
 

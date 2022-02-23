@@ -20,10 +20,13 @@ public class BombEnemyShip : MonoBehaviour
 
     void Start()
     {
-        targetPos = GameObject.Find("Player").GetComponent<Transform>();
-
-        startPos = transform.position;
-        endPos = new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, targetPos.transform.position.z);
+        GameObject player = GameObject.Find("Player");
+        if (player)
+        {
+            targetPos = player.transform;
+            startPos = transform.position;
+            endPos = new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, targetPos.transform.position.z);
+        }
 
         colorDefault = gameObject.GetComponent<Renderer>().material.color; // запомним текущий цвет объекта
     }
@@ -54,28 +57,28 @@ public class BombEnemyShip : MonoBehaviour
     void ColorBlink() //задам мерцание объекту
     {
         if (timer >= 0.0f)
-                timer = timer - 0.1f;
-            else
-            {
-                timer = 10.0f;
-                counter--;
-            }
-            
-            if (timer >= 5.0f)
-                isRed = true;
-            else
-                isRed = false;
+            timer = timer - 0.1f;
+        else
+        {
+            timer = 10.0f;
+            counter--;
+        }
 
-            switch (isRed)
-            {
-                case true :
-                    gameObject.GetComponent<Renderer>().material.color = Color.red;
+        if (timer >= 5.0f)
+            isRed = true;
+        else
+            isRed = false;
+
+        switch (isRed)
+        {
+            case true:
+                gameObject.GetComponent<Renderer>().material.color = Color.red;
                 break;
 
-                case false :
-                    gameObject.GetComponent<Renderer>().material.color = colorDefault;
+            case false:
+                gameObject.GetComponent<Renderer>().material.color = colorDefault;
                 break;
-            }
+        }
     }
 
     void OnCollisionEnter(Collision collision)

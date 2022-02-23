@@ -17,7 +17,11 @@ public class EnemyBomber : EnemyBase
         startPosEnemyBomber = transform.position;
         newPosEnemyBomber = new Vector3(Random.Range(-15, 15), 0, Random.Range(13, 0));
 
-        targetLookAtPlayer = GameObject.Find("Player").GetComponent<Transform>();
+        GameObject player = GameObject.Find("Player");
+        if (player)
+        {
+            targetLookAtPlayer = player.transform;
+        }
 
         //задаем стрельбу вражеского корабля
         StartCoroutine(Shooting());
@@ -56,19 +60,29 @@ public class EnemyBomber : EnemyBase
         }
     }
 
-    // Задаем стрельбу вражескому бомбардировщику
-    IEnumerator Shooting()
+    protected override Vector3 GetProjectilePosition()
     {
-        while (true)
-        {
-            Instantiate(bombPrefab, gun.transform.position, transform.rotation);
-            animShot.SetBool("isShot", true); //запустим анимацю отскока чуть назад при выстреле
-
-            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
-
-            ShootSound();
-        }
+        return gun.transform.position;
     }
+
+    protected override void PlayAnimation()
+    {
+        animShot.SetBool("isShot", true); //запустим анимацию отскока чуть назад при выстреле
+    }
+
+    // Задаем стрельбу вражескому бомбардировщику
+    //IEnumerator Shooting()
+    //{
+    //    while (true)
+    //    {
+    //        Instantiate(bombPrefab, gun.transform.position, transform.rotation);
+    //        animShot.SetBool("isShot", true); //запустим анимацию отскока чуть назад при выстреле
+
+    //        yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+
+    //        ShootSound();
+    //    }
+    //}
 
     //void BomberShoot()
     //{

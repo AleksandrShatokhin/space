@@ -50,8 +50,9 @@ public class DebuffSlowing : Influencer
         }
     }Пока убрал данный формат. Тестируем через триггер*/
 
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
+   
         //проверка столкновения с игроком
         if (other.gameObject.tag == "Player")
         {

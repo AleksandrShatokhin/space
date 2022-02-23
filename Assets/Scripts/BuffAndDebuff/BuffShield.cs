@@ -5,20 +5,8 @@ using UnityEngine;
 public class BuffShield : Influencer
 {
     public GameObject shield;
-    
-    /*void OnCollisionEnter(Collision collision)
-    {   
-        if (collision.gameObject.tag == "Player")
-        {
-            GameObject.Find("Player").GetComponent<PlayerController>().isShield = true;
-            Destroy(gameObject);
-            Instantiate(shield, transform.position, transform.rotation);
-        }
-    }
-    Пока убрал данный формат. Тестируем через триггер
-    */
 
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         //проверка на столкновение с игроком
         if(other.gameObject.tag == "Player")

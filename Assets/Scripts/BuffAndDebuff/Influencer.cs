@@ -42,4 +42,27 @@ public class Influencer : MonoBehaviour
             Destroy(effect, 2);
         }
     }
+
+    public void OnPlayerEffects()
+    {
+        ActivateSound();
+        DoEffect();
+    }
+
+    public void OnPlayerContact(Collider other)
+    {
+        // проверка на столкновение с игроком
+        if (other.gameObject.tag == "Player")
+        {
+            OnPlayerEffects();
+        }
+    }
+
+    virtual protected void OnTriggerEnter(Collider other)
+    {
+
+        OnPlayerContact(other);
+        //OnProjectileContact();
+        //OnAsteroidContact();
+    }
 }
