@@ -58,11 +58,30 @@ public class Influencer : MonoBehaviour
         }
     }
 
+    public void OnProjectileContact(Collider other)
+    {
+        // проверка на столкновение со всевозможными снарядами
+        if (other.gameObject.layer == (int)Layers.Projectile)
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void OnAsteroidContact(Collider other)
+    {
+        // проверка на столкновение с астероидами
+        if (other.gameObject.tag == "Asteroid")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     virtual protected void OnTriggerEnter(Collider other)
     {
 
         OnPlayerContact(other);
-        //OnProjectileContact();
-        //OnAsteroidContact();
+        OnProjectileContact(other);
+        OnAsteroidContact(other);
     }
 }

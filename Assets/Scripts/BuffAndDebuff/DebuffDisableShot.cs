@@ -34,7 +34,10 @@ public class DebuffDisableShot : Influencer
 
     protected override void OnTriggerEnter(Collider other)
     {
-        //проверка столкновения с игроком
+        // Реализуем базовый метод
+        base.OnTriggerEnter(other);
+
+        // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
             if (TimerController.isDisable == false)
@@ -43,29 +46,12 @@ public class DebuffDisableShot : Influencer
                 PlayerController.isDisableShot = true;
                 Destroy(gameObject);
                 MainUIController.isPickedUpDisableShot = true;
-                DoEffect();
             }
             else
             {
                 TimerController.timerStatrForDisableShot = 10.0f;
                 Destroy(gameObject);
             }
-
-            ActivateSound();
-
-        }
-
-        // проверка на столкновение со всевозможными снарядами
-        if(other.gameObject.layer == 8) // слой 8 - это projectile
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
-
-        // проверка на столкновение с астероидами
-        if(other.gameObject.tag == "Asteroid")
-        {
-            Destroy(gameObject);
 
         }
     }

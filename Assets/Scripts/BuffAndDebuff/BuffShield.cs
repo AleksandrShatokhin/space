@@ -8,28 +8,24 @@ public class BuffShield : Influencer
 
     protected override void OnTriggerEnter(Collider other)
     {
-        //проверка на столкновение с игроком
-        if(other.gameObject.tag == "Player")
+        // Реализуем базовый метод
+        base.OnTriggerEnter(other);
+
+        if (PlayerController.isShield)
         {
+            Destroy(gameObject);
+            return;
+        }
+
+        // индивидуальные действия по игроку
+        if (other.gameObject.tag == "Player")
+        {
+            
+
             PlayerController.isShield = true;
             Destroy(gameObject);
             Instantiate(shield, transform.position, transform.rotation);
             MainUIController.isPickedUpShield = true; // для вызова тектса на экран игроку
-            ActivateSound();
-            DoEffect();
-        }
-
-        // проверка на столкновение со всевозможными снарядами
-        if(other.gameObject.layer == 8) // слой 8 - это projectile
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
-
-        // проверка на столкновение с астероидами
-        if(other.gameObject.tag == "Asteroid")
-        {
-            Destroy(gameObject);
         }
     }
 }

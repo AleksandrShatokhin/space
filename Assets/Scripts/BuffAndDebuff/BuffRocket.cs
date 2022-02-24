@@ -16,26 +16,14 @@ public class BuffRocket : Influencer
         //В списке всего оружия найти ссылку на Ракетницу и добавить снаряды
         GameController.GetInstance().GetPlayer().weapons.Find(weapon => weapon.id == Weapons.Rocket).AddBullets(quantityRt);
 
-        // проверка на столкновение с Игроком
+        // Реализуем базовый метод
+        base.OnTriggerEnter(other);
+
+        // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
             MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
-            ActivateSound();
-            DoEffect();
-        }
-
-        // проверка на столкновение со всевозможными снарядами
-        if(other.gameObject.layer == 8) // слой 8 - это projectile
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
-
-        // проверка на столкновение с астероидами
-        if(other.gameObject.tag == "Asteroid")
-        {
-            Destroy(gameObject);
         }
     }
 }

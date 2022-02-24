@@ -32,28 +32,12 @@ public class DebuffSlowing : Influencer
         else transform.rotation = rotDebuff; // повернем дебафф в прежнее направление
     }
 
-    /*void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (GameObject.Find("Game").GetComponent<TimerController>().isSlowing == false)
-            {
-                GameObject.Find("Game").GetComponent<TimerController>().isSlowing = true;
-                GameObject.Find("Player").GetComponent<PlayerController>().speedPlayer = 10.0f;
-                Destroy(gameObject);
-            }
-            else
-            {
-                GameObject.Find("Game").GetComponent<TimerController>().timerStatrForSlowing = 10.0f;
-                Destroy(gameObject);
-            }
-        }
-    }Пока убрал данный формат. Тестируем через триггер*/
-
     protected override void OnTriggerEnter(Collider other)
     {
-   
-        //проверка столкновения с игроком
+        // Реализуем базовый метод
+        base.OnTriggerEnter(other);
+
+        // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
             if (TimerController.isSlowing == false)
@@ -62,27 +46,12 @@ public class DebuffSlowing : Influencer
                 PlayerController.speedPlayer = 10.0f;
                 Destroy(gameObject);
                 MainUIController.isPickedUpSlowing = true; // для вызова тектса на экран игроку
-                DoEffect();
             }
             else
             {
                 TimerController.timerStatrForSlowing = 10.0f;
                 Destroy(gameObject);
             }
-            ActivateSound();
-        }
-
-        // проверка на столкновение со всевозможными снарядами
-        if(other.gameObject.layer == 8) // слой 8 - это projectile
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
-
-        // проверка на столкновение с астероидами
-        if(other.gameObject.tag == "Asteroid")
-        {
-            Destroy(gameObject);
         }
     }
 }

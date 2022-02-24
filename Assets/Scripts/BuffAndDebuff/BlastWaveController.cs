@@ -13,27 +13,15 @@ public class BlastWaveController : Influencer
 
     protected override void OnTriggerEnter(Collider other)
     {
+        // Реализуем базовый метод
         base.OnTriggerEnter(other);
 
-        //проверка на столкновение с игроком
+        // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
             player.GetComponent<PlayerController>().StartBlastWave();
             Destroy(gameObject);
             MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
-        }
-
-        // проверка на столкновение со всевозможными снарядами
-        if(other.gameObject.layer == 8) // слой 8 - это projectile
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
-
-        // проверка на столкновение с астероидами
-        if(other.gameObject.tag == "Asteroid")
-        {
-            Destroy(gameObject);
         }
     }
 }
