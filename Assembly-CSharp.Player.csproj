@@ -53,7 +53,7 @@
     <UnityVersion>2020.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Applications/Visual Studio (Preview).app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Assets/SampleScenes/Scripts/CameraSwitch.cs" />
     <Compile Include="Assets/Scripts/Utilities/GarbageCollector.cs" />
     <Compile Include="Assets/Scripts/Enemies/EnemyShip.cs" />
+    <Compile Include="Assets/Scripts/Utilities/TestEmpty.cs" />
     <Compile Include="Assets/SampleScenes/Menu/Scripts/MenuSceneLoader.cs" />
     <Compile Include="Assets/Scripts/Utilities/Mover.cs" />
     <Compile Include="Assets/Scripts/ParticleSystem/ParticleSistemBlastWave.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets/Scripts/Utilities/Weapon.cs" />
     <Compile Include="Assets/Scripts/Game/TimerController.cs" />
     <Compile Include="Assets/Scripts/BuffAndDebuff/Influencer.cs" />
+    <Compile Include="Assets/Scripts/Utilities/LayersEnum.cs" />
     <Compile Include="Assets/SampleScenes/Menu/Scripts/PauseMenu.cs" />
     <Compile Include="Assets/Scripts/ParticleSystem/PS_BombBlast.cs" />
     <Compile Include="Assets/Scripts/Enemies/AsteroidEnemy.cs" />
@@ -113,8 +115,6 @@
     <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
     <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
     <Compile Include="Assets/Scripts/ParticleSystem/BlastBombCollider.cs" />
-    <Compile Include="Assets/Scripts/Utilities/TestEmpty.cs" />
-    <Compile Include="Assets/Scripts/Utilities/LayersEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

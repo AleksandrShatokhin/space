@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour, Deathable
         audioSource.volume = 0.1f;
         audioSource.clip = engineSound;
         audioSource.Play();
+       
     }
 
     void Update()
@@ -169,7 +170,7 @@ public class PlayerController : MonoBehaviour, Deathable
 
     void Deathable.Kill()
     {
-
+        
         Death();
     }
 
