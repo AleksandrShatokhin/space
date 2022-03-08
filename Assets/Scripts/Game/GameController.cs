@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     static public GameController GetInstance() => instance;
     private PlayerController player;
 
-
     public SpawnerBox spawner;
 
     //Ссылка на префаб меню
@@ -53,6 +52,7 @@ public class GameController : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip failSound;
     public AudioClip successSound;
+    public AudioClip backgroundMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +69,10 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();    
+        audioSource = GetComponent<AudioSource>();  
+        audioSource.clip = backgroundMusic;
+        audioSource.volume = 0.1f;
+        audioSource.Play();
     }
 
     // Update is called once per frame
