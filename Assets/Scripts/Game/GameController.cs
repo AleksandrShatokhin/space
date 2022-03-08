@@ -9,22 +9,19 @@ public class GameController : MonoBehaviour
     static public GameController GetInstance() => instance;
     private PlayerController player;
 
+    [SerializeField]
+    private int levelNumber;
+
     public SpawnerBox spawner;
 
     //Ссылка на префаб меню
     public GameObject postGame;
 
-    //Массив для противников
-    public GameObject[] enemies;
-
-    //Массив инфлюенсеров - бонусов и дебафов
-    public GameObject[] influencers;
-
     //Основные параметры игры
-    public float spawnEveryNSeconds = 0.5f;
+    // public float spawnEveryNSeconds = 0.5f;
     public float waitAfterWave = 5.0f;
-    public int enemiesInWave = 10;
-    public int numberOfWaves = 3;
+    // public int enemiesInWave = 10;
+    // public int numberOfWaves = 3;
     public float waitOnStart = 2.0f;
     private int allEnemiesSpawned = 0;
     private int allEnemies;
@@ -32,10 +29,10 @@ public class GameController : MonoBehaviour
     private int enemiesKilled = 0;
 
     //Частота спауна бонусов в игре
-    public float influencerSpawnRate = 5.0f;
+    // public float influencerSpawnRate = 5.0f;
 
     //Вероятность спауна бонуса 1 = 100%
-    public float influencerChance = 1.0f;
+    // public float influencerChance = 1.0f;
 
     private GameObject lastEnemy;
 
@@ -48,18 +45,33 @@ public class GameController : MonoBehaviour
     //Можно отключить извне для тестов
     public bool shouldSpawnWave = true;
 
+    [SerializeField]
+    private LevelData[] levelsData;
+    public LevelData levelData;
+
+    public int LevelNumber { get => levelNumber; set => levelNumber = value; }
+
     //Аудио свойства
     private AudioSource audioSource;
     public AudioClip failSound;
     public AudioClip successSound;
     public AudioClip backgroundMusic;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        //Получить данные по номеру уровня
+        LevelNumber = DataStore.GetInt(DataStore.level);
+
+        levelData = levelsData[LevelNumber];
+        allEnemies = levelData.EnemiesInWave * levelData.NumberOfWaves;
+
+        SceneObjectCreate();
         StartCoroutine(SpawnWave());
-        allEnemies = enemiesInWave * numberOfWaves;
 
         //Сохранить ссылку на игрока
         player = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -69,7 +81,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();  
+        audioSource = GetComponent<AudioSource>();
         audioSource.clip = backgroundMusic;
         audioSource.volume = 0.1f;
         audioSource.Play();
@@ -98,7 +110,8 @@ public class GameController : MonoBehaviour
                 _ = StartCoroutine(SpawnBonus());
             }
 
-            if (enemiesSpawned < enemiesInWave) {
+            if (enemiesSpawned < levelData.EnemiesInWave)
+            {
 
                 //Спаун случайного противника
                 GameObject spawned = spawner.Spawn(GetRandomEnemy());
@@ -109,13 +122,15 @@ public class GameController : MonoBehaviour
                 //Сохранить последнего противника  из уровня
                 lastEnemy = allEnemiesSpawned == allEnemies ? spawned : null;
 
-                yield return new WaitForSeconds(spawnEveryNSeconds);
+                yield return new WaitForSeconds(levelData.SpawnEveryNSeconds);
             }
-            else if(enemiesKilled < allEnemiesSpawned){
+            else if (enemiesKilled < allEnemiesSpawned)
+            {
                 yield return new WaitForSeconds(waitAfterWave);
             }
 
-            else {
+            else
+            {
                 enemiesSpawned = 0;
                 yield return new WaitForSeconds(waitAfterWave);
             }
@@ -152,7 +167,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    
+
     void CheckIfLevelEnd()
     {
         if (isLevelEnded)
@@ -167,7 +182,7 @@ public class GameController : MonoBehaviour
                 LevelEnded();
             }
         }
-        
+
     }
 
     public bool IsLevelEnded()
@@ -178,9 +193,9 @@ public class GameController : MonoBehaviour
     //Выбор случайного противника из списка
     private GameObject GetRandomEnemy()
     {
-        return enemies[Random.Range(0, enemies.Length)];
+        return levelData.Enemies[Random.Range(0, levelData.Enemies.Length)];
     }
-    
+
     IEnumerator SpawnBonus()
     {
         //Сразу выставляем признак, что не нужно запускать следующий спаун
@@ -188,13 +203,13 @@ public class GameController : MonoBehaviour
         isInfluencerTryToSpawn = true;
 
         //Сначала запускаем паузу. Объект должен добавиться после ожидания. 
-        yield return new WaitForSeconds(influencerSpawnRate);
+        yield return new WaitForSeconds(levelData.InfluencerSpawnRate);
 
         //Для расчета вероятности воспользуемся Random.Range
         float randomSeed = Random.Range(0.0f, 1.0f);
 
         //Если полученное значение входит в допустимую вероятность, то можно спаунить объект
-        if(randomSeed <= influencerChance)
+        if (randomSeed <= levelData.InfluencerChance)
         {
             spawner.Spawn(GetInfluencer());
         }
@@ -205,7 +220,7 @@ public class GameController : MonoBehaviour
     //Получить случайный инфлюенсер
     GameObject GetInfluencer()
     {
-        return influencers[Random.Range(0, influencers.Length)];
+        return levelData.Influencers[Random.Range(0, levelData.Influencers.Length)];
     }
 
 
@@ -243,7 +258,8 @@ public class GameController : MonoBehaviour
     public void PlaySound(AudioClip clip, float volume = 1.0f)
     {
 
-        if (!clip || !audioSource) {
+        if (!clip || !audioSource)
+        {
             return;
         }
 
@@ -256,6 +272,12 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         _ = Instantiate(postGame);
+    }
+
+    //Метод для настройки сцены и спауна необходимых объектов    
+    private void SceneObjectCreate()
+    {
+        _ = Instantiate(levelData.Planet, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
 }

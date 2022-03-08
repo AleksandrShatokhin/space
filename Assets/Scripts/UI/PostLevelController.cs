@@ -42,17 +42,17 @@ public class PostLevelController : MonoBehaviour
 
     void ToNextLevel()
     {
-
-
         string currentScene = SceneManager.GetActiveScene().name;
-            int levelNumber = int.Parse(Regex.Match(currentScene, @"\d+").Value);
+        int levelNumber = int.Parse(Regex.Match(currentScene, @"\d+").Value);
 
-            string nextLevel = $"Level{++levelNumber}";
+        string nextLevel = $"Level{++levelNumber}";
 
-            //Перед загрузкой новой сцены снять игру с паузы
-            Time.timeScale = 1.0f;
+        //Перед загрузкой новой сцены снять игру с паузы
+        Time.timeScale = 1.0f;
+
+        //Сразу задать следующий номер для уровня
+        DataStore.SetInt(DataStore.level, GameController.GetInstance().LevelNumber + 1);
         SceneManager.LoadScene(nextLevel);
-
     }
 
 
@@ -63,7 +63,7 @@ public class PostLevelController : MonoBehaviour
 
     void Restart()
     {
-            Time.timeScale = 1.0f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

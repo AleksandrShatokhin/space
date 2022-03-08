@@ -20,8 +20,6 @@ public class BuffShield : Influencer
         // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
-            
-
             PlayerController.isShield = true;
             Destroy(gameObject);
             Instantiate(shield, transform.position, transform.rotation);
