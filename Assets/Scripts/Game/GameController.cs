@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     private PlayerController player;
 
     [SerializeField]
-    private int levelNumber;
+    static private int levelNumber;
 
     public SpawnerBox spawner;
 
@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
         instance = this;
 
         //Получить данные по номеру уровня
-        LevelNumber = DataStore.GetInt(DataStore.level);
+        // LevelNumber = DataStore.GetInt(DataStore.level);
 
         levelData = levelsData[LevelNumber];
         allEnemies = levelData.EnemiesInWave * levelData.NumberOfWaves;

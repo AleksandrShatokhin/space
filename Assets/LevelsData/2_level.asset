@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a01b6ba1e5144e73860599734d79a77, type: 3}
   m_Name: 2_level
   m_EditorClassIdentifier: 
-  spawnEveryNSeconds: 0
-  enemiesInWave: 0
-  numberOfWaves: 0
-  influencerSpawnRate: 0
-  influencerChance: 0
+  spawnEveryNSeconds: 1.5
+  enemiesInWave: 8
+  numberOfWaves: 3
+  influencerSpawnRate: 1
+  influencerChance: 1
+  planet: {fileID: 446993443928477295, guid: 8231c580da486429985cc2d25ca57642, type: 3}
+  enemies:
+  - {fileID: 7881811179783615571, guid: 4e5941b3b5728428b8e8133812f533a3, type: 3}
+  - {fileID: 4014471606503684602, guid: 26cabe228385a7348b32702d72d420cd, type: 3}
+  - {fileID: 3344772250948986864, guid: 56511cf0f770fc54e95ec9136a1618fb, type: 3}
+  influencers:
+  - {fileID: 6396367849970775477, guid: 9a41b72f0c7d22c4f933834a49dbb76b, type: 3}
+  - {fileID: 2020165762366178656, guid: 39076c63fb94094499953a0720eecff5, type: 3}
+  - {fileID: 810726798811055707, guid: d49c91f545e10284bb2693de8ea3cd0d, type: 3}
