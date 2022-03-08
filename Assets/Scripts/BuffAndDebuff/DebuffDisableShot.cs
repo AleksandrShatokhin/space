@@ -10,8 +10,13 @@ public class DebuffDisableShot : Influencer
 
     void Start()
     {
-        targetPlayer = GameObject.Find("Player").GetComponent<Transform>();
-        rotDebuff = transform.rotation;
+        GameObject player = GameObject.Find("Player");
+
+        if (player)
+        {
+            targetPlayer = player.GetComponent<Transform>();
+            rotDebuff = transform.rotation;
+        }
     }
 
     void Update()
