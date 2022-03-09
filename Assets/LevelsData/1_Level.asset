@@ -15,13 +15,9 @@ MonoBehaviour:
   spawnEveryNSeconds: 1.5
   enemiesInWave: 8
   numberOfWaves: 2
-  influencerSpawnRate: 1
+  influencerSpawnRate: 2
   influencerChance: 1
   planet: {fileID: 1758967431657836195, guid: 51c8c828f5d704f57ab25a8464fe1004, type: 3}
   enemies:
   - {fileID: 7881811179783615571, guid: 4e5941b3b5728428b8e8133812f533a3, type: 3}
-  - {fileID: 4014471606503684602, guid: 26cabe228385a7348b32702d72d420cd, type: 3}
-  influencers:
-  - {fileID: 6396367849970775477, guid: 9a41b72f0c7d22c4f933834a49dbb76b, type: 3}
-  - {fileID: 2020165762366178656, guid: 39076c63fb94094499953a0720eecff5, type: 3}
-  - {fileID: 810726798811055707, guid: d49c91f545e10284bb2693de8ea3cd0d, type: 3}
+  influencers: []
