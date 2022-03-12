@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainUIController : MonoBehaviour
 {
-    public TextMeshProUGUI centerText, quantityRocketsText, screenText;
+    public TextMeshProUGUI centerText, bulletsText, screenText;
     public static bool isPickedUpSlowing = false;
     public static bool isPickedUpShield = false;
     public static bool isPickedUpDisableShot = false;
@@ -148,17 +148,18 @@ public class MainUIController : MonoBehaviour
     void ProjectileOnScreen() // зададим условия выводимого изображения на экран по выбранному виду оружия игроком
     {
 
-        Weapons currentWeapon = GameController.GetInstance().GetPlayer().GetWeapon().id;
+        Weapons currentWeapon  = GameController.GetInstance().GetPlayer().GetWeapon().id;
+        string bullets = GameController.GetInstance().GetPlayer().GetWeapon().GetBullets().ToString();
 
         if (currentWeapon == Weapons.Rocket)
         {
             imageProjectile.sprite = rocketPr;
-            quantityRocketsText.text = GameController.GetInstance().GetPlayer().GetWeapon().GetBullets().ToString();
+            bulletsText.text = bullets;
         }
         else if(currentWeapon == Weapons.Laser)
         {
             imageProjectile.sprite = defaultPr;
-            quantityRocketsText.text = "∞";
+            bulletsText.text = bullets;
         }
     }
 

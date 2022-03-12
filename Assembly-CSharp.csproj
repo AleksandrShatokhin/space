@@ -50,6 +50,7 @@
      <Compile Include="Assets/Scripts/Enemies/EnemyBomber.cs" />
      <Compile Include="Assets/Scripts/Utilities/HealtComponent.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/BuffRocket.cs" />
+     <Compile Include="Assets/Scripts/Utilities/DataStore.cs" />
      <Compile Include="Assets/Scripts/Projectiles/Projectile.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/BlastWaveController.cs" />
      <Compile Include="Assets/Scripts/Player/PlayerController.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets/Scripts/ParticleSystem/ParticleSistemBlastWave.cs" />
      <Compile Include="Assets/Scripts/Utilities/Rotator.cs" />
      <Compile Include="Assets/Scripts/UI/ButtonShot.cs" />
+     <Compile Include="Assets/Scripts/ScriptableObjects/LevelSet/LevelData.cs" />
      <Compile Include="Assets/Scripts/Utilities/CameraController.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/BuffShield.cs" />
      <Compile Include="Assets/Scripts/ParticleSystem/BlastWaveCollider.cs" />
@@ -95,8 +97,6 @@
      <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
      <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
      <Compile Include="Assets/Scripts/ParticleSystem/BlastBombCollider.cs" />
-     <Compile Include="Assets/Scripts/ScriptableObjects/LevelSet/LevelData.cs" />
-     <Compile Include="Assets/Scripts/Utilities/DataStore.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

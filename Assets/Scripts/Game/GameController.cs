@@ -57,6 +57,10 @@ public class GameController : MonoBehaviour
     public AudioClip successSound;
     public AudioClip backgroundMusic;
 
+    [SerializeField]
+    private float minPlanetSize = 1;
+    [SerializeField]
+    private float maxPlanetSize = 1.5f;
 
 
     // Start is called before the first frame update
@@ -197,7 +201,8 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator SpawnBonus()
-    {
+    {   
+
         //Сразу выставляем признак, что не нужно запускать следующий спаун
         //Так как надо сначала выждать паузу, а затем уже 
         isInfluencerTryToSpawn = true;
@@ -209,7 +214,7 @@ public class GameController : MonoBehaviour
         float randomSeed = Random.Range(0.0f, 1.0f);
 
         //Если полученное значение входит в допустимую вероятность, то можно спаунить объект
-        if (randomSeed <= levelData.InfluencerChance)
+        if (randomSeed <= levelData.InfluencerChance && levelData.Influencers.Length != 0)
         {
             spawner.Spawn(GetInfluencer());
         }
@@ -220,6 +225,11 @@ public class GameController : MonoBehaviour
     //Получить случайный инфлюенсер
     GameObject GetInfluencer()
     {
+        if(levelData.Influencers.Length == 0)
+        {
+            return null;
+        }
+
         return levelData.Influencers[Random.Range(0, levelData.Influencers.Length)];
     }
 
@@ -274,10 +284,22 @@ public class GameController : MonoBehaviour
         _ = Instantiate(postGame);
     }
 
+    private void SpawnPlanet()
+    {
+        //Определить границы экрана и задать позицию для планеты
+        Vector3 limits = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
+        Vector3 planetPosition = new Vector3(Random.Range(-limits.x, limits.x), -30.0f, Random.Range(-limits.z, limits.z));
+        GameObject planet = Instantiate(levelData.Planet, planetPosition, Quaternion.identity);
+
+        //Установить случайный размер планеты для разного визуального эффекта 
+        float size = Random.Range(minPlanetSize, maxPlanetSize);
+        planet.transform.localScale = new Vector3(size, size, size);
+    }
+
     //Метод для настройки сцены и спауна необходимых объектов    
     private void SceneObjectCreate()
-    {
-        _ = Instantiate(levelData.Planet, new Vector3(0, 0, 0), Quaternion.identity);
+    {   
+        SpawnPlanet();
     }
 
 }
