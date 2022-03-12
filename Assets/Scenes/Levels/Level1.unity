@@ -10682,6 +10682,8 @@ MonoBehaviour:
   failSound: {fileID: 8300000, guid: 1de0f6b6c439e4ad1a08a37d2dcd657f, type: 3}
   successSound: {fileID: 8300000, guid: f71b642f910e04954bb891a908773e95, type: 3}
   backgroundMusic: {fileID: 8300000, guid: fa552f85221e34557a9cbeb1f7e6724a, type: 3}
+  minPlanetSize: 1
+  maxPlanetSize: 1.5
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10921,7 +10923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerText: {fileID: 506122259}
-  quantityRocketsText: {fileID: 1910747281}
+  bulletsText: {fileID: 1910747281}
   screenText: {fileID: 0}
   player: {fileID: 794347863}
   childImage: {fileID: 469888998}
@@ -16265,7 +16267,7 @@ GameObject:
   - component: {fileID: 1910747282}
   - component: {fileID: 1910747281}
   m_Layer: 5
-  m_Name: QuantityRockets
+  m_Name: Bullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

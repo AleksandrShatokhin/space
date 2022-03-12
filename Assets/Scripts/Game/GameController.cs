@@ -69,7 +69,7 @@ public class GameController : MonoBehaviour
         instance = this;
 
         //Получить данные по номеру уровня
-        // LevelNumber = DataStore.GetInt(DataStore.level);
+        // LevelNumber = DataStore.GetInt(DataStore.level); 
 
         levelData = levelsData[LevelNumber];
         allEnemies = levelData.EnemiesInWave * levelData.NumberOfWaves;
