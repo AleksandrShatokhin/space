@@ -97,6 +97,7 @@
      <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
      <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
      <Compile Include="Assets/Scripts/ParticleSystem/BlastBombCollider.cs" />
+     <Compile Include="Assets/Scripts/UI/MenuController.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
