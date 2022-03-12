@@ -372,7 +372,7 @@ RectTransform:
   m_Children:
   - {fileID: 1109231837}
   m_Father: {fileID: 760346975}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -751,9 +751,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 266726430}
   - {fileID: 795496683}
   - {fileID: 1746513466}
+  - {fileID: 266726430}
   m_Father: {fileID: 898713716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -858,7 +858,7 @@ RectTransform:
   m_Children:
   - {fileID: 569652741}
   m_Father: {fileID: 760346975}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1091,6 +1091,7 @@ GameObject:
   - component: {fileID: 898713715}
   - component: {fileID: 898713714}
   - component: {fileID: 898713713}
+  - component: {fileID: 898713717}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1180,6 +1181,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &898713717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898713712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ed2e36cb5b24c86b3c0b4aeb4d1cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueGO: {fileID: 266726429}
+  newGameGO: {fileID: 795496682}
+  exitGO: {fileID: 1746513465}
+  continueBtn: {fileID: 266726431}
+  newGameBtn: {fileID: 795496684}
+  exitBtn: {fileID: 1746513467}
 --- !u!1001 &1026187154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1477,7 +1496,7 @@ RectTransform:
   m_Children:
   - {fileID: 129595944}
   m_Father: {fileID: 760346975}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
