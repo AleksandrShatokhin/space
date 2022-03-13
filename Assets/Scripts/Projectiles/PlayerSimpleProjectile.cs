@@ -12,7 +12,7 @@ public class PlayerSimpleProjectile : Projectile
 
     override protected void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 6) // слой 6 - это enemy
+        if (collision.gameObject.layer == (int)Layers.Enemy) // слой 6 - это enemy
         {
             //collision.gameObject.GetComponent<EnemyBase>().Death();
             collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);

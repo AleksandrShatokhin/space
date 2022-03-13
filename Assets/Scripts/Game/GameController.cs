@@ -302,4 +302,10 @@ public class GameController : MonoBehaviour
         SpawnPlanet();
     }
 
+    //Метод на неуязвимость (для синхронизации разным скриптам)
+    public void GetInvulnerablePlayer(bool variable)
+    {
+        player.Invulnerable(variable);
+    }
+
 }

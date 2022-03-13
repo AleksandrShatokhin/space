@@ -120,6 +120,8 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 077b2e6cce38546a5b265d36692ab2a3, type: 3}
   deathSound: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
   hitSound: {fileID: 0}
+  projectileEnemy: {fileID: 0}
+  FirstShootWait: 2
   heartPrefab: {fileID: 1999070248628597430, guid: 363334295e95a984593b72a7d66dba7b, type: 3}
   counterAsteroid: 0
 --- !u!114 &-1179865243143540468

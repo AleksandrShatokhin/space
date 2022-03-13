@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour, Deathable
     public float tilt = 1.5f;
     public static float speedPlayer = 18.0f;
     public static bool isDisableShot = false; //для дебаффа отключения стрельбы
-    public static bool isShield = false; // переменные для баффа щита
+    private bool invulnerable; // контроль неуязвимости
 
     //Арсенал
     private Switcher gunSwitcher;
@@ -177,8 +177,11 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public void AddDamage(float dmg)
     {
-        GameController.GetInstance().PlaySound(hitPlayer);
-        GetComponent<HealtComponent>().Change(-dmg);
+        if (!invulnerable)
+        {
+            GameController.GetInstance().PlaySound(hitPlayer);
+            GetComponent<HealtComponent>().Change(-dmg);
+        }
     }
 
     public void AddHealth(byte hp)
@@ -226,6 +229,17 @@ public class PlayerController : MonoBehaviour, Deathable
         {
             animPlayer.SetBool("isShotLG", true);
         }
+    }
+
+    public bool Invulnerable()
+    {
+        return invulnerable;
+    }
+
+    public bool Invulnerable(bool variable)
+    {
+        invulnerable = variable;
+        return invulnerable;
     }
 
 

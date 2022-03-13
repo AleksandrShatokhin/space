@@ -33,12 +33,22 @@ public class ShieldController : MonoBehaviour
             }
         }
         if (isShield == false)
-        Destroy(gameObject);
+        {
+            Destroy(gameObject);
+            GameController.GetInstance().GetInvulnerablePlayer(false);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "PlayerProjectile" && other.gameObject.tag != "EnemyShip")
-        Destroy(other.gameObject);
+        {
+            Destroy(other.gameObject);
+
+            if (other.gameObject.tag == "Asteroid")
+            {
+                other.GetComponent<EnemyBase>().Death();
+            }    
+        }
     }
 }
