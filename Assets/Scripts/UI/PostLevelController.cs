@@ -51,7 +51,7 @@ public class PostLevelController : MonoBehaviour
         Time.timeScale = 1.0f;
 
         //Сразу задать следующий номер для уровня
-        GameController.GetInstance().LevelNumber += 1;
+        GameController.LevelNumber += 1;
         
         // SceneManager.LoadScene(nextLevel);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

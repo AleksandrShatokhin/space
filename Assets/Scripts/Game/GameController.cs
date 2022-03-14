@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     static public GameController GetInstance() => instance;
     private PlayerController player;
 
+    public int debugLevelNumber = 0;
+
     [SerializeField]
     static private int levelNumber;
 
@@ -48,8 +50,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private LevelData[] levelsData;
     public LevelData levelData;
-
-    public int LevelNumber { get => levelNumber; set => levelNumber = value; }
+    
 
     //Аудио свойства
     private AudioSource audioSource;
@@ -61,6 +62,8 @@ public class GameController : MonoBehaviour
     private float minPlanetSize = 1;
     [SerializeField]
     private float maxPlanetSize = 1.5f;
+    
+    public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
 
     // Start is called before the first frame update
@@ -70,6 +73,9 @@ public class GameController : MonoBehaviour
 
         //Получить данные по номеру уровня
         // LevelNumber = DataStore.GetInt(DataStore.level); 
+        if (debugLevelNumber > 0){
+            LevelNumber = debugLevelNumber;
+        }
 
         levelData = levelsData[LevelNumber];
         allEnemies = levelData.EnemiesInWave * levelData.NumberOfWaves;
