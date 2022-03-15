@@ -6,13 +6,19 @@ using TMPro;
 public class BuffShield : Influencer
 {
     public GameObject shield;
+    private MainUIController uiController;
+
+    private void Start()
+    {
+        uiController = GameObject.Find("MainUI").GetComponent<MainUIController>();
+    }
 
     private void ActionShield()
     {
         GameController.GetInstance().GetInvulnerablePlayer(true);
         Destroy(gameObject);
         Instantiate(shield, transform.position, transform.rotation);
-        MainUIController.isPickedUpShield = true; // для вызова тектса на экран игроку
+        uiController.GetCurrentText((int)BonusNumber.BuffShield); // для вызова тектса на экран игроку
     }
 
     protected override void OnTriggerEnter(Collider other)

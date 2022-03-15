@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\ParticleSystem\BlastBombCollider.cs" />
     <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
     <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
+    <Compile Include="Assets\Scripts\UI\CenterTextUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
