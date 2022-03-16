@@ -5,9 +5,11 @@ using UnityEngine;
 public class BuffRocket : Influencer
 {
     private int quantityRt;
+    private MainUIController uiController;
 
     void Start()
     {
+        uiController = GameObject.Find("MainUI").GetComponent<MainUIController>();
         quantityRt = Random.Range(2, 5);
     }
     
@@ -23,7 +25,9 @@ public class BuffRocket : Influencer
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
+            //MainUIController.isPickedUpRocket = true; // для вызова тектса на экран игроку
+            uiController.GetCurrentText((int)BonusNumber.BuffRocket);
+
         }
     }
 }

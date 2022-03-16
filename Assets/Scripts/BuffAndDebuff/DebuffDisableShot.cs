@@ -7,9 +7,12 @@ public class DebuffDisableShot : Influencer
     private Transform targetPlayer;
     private float distance;
     private Quaternion rotDebuff;
+    private MainUIController uiController;
 
     void Start()
     {
+        uiController = GameObject.Find("MainUI").GetComponent<MainUIController>();
+
         GameObject player = GameObject.Find("Player");
 
         if (player)
@@ -45,12 +48,14 @@ public class DebuffDisableShot : Influencer
         // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
+            // вызываем текст на экран по подбору
+            uiController.GetCurrentText((int)BonusNumber.DebuffDisableShot);
+
             if (TimerController.isDisable == false)
             {
                 TimerController.isDisable = true;
                 PlayerController.isDisableShot = true;
                 Destroy(gameObject);
-                MainUIController.isPickedUpDisableShot = true;
             }
             else
             {

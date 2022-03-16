@@ -5,14 +5,19 @@ using UnityEngine;
 public class BlastWaveController : Influencer
 {
     private GameObject player;
+    private MainUIController uiController;
 
     private void Start()
     {
         player = GameObject.Find("Player");
+        uiController = GameObject.Find("MainUI").GetComponent<MainUIController>();
     }
 
     protected override void OnTriggerEnter(Collider other)
     {
+        // для вызова тектса на экран игроку
+        uiController.GetCurrentText((int)BonusNumber.BuffBlastWave);
+
         // Реализуем базовый метод
         base.OnTriggerEnter(other);
 
@@ -21,7 +26,6 @@ public class BlastWaveController : Influencer
         {
             player.GetComponent<PlayerController>().StartBlastWave();
             Destroy(gameObject);
-            MainUIController.isPickedUpBlastWave = true; // для вызова тектса на экран игроку
         }
     }
 }

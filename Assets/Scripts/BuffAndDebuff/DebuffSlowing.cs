@@ -7,9 +7,11 @@ public class DebuffSlowing : Influencer
     private Transform targetPlayer;
     private float distance;
     private Quaternion rotDebuff;
+    private MainUIController uiController;
 
     void Start()
     {
+        uiController = GameObject.Find("MainUI").GetComponent<MainUIController>();
         GameObject player = GameObject.Find("Player");
 
         if (player)
@@ -45,12 +47,14 @@ public class DebuffSlowing : Influencer
         // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
+            // для вызова тектса на экран игроку
+            uiController.GetCurrentText((int)BonusNumber.DebuffSlowing);
+
             if (TimerController.isSlowing == false)
             {
                 TimerController.isSlowing = true;
                 PlayerController.speedPlayer = 10.0f;
                 Destroy(gameObject);
-                MainUIController.isPickedUpSlowing = true; // для вызова тектса на экран игроку
             }
             else
             {
