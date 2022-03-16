@@ -56,6 +56,7 @@
      <Compile Include="Assets/Scripts/Player/PlayerController.cs" />
      <Compile Include="Assets/Scripts/UI/SceneManagerForLevelSelect.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/NewMonoBehaviour.cs" />
+     <Compile Include="Assets/Scripts/Utilities/TransformMover.cs" />
      <Compile Include="Assets/SampleScenes/Scripts/CameraSwitch.cs" />
      <Compile Include="Assets/Scripts/Utilities/GarbageCollector.cs" />
      <Compile Include="Assets/Scripts/Enemies/EnemyShip.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets/Scripts/ScriptableObjects/LevelSet/LevelData.cs" />
      <Compile Include="Assets/Scripts/Utilities/CameraController.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/BuffShield.cs" />
+     <Compile Include="Assets/Scripts/UI/CenterTextUI.cs" />
      <Compile Include="Assets/Scripts/ParticleSystem/BlastWaveCollider.cs" />
      <Compile Include="Assets/Scripts/Base/Deathable.cs" />
      <Compile Include="Assets/Scripts/Utilities/SpawnerBox.cs" />
@@ -98,7 +100,6 @@
      <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
      <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
      <Compile Include="Assets/Scripts/ParticleSystem/BlastBombCollider.cs" />
-     <Compile Include="Assets/Scripts/Utilities/TransformMover.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
