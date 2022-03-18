@@ -88,10 +88,12 @@ public class BombEnemyShip : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     { // пока реализую, что при соприкосновении с игроком взрыв происходит сразу (бомба взрывается)
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
+        {
             counter = 0;
+        }
     }
 
     private void OnDestroy()
