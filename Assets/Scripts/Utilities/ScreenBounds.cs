@@ -5,17 +5,24 @@ using UnityEngine;
 public class ScreenBounds : MonoBehaviour
 {
     //Границы перемещения игрока на экране
-    Vector3 moveBounds;
-    public float playerWidth;
-    public float playerHeight;
-    public MeshRenderer mr;
+    private Vector3 moveBounds;
+    private float playerWidth;
+    private float playerHeight;
+    [SerializeField] private MeshRenderer mr;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //Используя ScreenToWorldPoint. размеры окна и позицию по высоте камеры формируем границы движения игрока
-        moveBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
-        
+        StartCoroutine(SearchScreenBounds());
+    }
+
+    // вызывая сразу напряму в старте наблюдаю ошибку, что сылка не задана на объект
+    // сделал небольшую задержку и на данный момент всё работает
+    IEnumerator SearchScreenBounds()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+        moveBounds = GameController.GetInstance().ScreenBound();
+
         playerWidth = mr.bounds.size.x / 2;
         playerHeight = mr.bounds.size.z / 2;
 
@@ -23,7 +30,12 @@ public class ScreenBounds : MonoBehaviour
         moveBounds.z -= playerHeight;
     }
 
-    // Update is called once per frame
+    // когда появляется(исчезает) босс, необходимо задать новые границы движения
+    public void SearchNewScreenBounds()
+    {
+        StartCoroutine(SearchScreenBounds());
+    }
+
     void LateUpdate()
     {
         //Сохранить текущее положение корабля

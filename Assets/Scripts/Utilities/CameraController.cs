@@ -27,4 +27,10 @@ public class CameraController : MonoBehaviour
         shake = false;
         
     }
+
+    public void NewScreenBounds()
+    {
+        GameController.GetInstance().ScreenBound();
+        GameObject.Find("Player").GetComponent<ScreenBounds>().SearchNewScreenBounds();
+    }
 }

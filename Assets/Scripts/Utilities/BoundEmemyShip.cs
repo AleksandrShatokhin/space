@@ -10,14 +10,23 @@ public class BoundEmemyShip : MonoBehaviour
 
     void Start()
     {
-        moveBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
+        StartCoroutine(SearchScreenBounds());
+    }
+
+    // вызывая сразу напряму в старте наблюдаю ошибку, что сылка не задана на объект
+    // сделал небольшую задержку и на данный момент всё работает
+    IEnumerator SearchScreenBounds()
+    {
+        yield return new WaitForSeconds(0.01f);
+
+        moveBounds = GameController.GetInstance().ScreenBound();
 
         enemyWidth = mr.bounds.size.x / 2;
 
         moveBounds.x -= enemyWidth;
     }
 
-    void LateUpdate()
+        void LateUpdate()
     {
         Vector3 boundsTransform = transform.position;
 

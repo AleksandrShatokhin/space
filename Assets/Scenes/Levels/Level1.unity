@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0011810535, g: 0.0012213722, b: 0.0011747914, a: 1}
+  m_IndirectSpecularColor: {r: 0.0013341557, g: 0.0013341557, b: 0.0013341557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10539,7 +10539,7 @@ MonoBehaviour:
   postGame: {fileID: 797679595789509714, guid: aef3e894c20e7420e891f850875ada82, type: 3}
   waitAfterWave: 5
   waitOnStart: 2
-  shouldSpawnWave: 1
+  shouldSpawnWave: 0
   levelsData:
   - {fileID: 11400000, guid: 9020ecdb89d1b44ed8a9d1aaf73b3675, type: 2}
   - {fileID: 11400000, guid: 618618e6a5d4e4d5d81a4f09b80cabb7, type: 2}

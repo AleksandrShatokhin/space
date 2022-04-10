@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private LevelData[] levelsData;
     public LevelData levelData;
-    
+
 
     //Аудио свойства
     private AudioSource audioSource;
@@ -62,7 +62,9 @@ public class GameController : MonoBehaviour
     private float minPlanetSize = 1;
     [SerializeField]
     private float maxPlanetSize = 1.5f;
-    
+
+    private Vector3 moveBounds;
+
     public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
 
@@ -73,7 +75,8 @@ public class GameController : MonoBehaviour
 
         //Получить данные по номеру уровня
         // LevelNumber = DataStore.GetInt(DataStore.level); 
-        if (debugLevelNumber > 0){
+        if (debugLevelNumber > 0)
+        {
             LevelNumber = debugLevelNumber;
         }
 
@@ -207,7 +210,7 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator SpawnBonus()
-    {   
+    {
 
         //Сразу выставляем признак, что не нужно запускать следующий спаун
         //Так как надо сначала выждать паузу, а затем уже 
@@ -231,7 +234,7 @@ public class GameController : MonoBehaviour
     //Получить случайный инфлюенсер
     GameObject GetInfluencer()
     {
-        if(levelData.Influencers.Length == 0)
+        if (levelData.Influencers.Length == 0)
         {
             return null;
         }
@@ -304,7 +307,7 @@ public class GameController : MonoBehaviour
 
     //Метод для настройки сцены и спауна необходимых объектов    
     private void SceneObjectCreate()
-    {   
+    {
         SpawnPlanet();
     }
 
@@ -312,6 +315,14 @@ public class GameController : MonoBehaviour
     public void GetInvulnerablePlayer(bool variable)
     {
         player.Invulnerable(variable);
+    }
+
+    public Vector3 ScreenBound()
+    {
+        //Используя ScreenToWorldPoint. размеры окна и позицию по высоте камеры формируем границы движения
+        moveBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
+
+        return moveBounds;
     }
 
 }
