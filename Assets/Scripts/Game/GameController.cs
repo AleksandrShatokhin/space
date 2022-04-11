@@ -30,18 +30,14 @@ public class GameController : MonoBehaviour
 
     private int enemiesKilled = 0;
 
-    //Частота спауна бонусов в игре
-    // public float influencerSpawnRate = 5.0f;
-
-    //Вероятность спауна бонуса 1 = 100%
-    // public float influencerChance = 1.0f;
-
     private GameObject lastEnemy;
 
     //Состояния игры
     private bool isGameOver = false;
     private bool isLevelEnded = false;
     private bool isInfluencerTryToSpawn = false;
+
+    private bool isBossMode = false;
 
     //Параметр для контроля спауна волн.
     //Можно отключить извне для тестов
@@ -66,7 +62,6 @@ public class GameController : MonoBehaviour
     private Vector3 moveBounds;
 
     public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
-
 
     // Start is called before the first frame update
     void Start()
@@ -324,5 +319,12 @@ public class GameController : MonoBehaviour
 
         return moveBounds;
     }
+
+    //Управление режимом Boss Fight
+    public bool IsBossMode() => isBossMode;
+
+    public void SetBossMode() => isBossMode = true;
+
+    public void SetBossModeOff() => isBossMode = false;
 
 }

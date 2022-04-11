@@ -15,15 +15,15 @@ public class BlastWaveController : Influencer
 
     protected override void OnTriggerEnter(Collider other)
     {
-        // для вызова тектса на экран игроку
-        uiController.GetCurrentText((int)BonusNumber.BuffBlastWave);
-
+    
         // Реализуем базовый метод
         base.OnTriggerEnter(other);
 
         // индивидуальные действия по игроку
         if (other.gameObject.tag == "Player")
         {
+            // для вызова тектса на экран игроку
+            uiController.GetCurrentText((int)BonusNumber.BuffBlastWave);
             player.GetComponent<PlayerController>().StartBlastWave();
             Destroy(gameObject);
         }
