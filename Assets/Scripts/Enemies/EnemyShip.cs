@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyShip : EnemyBase
 {
-    private Transform targetLookAtPlayer;
-
     public GameObject leftEnemyGun;
     public GameObject rightEnemyGun;
     public GameObject EnemyShipProjectile;

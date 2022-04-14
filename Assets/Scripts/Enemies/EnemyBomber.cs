@@ -6,7 +6,6 @@ public class EnemyBomber : EnemyBase
 {
     private Vector3 startPosEnemyBomber, newPosEnemyBomber;
     private float step = 0.0f;
-    private Transform targetLookAtPlayer;
     public GameObject bombPrefab, gun;
     private Animator animShot;
 

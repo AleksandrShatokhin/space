@@ -6,17 +6,21 @@ public class BossController : EnemyBase
 {
     private Animator animatorCamera;
 
-    private Transform targetLookAtPlayer;
     [SerializeField] private GameObject leftBlasterGun, rightBlasterGun;
     [SerializeField] private GameObject spawnLeftBlasterProjectile, spawnRightBlasterProjectile;
-    [SerializeField] private GameObject blasterProjectile;
+    [SerializeField] private GameObject spawnLeftBombProjectile, spawnRightBombProjectile;
+    [SerializeField] private GameObject blasterProjectile, bombProjectile;
     private bool isShotLeftBlasterGun, isShotRightBlasterGun;
 
     private Vector3 startPositionBoss, newPositionBoss;
     private float step = 0.0f;
 
+    private float firstDelay;
+
     void Start()
     {
+        firstDelay = Random.Range(0.5f, 3);
+
         // вызываем отдаление камеры
         animatorCamera = Camera.main.GetComponent<Animator>();
         animatorCamera.SetBool("isPlus", true);
@@ -31,12 +35,12 @@ public class BossController : EnemyBase
 
     void Update()
     {
-        LookAtGuns();
+        LookAtBlasterGuns();
         Movement();
     }
-    
+
     // проверим относительное положение позиций player и boss и после зададим поворот бластеров в сторону player
-    private void LookAtGuns()
+    private void LookAtBlasterGuns()
     {
         Vector3 relativePosForLeftGun = targetLookAtPlayer.position - leftBlasterGun.transform.position;
         Vector3 relativePosForRightGun = targetLookAtPlayer.position - rightBlasterGun.transform.position;
@@ -47,11 +51,11 @@ public class BossController : EnemyBase
         leftBlasterGun.transform.rotation = rotationBossLeftGun;
         rightBlasterGun.transform.rotation = rotationBossRightGun;
 
-        AngleBounds();
+        BlasterRotationBounds();
     }
 
     // зададим услови€ ограничений движени€ пушек
-    private void AngleBounds()
+    private void BlasterRotationBounds()
     {
         float minAngleLeft = 35.0f, maxAngleLeft = 195.0f;
         float minAngleRight = 160.0f, maxAngleRight = 325.0f;
@@ -102,8 +106,6 @@ public class BossController : EnemyBase
     // корутина левого бластера
     IEnumerator ShotLeftBlasterGun()
     {
-        float firstDelay = Random.Range(1, 3);
-
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
@@ -120,8 +122,6 @@ public class BossController : EnemyBase
     // корутина правого бластера
     IEnumerator ShotRightBlasterGun()
     {
-        float firstDelay = Random.Range(1, 3);
-
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
@@ -138,8 +138,45 @@ public class BossController : EnemyBase
     // метод стрельбы (думаю как то собирать всЄ в одном месте)
     private void BossShooting()
     {
+        // запускаем стрельбу из бластеров
         StartCoroutine(ShotLeftBlasterGun());
         StartCoroutine(ShotRightBlasterGun());
+
+        // запускаем стрельбу бомбами
+        StartCoroutine(ShotLeftBombGun());
+        StartCoroutine(ShotRightBombGun());
+    }
+
+    // корутина левой бомбы
+    IEnumerator ShotLeftBombGun()
+    {
+        yield return new WaitForSeconds(firstDelay);
+
+        while (true)
+        {
+            if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100)
+            {
+                Instantiate(bombProjectile, spawnLeftBombProjectile.transform.position, Quaternion.identity);
+            }
+
+            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+        }
+    }
+
+    // корутина правой бомбы
+    IEnumerator ShotRightBombGun()
+    {
+        yield return new WaitForSeconds(firstDelay);
+
+        while (true)
+        {
+            if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100)
+            {
+                Instantiate(bombProjectile, spawnRightBombProjectile.transform.position, Quaternion.identity);
+            }
+
+            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+        }
     }
 
     //зададим движение вражеского корабл€

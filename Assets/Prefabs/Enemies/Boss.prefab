@@ -289,6 +289,36 @@ Transform:
   m_Father: {fileID: 7559757568189588105}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3075850168967546420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4779842478898285531}
+  m_Layer: 0
+  m_Name: SpawnRightBombProjectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4779842478898285531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075850168967546420}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -70, y: -16.5, z: 0}
+  m_LocalScale: {x: 5.5555553, y: 5.5555553, z: 5.5555553}
+  m_Children: []
+  m_Father: {fileID: 6747877646387383370}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3935559173889883955
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +628,8 @@ Transform:
   - {fileID: 1492759272590284370}
   - {fileID: 4074518200939257044}
   - {fileID: 3491206371913852940}
+  - {fileID: 735987076761016187}
+  - {fileID: 4779842478898285531}
   - {fileID: 8222200499823970086}
   - {fileID: 7333187151014093587}
   - {fileID: 280871418872063221}
@@ -628,9 +660,10 @@ MonoBehaviour:
   rightBlasterGun: {fileID: 7056396759173264713}
   spawnLeftBlasterProjectile: {fileID: 1833626131149814500}
   spawnRightBlasterProjectile: {fileID: 5579480561043211619}
+  spawnLeftBombProjectile: {fileID: 6446323469651948717}
+  spawnRightBombProjectile: {fileID: 3075850168967546420}
   blasterProjectile: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
-  isShotLeftBlasterGun: 0
-  isShotRightBlasterGun: 0
+  bombProjectile: {fileID: 2586940537171241702, guid: 7e4bf103534c842ff919790c14238030, type: 3}
 --- !u!114 &5841346117408434716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +690,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 33
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6446323469651948717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735987076761016187}
+  m_Layer: 0
+  m_Name: SpawnLeftBombProjectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &735987076761016187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446323469651948717}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 70, y: -16.5, z: 0}
+  m_LocalScale: {x: 5.5555553, y: 5.5555553, z: 5.5555553}
+  m_Children: []
+  m_Father: {fileID: 6747877646387383370}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7056396759173264713
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_LocalScale.x
@@ -889,7 +952,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_LocalScale.x
@@ -967,7 +1030,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_LocalScale.x
@@ -1045,7 +1108,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1270859992181026970, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_LocalScale.x

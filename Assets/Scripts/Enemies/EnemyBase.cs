@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour, Deathable
 {
+    protected Transform targetLookAtPlayer;
 
     public float movementSpeed;
 
@@ -87,5 +88,17 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
             ShootSound();
         }
+    }
+
+    protected float AngleBetweenBossAndPlayer()
+    {
+        Vector3 targetPos = targetLookAtPlayer.transform.position;
+        targetPos.y = gameObject.transform.position.y;
+
+        Vector3 targetAngle = targetPos - gameObject.transform.position;
+
+        float angleBetween = Vector3.SignedAngle(targetAngle, gameObject.transform.forward, Vector3.up);
+
+        return angleBetween;
     }
 }
