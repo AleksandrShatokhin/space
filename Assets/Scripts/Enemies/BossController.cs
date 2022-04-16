@@ -1,9 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static System.Enum;
 
+
+public enum BossStages
+{
+    Stage1 = 1,
+    Stage2,
+    Stage3
+}
 public class BossController : EnemyBase
 {
+
+
     private Animator animatorCamera;
 
     [SerializeField] private GameObject leftBlasterGun, rightBlasterGun;
@@ -17,11 +27,21 @@ public class BossController : EnemyBase
 
     private float firstDelay;
 
+    [SerializeField]
+    private BossStages stage;
+    private int stageCount;
+    private float hpOnOneStage;
+
+
     void Start()
     {
+        stage = BossStages.Stage1;
+        stageCount = GetNames(typeof(BossStages)).Length;
+        hpOnOneStage = GetComponent<HealtComponent>().GetHealth() / stageCount;
+
         firstDelay = Random.Range(0.5f, 3);
 
-        // вызываем отдаление камеры
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         animatorCamera = Camera.main.GetComponent<Animator>();
         animatorCamera.SetBool("isPlus", true);
 
@@ -31,6 +51,7 @@ public class BossController : EnemyBase
         newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
 
         BossShooting();
+
     }
 
     void Update()
@@ -39,7 +60,7 @@ public class BossController : EnemyBase
         Movement();
     }
 
-    // проверим относительное положение позиций player и boss и после зададим поворот бластеров в сторону player
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ player пїЅ boss пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ player
     private void LookAtBlasterGuns()
     {
         Vector3 relativePosForLeftGun = targetLookAtPlayer.position - leftBlasterGun.transform.position;
@@ -54,13 +75,13 @@ public class BossController : EnemyBase
         BlasterRotationBounds();
     }
 
-    // зададим условия ограничений движения пушек
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     private void BlasterRotationBounds()
     {
         float minAngleLeft = 35.0f, maxAngleLeft = 195.0f;
         float minAngleRight = 160.0f, maxAngleRight = 325.0f;
 
-        // ограничиваем движение левой пушки
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (leftBlasterGun.transform.eulerAngles.y > maxAngleLeft)
         {
             leftBlasterGun.transform.rotation = Quaternion.Euler(leftBlasterGun.transform.rotation.x, maxAngleLeft, leftBlasterGun.transform.rotation.z);
@@ -71,7 +92,7 @@ public class BossController : EnemyBase
             leftBlasterGun.transform.rotation = Quaternion.Euler(leftBlasterGun.transform.rotation.x, minAngleLeft, leftBlasterGun.transform.rotation.z);
         }
 
-        // добавим условие для стрельбы
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (leftBlasterGun.transform.eulerAngles.y < maxAngleLeft && leftBlasterGun.transform.eulerAngles.y > minAngleLeft)
         {
             isShotLeftBlasterGun = true;
@@ -81,7 +102,7 @@ public class BossController : EnemyBase
             isShotLeftBlasterGun = false;
         }
 
-        // ограничиваем движение правой пушки
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (rightBlasterGun.transform.eulerAngles.y > maxAngleRight)
         {
             rightBlasterGun.transform.rotation = Quaternion.Euler(rightBlasterGun.transform.rotation.x, maxAngleRight, rightBlasterGun.transform.rotation.z);
@@ -92,7 +113,7 @@ public class BossController : EnemyBase
             rightBlasterGun.transform.rotation = Quaternion.Euler(rightBlasterGun.transform.rotation.x, minAngleRight, rightBlasterGun.transform.rotation.z);
         }
 
-        // добавим условие для стрельбы
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (rightBlasterGun.transform.eulerAngles.y < maxAngleRight && rightBlasterGun.transform.eulerAngles.y > minAngleRight)
         {
             isShotRightBlasterGun = true;
@@ -103,7 +124,7 @@ public class BossController : EnemyBase
         }
     }
 
-    // корутина левого бластера
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     IEnumerator ShotLeftBlasterGun()
     {
         yield return new WaitForSeconds(firstDelay);
@@ -119,7 +140,7 @@ public class BossController : EnemyBase
         }
     }
 
-    // корутина правого бластера
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     IEnumerator ShotRightBlasterGun()
     {
         yield return new WaitForSeconds(firstDelay);
@@ -135,53 +156,79 @@ public class BossController : EnemyBase
         }
     }
 
-    // метод стрельбы (думаю как то собирать всё в одном месте)
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ)
     private void BossShooting()
     {
-        // запускаем стрельбу из бластеров
+
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         StartCoroutine(ShotLeftBlasterGun());
         StartCoroutine(ShotRightBlasterGun());
 
-        // запускаем стрельбу бомбами
+
+
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         StartCoroutine(ShotLeftBombGun());
         StartCoroutine(ShotRightBombGun());
+
+        if (stage == BossStages.Stage2)
+        {
+            return;
+        }
+
+        if (stage == BossStages.Stage3)
+        {
+            return;
+        }
+
     }
 
-    // корутина левой бомбы
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     IEnumerator ShotLeftBombGun()
     {
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
         {
-            if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100)
+
+            if (stage >= BossStages.Stage2)
             {
-                Instantiate(bombProjectile, spawnLeftBombProjectile.transform.position, Quaternion.identity);
+
+
+
+                if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100)
+                {
+                    Instantiate(bombProjectile, spawnLeftBombProjectile.transform.position, Quaternion.identity);
+                }
+
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
         }
     }
 
-    // корутина правой бомбы
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     IEnumerator ShotRightBombGun()
     {
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
         {
-            if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100)
+            if (stage >= BossStages.Stage2)
             {
-                Instantiate(bombProjectile, spawnRightBombProjectile.transform.position, Quaternion.identity);
+
+                if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100)
+                {
+                    Instantiate(bombProjectile, spawnRightBombProjectile.transform.position, Quaternion.identity);
+                }
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
         }
     }
 
-    //зададим движение вражеского корабля
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void Movement()
-    { 
+    {
         if (step < 1)
         {
             transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
@@ -195,4 +242,38 @@ public class BossController : EnemyBase
             newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
         }
     }
+
+
+    private void NextStage()
+    {
+        if (stage == BossStages.Stage3)
+        {
+            return;
+        }
+
+        stage += 1;
+    }
+
+    private void ChangeBossStageProcess()
+    {
+        float hp = GetComponent<HealtComponent>().GetHealth();
+        float startHp = GetComponent<HealtComponent>().GetStartHealth();
+
+        Debug.Log(startHp - hp);
+        Debug.Log(hpOnOneStage * (int)stage);
+
+        if (startHp - hp >= hpOnOneStage * (int)stage)
+        {
+            NextStage();
+        }
+
+        Debug.Log(stage);
+    }
+
+    public override void AddDamage(float damage)
+    {
+        base.AddDamage(damage);
+        ChangeBossStageProcess();
+    }
+
 }

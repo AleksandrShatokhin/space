@@ -39,7 +39,7 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     }
 
 
-    public void AddDamage(float damage)
+    public virtual void AddDamage(float damage)
     {
         HitSound();
         _ = GetComponent<HealtComponent>().Change(-damage);

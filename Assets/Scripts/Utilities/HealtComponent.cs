@@ -11,7 +11,13 @@ public class HealtComponent : MonoBehaviour
      */
 
     public float health;
+
+    private float startHealth;
     private Deathable deathableParent;
+
+    void Start(){
+        startHealth = health;
+    }
 
     public bool Change(float hp)
     {
@@ -26,10 +32,10 @@ public class HealtComponent : MonoBehaviour
             isDead = true;
         }
 
-        if (health > 5) //если подобраное сердечко дает больше определенного значения
-        {
-            health = 5;
-        }
+        // if (health > 5) //если подобраное сердечко дает больше определенного значения
+        // {
+        //     health = 5;
+        // }
 
         UpdatePlayerHealthBar();
 
@@ -60,4 +66,7 @@ public class HealtComponent : MonoBehaviour
         pc.healthBar.SetValue(health);
 
     }
+
+
+    public float GetStartHealth() => startHealth;
 }
