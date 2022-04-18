@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 921307857323388051}
   - component: {fileID: 3111375827327621209}
   - component: {fileID: 4389961206446437076}
-  - component: {fileID: 4389961206446437099}
   - component: {fileID: 484575486705408385}
+  - component: {fileID: -2098244380841374754}
   m_Layer: 8
   m_Name: BossRocket
   m_TagString: PlayerProjectile
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3471483272150006156}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 15, y: 15, z: 75}
   m_Children:
   - {fileID: 4389961206839681576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &921307857323388051
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -101,25 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4389961206446437099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3471483272150006156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313f12aecbdadc5468bc4c03ad5a1d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 15
-  rocketSpeed: 8
-  damage: 1
-  flaresEffect: {fileID: 0}
-  flaresDestroyTime: 0.3
-  explosionSound: {fileID: 8300000, guid: dd2ced0dfc58c44b2b53b263776dd9a3, type: 3}
-  blastRocket: {fileID: 5366260612528004933, guid: 1abd372462b8e314bbe4169664c981bc, type: 3}
 --- !u!65 &484575486705408385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,11 +109,32 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3471483272150006156}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.1, z: 0.02}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.02, y: 0.021727333, z: 0.02}
+  m_Center: {x: 0, y: -0.0001393204, z: 0}
+--- !u!114 &-2098244380841374754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471483272150006156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281fbc4d01b99d74092c9b49907ffa04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 15
+  rocketSpeed: 8
+  bossRocketSpeed: 15
+  damage: 1
+  flaresEffect: {fileID: 0}
+  flaresDestroyTime: 0.3
+  explosionSound: {fileID: 0}
+  blastBossRocket: {fileID: 5014036446773065016, guid: 69b01e42c3be47744a9f3a716f1a777f, type: 3}
+  indicatorTarget: {fileID: 3261866806356040388, guid: 41a526980f1f6c0459b56e19263d8694, type: 3}
 --- !u!1 &4389961206839681581
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public abstract class Projectile : MonoBehaviour
     SphereCollider sc;
     public float projectileSpeed = 15.0f;
     public float rocketSpeed = 8.0f;
+    public float bossRocketSpeed = 15.0f;
     public float damage = 1.0f;
 
     public GameObject flaresEffect;
@@ -31,6 +32,11 @@ public abstract class Projectile : MonoBehaviour
     virtual protected void Rocket() //если игроком выбраны ракеты
     {
         transform.Translate(Vector3.forward * Time.deltaTime * rocketSpeed);
+    }
+
+    virtual protected void BossRocket() //если игроком выбраны ракеты
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * bossRocketSpeed);
     }
 
 

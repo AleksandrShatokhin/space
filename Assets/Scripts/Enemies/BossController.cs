@@ -12,14 +12,13 @@ public enum BossStages
 }
 public class BossController : EnemyBase
 {
-
-
     private Animator animatorCamera;
 
     [SerializeField] private GameObject leftBlasterGun, rightBlasterGun;
     [SerializeField] private GameObject spawnLeftBlasterProjectile, spawnRightBlasterProjectile;
     [SerializeField] private GameObject spawnLeftBombProjectile, spawnRightBombProjectile;
-    [SerializeField] private GameObject blasterProjectile, bombProjectile;
+    [SerializeField] private GameObject spawnLeftRocketProjectile, spawnRightRocketProjectile;
+    [SerializeField] private GameObject blasterProjectile, bombProjectile, rocketProjectile;
     private bool isShotLeftBlasterGun, isShotRightBlasterGun;
 
     private Vector3 startPositionBoss, newPositionBoss;
@@ -164,11 +163,11 @@ public class BossController : EnemyBase
         StartCoroutine(ShotLeftBlasterGun());
         StartCoroutine(ShotRightBlasterGun());
 
-
-
         // ��������� �������� �������
         StartCoroutine(ShotLeftBombGun());
         StartCoroutine(ShotRightBombGun());
+
+        StartCoroutine(ShootingRocket());
 
         if (stage == BossStages.Stage2)
         {
@@ -189,17 +188,12 @@ public class BossController : EnemyBase
 
         while (true)
         {
-
             if (stage >= BossStages.Stage2)
             {
-
-
-
                 if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100)
                 {
                     Instantiate(bombProjectile, spawnLeftBombProjectile.transform.position, Quaternion.identity);
                 }
-
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
@@ -215,7 +209,6 @@ public class BossController : EnemyBase
         {
             if (stage >= BossStages.Stage2)
             {
-
                 if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100)
                 {
                     Instantiate(bombProjectile, spawnRightBombProjectile.transform.position, Quaternion.identity);
@@ -223,6 +216,51 @@ public class BossController : EnemyBase
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+        }
+    }
+
+    // собираем левые и правые и рганизовываем порядок стрельбы рокетами по зоне
+    IEnumerator ShootingRocket()
+    {
+        while (true)
+        {
+            if (stage >= BossStages.Stage3)
+            {
+                StartCoroutine(ShotLeftRocketGun());
+                StartCoroutine(ShotRightRocketGun());
+            }
+
+            yield return new WaitForSeconds(Mathf.Lerp(5, 10, Random.value));
+        }
+    }
+
+    // цикл стрельбы из левого лаунчера рокетами
+    IEnumerator ShotLeftRocketGun()
+    {
+        int maxCount = 5;
+        int currentCount = 0;
+
+        while (currentCount < maxCount)
+        {
+            currentCount += 1;
+            Instantiate(rocketProjectile, spawnLeftRocketProjectile.transform.position, rocketProjectile.transform.rotation);
+
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    // цикл стрельбы из правого лаунчера рокетами
+    IEnumerator ShotRightRocketGun()
+    {
+        int maxCount = 5;
+        int currentCount = 0;
+
+        while (currentCount < maxCount)
+        {
+            currentCount += 1;
+            Instantiate(rocketProjectile, spawnRightRocketProjectile.transform.position, rocketProjectile.transform.rotation);
+
+            yield return new WaitForSeconds(0.3f);
         }
     }
 

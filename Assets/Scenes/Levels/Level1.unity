@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0011810535, g: 0.0012213722, b: 0.0011747914, a: 1}
+  m_IndirectSpecularColor: {r: 0.0013341557, g: 0.0013341557, b: 0.0013341557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10879,10 +10879,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5841346117408434716, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
-      propertyPath: health
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 6264109450077427440, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
       propertyPath: m_Name
       value: Boss
