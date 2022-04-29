@@ -15,7 +15,7 @@ public class BossRocket : Projectile
 
     void Start()
     {
-        randomPoint = new Vector3(Random.Range(-40, 40), 0, Random.Range(-20, 10));
+        RandomPoint();
     }
 
     override protected void FixedUpdate()
@@ -74,5 +74,19 @@ public class BossRocket : Projectile
             transform.LookAt(randomPoint);
             Indicator();
         }
+    }
+
+    // генерим случайную точку в зоне границ экрана
+    private Vector3 RandomPoint()
+    {
+        Vector3 centerPoint = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.transform.position.y));
+        Vector3 screenBounds = GameController.GetInstance().ScreenBound();
+
+        float valueX = Random.Range(centerPoint.x - Random.Range(0, screenBounds.x), centerPoint.x + Random.Range(0, screenBounds.x));
+        float valueZ = Random.Range(centerPoint.z - Random.Range(0, screenBounds.z), centerPoint.z + Random.Range(0, screenBounds.z));
+
+        randomPoint = new Vector3(valueX, 0.0f, valueZ);
+
+        return randomPoint = new Vector3(valueX, 0.0f, valueZ);
     }
 }

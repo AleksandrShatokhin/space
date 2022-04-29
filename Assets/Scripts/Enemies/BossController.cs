@@ -21,8 +21,8 @@ public class BossController : EnemyBase
     [SerializeField] private GameObject blasterProjectile, bombProjectile, rocketProjectile;
     private bool isShotLeftBlasterGun, isShotRightBlasterGun;
 
-    private Vector3 startPositionBoss, newPositionBoss;
-    private float step = 0.0f;
+    private Vector3 startPositionBoss, newPositionBoss, betweenStagePositionBoss, currentPositionBoss;
+    private float step = 0.0f, stepBetweenStage = 0.0f;
 
     private float firstDelay;
 
@@ -48,6 +48,7 @@ public class BossController : EnemyBase
 
         startPositionBoss = transform.position;
         newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
+        betweenStagePositionBoss = new Vector3(0.0f, -10.0f, 28.0f);
 
         BossShooting();
 
@@ -130,7 +131,7 @@ public class BossController : EnemyBase
 
         while (true)
         {
-            if (isShotLeftBlasterGun)
+            if (isShotLeftBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnLeftBlasterProjectile.transform.position, spawnLeftBlasterProjectile.transform.rotation);
             }
@@ -146,7 +147,7 @@ public class BossController : EnemyBase
 
         while (true)
         {
-            if (isShotRightBlasterGun)
+            if (isShotRightBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnRightBlasterProjectile.transform.position, spawnRightBlasterProjectile.transform.rotation);
             }
@@ -158,7 +159,6 @@ public class BossController : EnemyBase
     // ����� �������� (����� ��� �� �������� �� � ����� �����)
     private void BossShooting()
     {
-
         // ��������� �������� �� ���������
         StartCoroutine(ShotLeftBlasterGun());
         StartCoroutine(ShotRightBlasterGun());
@@ -190,7 +190,7 @@ public class BossController : EnemyBase
         {
             if (stage >= BossStages.Stage2)
             {
-                if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100)
+                if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100 && GameController.GetInstance().IsBossMode())
                 {
                     Instantiate(bombProjectile, spawnLeftBombProjectile.transform.position, Quaternion.identity);
                 }
@@ -209,7 +209,7 @@ public class BossController : EnemyBase
         {
             if (stage >= BossStages.Stage2)
             {
-                if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100)
+                if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100 && GameController.GetInstance().IsBossMode())
                 {
                     Instantiate(bombProjectile, spawnRightBombProjectile.transform.position, Quaternion.identity);
                 }
@@ -224,7 +224,7 @@ public class BossController : EnemyBase
     {
         while (true)
         {
-            if (stage >= BossStages.Stage3)
+            if (stage >= BossStages.Stage3 && GameController.GetInstance().IsBossMode())
             {
                 StartCoroutine(ShotLeftRocketGun());
                 StartCoroutine(ShotRightRocketGun());
@@ -267,20 +267,22 @@ public class BossController : EnemyBase
     //������� �������� ���������� �������
     private void Movement()
     {
-        if (step < 1)
+        if (GameController.GetInstance().IsBossMode())
         {
-            transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
-            step = step + 0.001f;
-        }
+            if (step < 1)
+            {
+                transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
+                step = step + 0.001f;
+            }
 
-        if (step >= 1)
-        {
-            step = 0;
-            startPositionBoss = newPositionBoss;
-            newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
+            if (step >= 1)
+            {
+                step = 0;
+                startPositionBoss = newPositionBoss;
+                newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
+            }
         }
     }
-
 
     private void NextStage()
     {

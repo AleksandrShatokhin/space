@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     private bool isLevelEnded = false;
     private bool isInfluencerTryToSpawn = false;
 
-    private bool isBossMode = false;
+    [SerializeField] private bool isBossMode = false;
 
     //Параметр для контроля спауна волн.
     //Можно отключить извне для тестов
