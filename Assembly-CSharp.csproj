@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Utilities\Weapon.cs" />
     <Compile Include="Assets\Scripts\Utilities\HealtComponent.cs" />
     <Compile Include="Assets\Scripts\BuffAndDebuff\BuffRocket.cs" />
+    <Compile Include="Assets\Scripts\Utilities\IndicatorForBossRocket.cs" />
     <Compile Include="Assets\Scripts\Enemies\BossController.cs" />
     <Compile Include="Assets\Scripts\Utilities\DataStore.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\Scripts\Utilities\Switcher.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\BossRocket.cs" />
     <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
     <Compile Include="Assets\Scripts\Player\ShieldController.cs" />
     <Compile Include="Assets\Scripts\ParticleSystem\ParticleSistemBlastWave.cs" />
@@ -118,8 +120,7 @@
     <Compile Include="Assets\Scripts\ParticleSystem\BlastBombCollider.cs" />
     <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
     <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
-    <Compile Include="Assets\Scripts\Projectiles\BossRocket.cs" />
-    <Compile Include="Assets\Scripts\Utilities\IndicatorForBossRocket.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BossState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

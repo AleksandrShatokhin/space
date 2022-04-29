@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour
 
     private Vector3 moveBounds;
 
+
     public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
     // Start is called before the first frame update
@@ -325,6 +326,11 @@ public class GameController : MonoBehaviour
 
     public void SetBossMode() => isBossMode = true;
 
-    public void SetBossModeOff() => isBossMode = false;
+    public bool SetBossModeOff()
+    {
+        Camera.main.GetComponent<Animator>().SetBool("isMinus", true);
+        Camera.main.GetComponent<Animator>().SetBool("isPlus", false);
 
+        return isBossMode = false;
+    }
 }

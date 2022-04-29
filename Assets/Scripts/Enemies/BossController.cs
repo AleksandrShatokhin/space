@@ -21,10 +21,12 @@ public class BossController : EnemyBase
     [SerializeField] private GameObject blasterProjectile, bombProjectile, rocketProjectile;
     private bool isShotLeftBlasterGun, isShotRightBlasterGun;
 
-    private Vector3 startPositionBoss, newPositionBoss, betweenStagePositionBoss, currentPositionBoss;
-    private float step = 0.0f, stepBetweenStage = 0.0f;
-
     private float firstDelay;
+
+    private Vector3 startPositionBoss, newPositionBoss;
+    private float step = 0.0f;
+
+    private Vector3 betweenStagePositionBoss = new Vector3(0.0f, -10.0f, 28.0f);
 
     [SerializeField]
     private BossStages stage;
@@ -48,16 +50,48 @@ public class BossController : EnemyBase
 
         startPositionBoss = transform.position;
         newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
-        betweenStagePositionBoss = new Vector3(0.0f, -10.0f, 28.0f);
 
         BossShooting();
-
     }
 
     void Update()
     {
         LookAtBlasterGuns();
         Movement();
+    }
+
+    private void Movement()
+    {
+        if (GameController.GetInstance().IsBossMode())
+        {
+            if (step < 1)
+            {
+                transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
+                step = step + 0.001f;
+            }
+
+            if (step >= 1)
+            {
+                step = 0;
+                startPositionBoss = newPositionBoss;
+                newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
+            }
+        }
+        else
+        {
+            newPositionBoss = betweenStagePositionBoss;
+
+            if (step < 1)
+            {
+                transform.position = Vector3.Lerp(base.GetCurrentPositionBoss(), newPositionBoss, step);
+                step = step + 0.001f;
+            }
+
+            if (step >= 1)
+            {
+                transform.position = newPositionBoss;
+            }
+        }
     }
 
     // �������� ������������� ��������� ������� player � boss � ����� ������� ������� ��������� � ������� player
@@ -265,24 +299,7 @@ public class BossController : EnemyBase
     }
 
     //������� �������� ���������� �������
-    private void Movement()
-    {
-        if (GameController.GetInstance().IsBossMode())
-        {
-            if (step < 1)
-            {
-                transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
-                step = step + 0.001f;
-            }
-
-            if (step >= 1)
-            {
-                step = 0;
-                startPositionBoss = newPositionBoss;
-                newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
-            }
-        }
-    }
+    
 
     private void NextStage()
     {
@@ -305,6 +322,8 @@ public class BossController : EnemyBase
         if (startHp - hp >= hpOnOneStage * (int)stage)
         {
             NextStage();
+            GameController.GetInstance().SetBossModeOff();
+            SetCurrentPositionBoss(this.transform.position);
         }
 
         Debug.Log(stage);
@@ -315,5 +334,4 @@ public class BossController : EnemyBase
         base.AddDamage(damage);
         ChangeBossStageProcess();
     }
-
 }

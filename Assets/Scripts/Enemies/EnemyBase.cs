@@ -16,6 +16,8 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public GameObject projectileEnemy;
 
+    private Vector3 currentPositionBoss;
+
     //Ожидание перед первым выстрелом
     public float FirstShootWait = 2.0f;
 
@@ -101,4 +103,12 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
         return angleBetween;
     }
+
+    protected Vector3 SetCurrentPositionBoss(Vector3 posBoss)
+    {
+        currentPositionBoss = posBoss;
+        return currentPositionBoss;
+    }
+
+    protected Vector3 GetCurrentPositionBoss() => currentPositionBoss;
 }
