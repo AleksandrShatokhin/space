@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     private bool isLevelEnded = false;
     private bool isInfluencerTryToSpawn = false;
 
-    private bool isBossMode = false;
+    [SerializeField] private bool isBossMode = false;
 
     //Параметр для контроля спауна волн.
     //Можно отключить извне для тестов
@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
     private float maxPlanetSize = 1.5f;
 
     private Vector3 moveBounds;
+
 
     public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
@@ -325,6 +326,11 @@ public class GameController : MonoBehaviour
 
     public void SetBossMode() => isBossMode = true;
 
-    public void SetBossModeOff() => isBossMode = false;
+    public bool SetBossModeOff()
+    {
+        Camera.main.GetComponent<Animator>().SetBool("isMinus", true);
+        Camera.main.GetComponent<Animator>().SetBool("isPlus", false);
 
+        return isBossMode = false;
+    }
 }

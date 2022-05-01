@@ -88,7 +88,7 @@ public class MoveJoyStick : MonoBehaviour
             cursor.transform.position = pointB;
 
             // задем допустимую дистанцию движения курсора (стика)
-            cursor.transform.position = new Vector3(pointA.x + direction.x, joystick.transform.position.y, pointA.z + direction.z);
+            cursor.transform.position = new Vector3(pointA.x + direction.x, joystick.transform.position.y, 0);
 
             // придаем движение игроку
             //player.Translate(direction * speed * Time.deltaTime);
