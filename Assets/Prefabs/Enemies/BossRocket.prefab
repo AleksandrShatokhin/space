@@ -134,7 +134,7 @@ MonoBehaviour:
   flaresEffect: {fileID: 0}
   flaresDestroyTime: 0.3
   explosionSound: {fileID: 0}
-  blastBossRocket: {fileID: 5014036446773065016, guid: 69b01e42c3be47744a9f3a716f1a777f, type: 3}
+  blastBossRocket: {fileID: 3674336367957755224, guid: 549d01fd8cd2a4c41a7404fabc108d54, type: 3}
   indicatorTarget: {fileID: 3261866806356040388, guid: 41a526980f1f6c0459b56e19263d8694, type: 3}
 --- !u!1 &4389961206839681581
 GameObject:
