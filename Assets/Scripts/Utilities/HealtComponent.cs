@@ -23,21 +23,22 @@ public class HealtComponent : MonoBehaviour
     {
         bool isDead = false;
 
-        health += hp;
-        
+        //Максимальное ХП должно регулироваться для каждого объекта.
+        //Поэтому при ограничении используем значение StartHealth
+        if (health + hp > startHealth) //если подобраное сердечко дает больше определенного значения
+        {
+            health = startHealth;
+        }
         //Ограничить ввод жизней. Если пытаемся отнять больше, чем есть, то просто обнуляем.
-        if (health <= 0)
+        else if (health + hp <= 0)
         {
             GetComponentInParent<Deathable>().Kill();
             isDead = true;
         }
-
-        // if (health > 5) //если подобраное сердечко дает больше определенного значения
-        // {
-        //     health = 5;
-        // }
-
-        UpdatePlayerHealthBar();
+        else 
+        {
+            health += hp;
+        }
 
         return isDead;
     }
@@ -50,21 +51,6 @@ public class HealtComponent : MonoBehaviour
 
     public void SetDeathable(Deathable deathable) {
         deathableParent = deathable;
-    }
-
-
-    public void UpdatePlayerHealthBar()
-    {
-        //Если есть компонент HealthBar в родителе, то надо проставить новое значение
-        PlayerController pc = GetComponentInParent<PlayerController>();
-
-        if (!pc)
-        {
-            return;
-        }
-        
-        pc.healthBar.SetValue(health);
-
     }
 
 

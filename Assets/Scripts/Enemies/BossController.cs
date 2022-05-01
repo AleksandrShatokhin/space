@@ -36,7 +36,7 @@ public class BossController : EnemyBase
 
     void Start()
     {
-        stage = BossStages.Stage1;
+        // stage = BossStages.Stage1;
         stageCount = GetNames(typeof(BossStages)).Length;
         hpOnOneStage = GetComponent<HealtComponent>().GetHealth() / stageCount;
 

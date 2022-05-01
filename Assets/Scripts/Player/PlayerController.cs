@@ -181,12 +181,14 @@ public class PlayerController : MonoBehaviour, Deathable
         {
             GameController.GetInstance().PlaySound(hitPlayer);
             GetComponent<HealtComponent>().Change(-dmg);
+            UpdateHealthBar();
         }
     }
 
     public void AddHealth(byte hp)
     {
         GetComponent<HealtComponent>().Change(hp);
+        UpdateHealthBar();
     }
 
     public void SwitchProjectile()
@@ -244,4 +246,9 @@ public class PlayerController : MonoBehaviour, Deathable
 
 
     public Weapon GetWeapon() => currentWeapon;
+
+
+    void UpdateHealthBar(){ 
+        healthBar.SetValue(health.GetHealth());
+    }
 }
