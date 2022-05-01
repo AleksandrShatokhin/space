@@ -94,6 +94,7 @@ public class GameController : MonoBehaviour
         audioSource.clip = backgroundMusic;
         audioSource.volume = 0.1f;
         audioSource.Play();
+        instance = this;
     }
 
     // Update is called once per frame
