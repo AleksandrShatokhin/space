@@ -15,7 +15,6 @@ public class BlastWaveController : Influencer
 
     protected override void OnTriggerEnter(Collider other)
     {
-    
         // Реализуем базовый метод
         base.OnTriggerEnter(other);
 

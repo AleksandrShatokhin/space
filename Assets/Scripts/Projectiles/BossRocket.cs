@@ -29,7 +29,7 @@ public class BossRocket : Projectile
         }
     }
 
-    // создаем взрыв рокеты
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     private GameObject BlastBossRocket()
     {
         GameObject blast;
@@ -42,6 +42,7 @@ public class BossRocket : Projectile
         else 
         {
             isBlast = true;
+            GameController.GetInstance().PlaySound(explosionSound, 0.6f);
             blast = Instantiate(blastBossRocket, transform.position, Quaternion.identity);
             indicator.GetComponent<IndicatorForBossRocket>().DestroyIndicator();
         }
@@ -49,7 +50,7 @@ public class BossRocket : Projectile
         return blast;
     }
 
-    // создаем индикатор прицеливания рокеты
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     private GameObject Indicator()
     {
         bool isIndicator = false;
@@ -76,7 +77,7 @@ public class BossRocket : Projectile
         }
     }
 
-    // генерим случайную точку в зоне границ экрана
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     private Vector3 RandomPoint()
     {
         Vector3 centerPoint = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.transform.position.y));

@@ -34,6 +34,14 @@ public class BossController : EnemyBase
     private float hpOnOneStage;
 
 
+    // Звуки для босса, так как у него отдельная модель с оружиями
+    [SerializeField]
+    private AudioClip blasterSound;
+    [SerializeField]
+    private AudioClip bombSound;
+    [SerializeField]
+    private AudioClip launcherSound;
+
     void Start()
     {
         // stage = BossStages.Stage1;
@@ -168,6 +176,7 @@ public class BossController : EnemyBase
             if (isShotLeftBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnLeftBlasterProjectile.transform.position, spawnLeftBlasterProjectile.transform.rotation);
+                GameController.GetInstance().PlaySound(blasterSound);
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
@@ -184,6 +193,7 @@ public class BossController : EnemyBase
             if (isShotRightBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnRightBlasterProjectile.transform.position, spawnRightBlasterProjectile.transform.rotation);
+                GameController.GetInstance().PlaySound(blasterSound);
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
@@ -276,6 +286,7 @@ public class BossController : EnemyBase
 
         while (currentCount < maxCount)
         {
+            GameController.GetInstance().PlaySound(launcherSound, 0.6f);
             currentCount += 1;
             Instantiate(rocketProjectile, spawnLeftRocketProjectile.transform.position, rocketProjectile.transform.rotation);
 

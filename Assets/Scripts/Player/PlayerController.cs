@@ -160,17 +160,18 @@ public class PlayerController : MonoBehaviour, Deathable
     //Правильный путь для смерти игрока. Должны задаваться все необходимые переменные
     //Например, признак конца игры
     public void Death()
-    {
+    {   
+        
         GameObject explosion = Instantiate(particlePlayerExplosion, this.transform.position, Quaternion.identity);
         Destroy(explosion, 3);
         GameController.GetInstance().PlaySound(playerExplosion, 2.0f);
         GameController.GetInstance().GameOver();
+        UpdateHealthBar();
         Destroy(this.gameObject);
     }
 
     void Deathable.Kill()
     {
-        
         Death();
     }
 
@@ -249,6 +250,6 @@ public class PlayerController : MonoBehaviour, Deathable
 
 
     void UpdateHealthBar(){ 
-        healthBar.SetValue(health.GetHealth());
+            healthBar.SetValue(health.GetHealth());
     }
 }
