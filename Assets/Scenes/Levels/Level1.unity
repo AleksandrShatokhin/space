@@ -10540,7 +10540,7 @@ MonoBehaviour:
   waitAfterWave: 5
   waitOnStart: 2
   isBossMode: 1
-  shouldSpawnWave: 0
+  shouldSpawnWave: 1
   levelsData:
   - {fileID: 11400000, guid: 9020ecdb89d1b44ed8a9d1aaf73b3675, type: 2}
   - {fileID: 11400000, guid: 618618e6a5d4e4d5d81a4f09b80cabb7, type: 2}
@@ -10882,8 +10882,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3038300377819460840, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
       propertyPath: stage
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3038300377819460840, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
+      propertyPath: blasterSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 249b25ccc8c0a491a9d24a0fb08943a9, type: 3}
+    - target: {fileID: 3038300377819460840, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
+      propertyPath: launcherSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1ab7c1c62bdc4438b791791536f4927, type: 3}
     - target: {fileID: 6264109450077427440, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
       propertyPath: m_Name
       value: Boss

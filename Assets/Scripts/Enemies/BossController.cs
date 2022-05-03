@@ -327,17 +327,12 @@ public class BossController : EnemyBase
         float hp = GetComponent<HealtComponent>().GetHealth();
         float startHp = GetComponent<HealtComponent>().GetStartHealth();
 
-        Debug.Log(startHp - hp);
-        Debug.Log(hpOnOneStage * (int)stage);
-
         if (startHp - hp >= hpOnOneStage * (int)stage)
         {
             NextStage();
             GameController.GetInstance().SetBossModeOff();
             SetCurrentPositionBoss(this.transform.position);
         }
-
-        Debug.Log(stage);
     }
 
     public override void AddDamage(float damage)

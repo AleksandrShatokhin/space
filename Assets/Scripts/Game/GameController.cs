@@ -114,7 +114,15 @@ public class GameController : MonoBehaviour
         int enemiesSpawned = 0;
 
         while (shouldSpawnWave)
-        {
+        {   
+
+            //Если сейчас идет бой с боссом, то процесс спауна волн не должен запускаться
+            //но при смене стадий будет выключен признак Boss Fight'а и волна должна будет запуститься
+            if(isBossMode){
+                yield return new WaitForSeconds(5.0f);
+                continue;
+            }
+
             if (!isInfluencerTryToSpawn)
             {
                 _ = StartCoroutine(SpawnBonus());
@@ -127,7 +135,6 @@ public class GameController : MonoBehaviour
                 GameObject spawned = spawner.Spawn(GetRandomEnemy());
                 enemiesSpawned++;
                 allEnemiesSpawned++;
-
 
                 //Сохранить последнего противника  из уровня
                 lastEnemy = allEnemiesSpawned == allEnemies ? spawned : null;
@@ -332,6 +339,7 @@ public class GameController : MonoBehaviour
         Camera.main.GetComponent<Animator>().SetBool("isMinus", true);
         Camera.main.GetComponent<Animator>().SetBool("isPlus", false);
 
-        return isBossMode = false;
+        isBossMode = false;
+        return isBossMode;
     }
 }
