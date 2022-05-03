@@ -33,6 +33,9 @@ public class BossController : EnemyBase
     private int stageCount;
     private float hpOnOneStage;
 
+    [SerializeField]
+    private float timeToNextStage = 30.0f;
+
 
     // Звуки для босса, так как у него отдельная модель с оружиями
     [SerializeField]
@@ -332,6 +335,7 @@ public class BossController : EnemyBase
             NextStage();
             GameController.GetInstance().SetBossModeOff();
             SetCurrentPositionBoss(this.transform.position);
+            StartCoroutine(SetBossModeAfterPause());
         }
     }
 
@@ -339,5 +343,12 @@ public class BossController : EnemyBase
     {
         base.AddDamage(damage);
         ChangeBossStageProcess();
+    }
+
+
+    protected IEnumerator SetBossModeAfterPause()
+    {
+        yield return new WaitForSeconds(timeToNextStage);
+        GameController.GetInstance().SetBossMode();
     }
 }
