@@ -332,7 +332,13 @@ public class GameController : MonoBehaviour
     //Управление режимом Boss Fight
     public bool IsBossMode() => isBossMode;
 
-    public void SetBossMode() => isBossMode = true;
+    public bool SetBossMode()
+    {
+        Camera.main.GetComponent<Animator>().SetBool("isPlus", true);
+
+        isBossMode = true;
+        return isBossMode;
+    }
 
     public bool SetBossModeOff()
     {

@@ -55,7 +55,7 @@ public class BossController : EnemyBase
 
         // �������� ��������� ������
         animatorCamera = Camera.main.GetComponent<Animator>();
-        animatorCamera.SetBool("isPlus", true);
+        GameController.GetInstance().SetBossMode();
 
         targetLookAtPlayer = GameObject.Find("Player").GetComponent<Transform>();
 
