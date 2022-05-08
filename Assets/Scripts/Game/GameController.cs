@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
@@ -22,8 +23,7 @@ public class GameController : MonoBehaviour
     //Основные параметры игры
     // public float spawnEveryNSeconds = 0.5f;
     public float waitAfterWave = 5.0f;
-    // public int enemiesInWave = 10;
-    // public int numberOfWaves = 3;
+
     public float waitOnStart = 2.0f;
     private int allEnemiesSpawned = 0;
     private int allEnemies;
@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
     private int enemiesKilled = 0;
 
     private GameObject lastEnemy;
+    private GameObject lastSpawnedEnemy;
 
     //Состояния игры
     private bool isGameOver = false;
@@ -47,7 +48,6 @@ public class GameController : MonoBehaviour
     private LevelData[] levelsData;
     public LevelData levelData;
 
-
     //Аудио свойства
     private AudioSource audioSource;
     public AudioClip failSound;
@@ -61,25 +61,38 @@ public class GameController : MonoBehaviour
 
     private Vector3 moveBounds;
 
+    private GameObject boss;
+
+    [SerializeField]
+    private Vector3 bossSpawnLocation;
+
+    private bool bossWasSpawned = false;
+
+    private bool bossInWaitingToReturn;
+
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         instance = this;
-
+        
         //Получить данные по номеру уровня
-        // LevelNumber = DataStore.GetInt(DataStore.level); 
         if (debugLevelNumber > 0)
         {
             LevelNumber = debugLevelNumber;
         }
 
         levelData = levelsData[LevelNumber];
+        isBossMode = levelData.BossLevel;
+
+        Debug.Log(levelData.EnemiesInWave);
         allEnemies = levelData.EnemiesInWave * levelData.NumberOfWaves;
 
         SceneObjectCreate();
+        SpawnBoss();
         StartCoroutine(SpawnWave());
 
         //Сохранить ссылку на игрока
@@ -123,6 +136,12 @@ public class GameController : MonoBehaviour
                 continue;
             }
 
+            //Если босс готов вернуться, то не делаем спаун новых врагов
+            if(boss.GetComponent<BossController>().IsReadyToReturn()){
+                yield return new WaitForSeconds(1.5f);
+                continue;
+            }
+
             if (!isInfluencerTryToSpawn)
             {
                 _ = StartCoroutine(SpawnBonus());
@@ -133,6 +152,9 @@ public class GameController : MonoBehaviour
 
                 //Спаун случайного противника
                 GameObject spawned = spawner.Spawn(GetRandomEnemy());
+                lastSpawnedEnemy = spawned;
+                spawnedEnemies.Add(spawned);
+
                 enemiesSpawned++;
                 allEnemiesSpawned++;
 
@@ -192,9 +214,14 @@ public class GameController : MonoBehaviour
             return;
         }
 
+        if(bossWasSpawned && !boss)
+        {
+            LevelEnded();
+        }
+
         if (allEnemies == allEnemiesSpawned && enemiesKilled == allEnemiesSpawned)
         {
-            if (lastEnemy == null)
+            if (lastEnemy == null) 
             {
                 LevelEnded();
             }
@@ -215,7 +242,6 @@ public class GameController : MonoBehaviour
 
     IEnumerator SpawnBonus()
     {
-
         //Сразу выставляем признак, что не нужно запускать следующий спаун
         //Так как надо сначала выждать паузу, а затем уже 
         isInfluencerTryToSpawn = true;
@@ -277,15 +303,12 @@ public class GameController : MonoBehaviour
 
     }
 
-
     public void PlaySound(AudioClip clip, float volume = 1.0f)
     {
-
         if (!clip || !audioSource)
         {
             return;
         }
-
 
         audioSource.PlayOneShot(clip, volume);
     }
@@ -298,7 +321,12 @@ public class GameController : MonoBehaviour
     }
 
     private void SpawnPlanet()
-    {
+    {   
+        
+        if(!levelData.Planet){
+            return;
+        }
+
         //Определить границы экрана и задать позицию для планеты
         Vector3 limits = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
         Vector3 planetPosition = new Vector3(Random.Range(-limits.x, limits.x), -30.0f, Random.Range(-limits.z, limits.z));
@@ -348,4 +376,25 @@ public class GameController : MonoBehaviour
         isBossMode = false;
         return isBossMode;
     }
+
+    void SpawnBoss(){
+        if(!levelData.BossLevel || levelData.Boss == null){
+            return;
+        }
+
+        StartCoroutine(SpawnBossCoroutine());
+    }
+
+    IEnumerator SpawnBossCoroutine(){
+        yield return new WaitForSeconds(levelData.WaitBeforeBoss);
+        SetBossMode();
+        boss = Instantiate(levelData.Boss, bossSpawnLocation, Quaternion.identity);
+        bossWasSpawned = true;
+    }
+
+    public bool IsLastEnemyAlive(){
+       spawnedEnemies.RemoveAll(spawned => spawned == null);
+       return spawnedEnemies.Count > 0 ? true : false;
+    }
+
 }

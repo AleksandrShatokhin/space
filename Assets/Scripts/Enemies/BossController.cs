@@ -45,6 +45,10 @@ public class BossController : EnemyBase
     [SerializeField]
     private AudioClip launcherSound;
 
+    private bool bossReadyToReturn = false;
+
+    public bool IsReadyToReturn() => bossReadyToReturn;
+
     void Start()
     {
         // stage = BossStages.Stage1;
@@ -349,6 +353,15 @@ public class BossController : EnemyBase
     protected IEnumerator SetBossModeAfterPause()
     {
         yield return new WaitForSeconds(timeToNextStage);
+        bossReadyToReturn = true;
+
+        //Подождать смерти последнего противника из волны
+        while(GameController.GetInstance().IsLastEnemyAlive()){
+            Debug.Log("Ready to return");
+            yield return new WaitForSeconds(1.5f);   
+        }
+
         GameController.GetInstance().SetBossMode();
+        bossReadyToReturn = false;
     }
 }

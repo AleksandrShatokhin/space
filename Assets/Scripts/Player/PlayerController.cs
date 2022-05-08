@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour, Deathable
     private Rigidbody rb;
     private GameObject joystick;
 
+    [SerializeField]
+    private bool godMode;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -178,6 +181,10 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public void AddDamage(float dmg)
     {
+        if(godMode){
+            return;
+        }
+
         if (!invulnerable)
         {
             GameController.GetInstance().PlaySound(hitPlayer);

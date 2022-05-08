@@ -824,7 +824,11 @@ MonoBehaviour:
   blasterProjectile: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
   bombProjectile: {fileID: 2586940537171241702, guid: 7e4bf103534c842ff919790c14238030, type: 3}
   rocketProjectile: {fileID: 3471483272150006156, guid: 5138360e38d6c41ae9178d703fcf6161, type: 3}
-  stage: 3
+  stage: 1
+  timeToNextStage: 10
+  blasterSound: {fileID: 8300000, guid: 249b25ccc8c0a491a9d24a0fb08943a9, type: 3}
+  bombSound: {fileID: 0}
+  launcherSound: {fileID: 8300000, guid: e1ab7c1c62bdc4438b791791536f4927, type: 3}
 --- !u!114 &5841346117408434716
 MonoBehaviour:
   m_ObjectHideFlags: 0
