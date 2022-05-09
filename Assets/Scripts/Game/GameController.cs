@@ -317,7 +317,14 @@ public class GameController : MonoBehaviour
     IEnumerator PostGame(float time = 2)
     {
         yield return new WaitForSeconds(time);
-        _ = Instantiate(postGame);
+
+        if(levelNumber == levelsData.Length - 1){
+            //Можно перейти к титрам и финалу игры
+            SceneManager.LoadScene("Credits");
+        } else {
+            _ = Instantiate(postGame);
+        }
+        
     }
 
     private void SpawnPlanet()
