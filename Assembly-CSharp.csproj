@@ -45,6 +45,7 @@
      <Compile Include="Assets/Scripts/BuffAndDebuff/DebuffDisableShot.cs" />
      <Compile Include="Assets/SampleScenes/Scripts/SlowMoButton.cs" />
      <Compile Include="Assets/SampleScenes/Scripts/LevelReset.cs" />
+     <Compile Include="Assets/Scripts/BossParticleController.cs" />
      <Compile Include="Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs" />
      <Compile Include="Assets/Scripts/UI/ClickButtonStart.cs" />
      <Compile Include="Assets/Scripts/Enemies/EnemyBomber.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets/Scripts/Utilities/SpawnerBox.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/MoveElements.cs" />
      <Compile Include="Assets/SampleScenes/Scripts/ParticleSceneControls.cs" />
+     <Compile Include="Assets/CreditsController.cs" />
      <Compile Include="Assets/Scripts/Projectiles/ProjectileRoket.cs" />
      <Compile Include="Assets/Scripts/Enemies/BossState.cs" />
      <Compile Include="Assets/Scripts/BuffAndDebuff/DebuffSlowing.cs" />
@@ -104,8 +106,6 @@
      <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
      <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
      <Compile Include="Assets/Scripts/ParticleSystem/BlastBombCollider.cs" />
-     <Compile Include="Assets/Scripts/BossParticleController.cs" />
-     <Compile Include="Assets/CreditsController.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
