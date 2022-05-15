@@ -192,10 +192,9 @@ public class GameController : MonoBehaviour
 
     public void LevelEnded()
     {
-        float waitSec = 2;
         isLevelEnded = true;
         PlaySound(successSound);
-        StartCoroutine(PostGame(waitSec));
+        StartCoroutine(PostGame(levelData.WaitAfterLevel));
     }
 
     void Restart()

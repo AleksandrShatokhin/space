@@ -45,7 +45,14 @@ public class BossController : EnemyBase
     [SerializeField]
     private AudioClip launcherSound;
 
+    [SerializeField]
+    private AudioClip bossStartExplosion;
+
     private bool bossReadyToReturn = false;
+
+
+    //Стрельба вкл/выкл
+    private bool canShoot = true;
 
     public bool IsReadyToReturn() => bossReadyToReturn;
 
@@ -180,6 +187,12 @@ public class BossController : EnemyBase
 
         while (true)
         {
+
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (isShotLeftBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnLeftBlasterProjectile.transform.position, spawnLeftBlasterProjectile.transform.rotation);
@@ -197,6 +210,11 @@ public class BossController : EnemyBase
 
         while (true)
         {
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (isShotRightBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnRightBlasterProjectile.transform.position, spawnRightBlasterProjectile.transform.rotation);
@@ -238,7 +256,12 @@ public class BossController : EnemyBase
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
-        {
+        {   
+
+            if(!canShoot){
+                continue;
+            }
+
             if (stage >= BossStages.Stage2)
             {
                 if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100 && GameController.GetInstance().IsBossMode())
@@ -257,7 +280,12 @@ public class BossController : EnemyBase
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
-        {
+        {   
+
+            if(!canShoot){
+                continue;
+            }
+
             if (stage >= BossStages.Stage2)
             {
                 if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100 && GameController.GetInstance().IsBossMode())
@@ -274,7 +302,11 @@ public class BossController : EnemyBase
     IEnumerator ShootingRocket()
     {
         while (true)
-        {
+        {   
+            if(!canShoot){
+                continue;
+            }
+
             if (stage >= BossStages.Stage3 && GameController.GetInstance().IsBossMode())
             {
                 StartCoroutine(ShotLeftRocketGun());
@@ -317,7 +349,7 @@ public class BossController : EnemyBase
     }
 
     //������� �������� ���������� �������
-    
+
 
     private void NextStage()
     {
@@ -356,12 +388,36 @@ public class BossController : EnemyBase
         bossReadyToReturn = true;
 
         //Подождать смерти последнего противника из волны
-        while(GameController.GetInstance().IsLastEnemyAlive()){
+        while (GameController.GetInstance().IsLastEnemyAlive())
+        {
             Debug.Log("Ready to return");
-            yield return new WaitForSeconds(1.5f);   
+            yield return new WaitForSeconds(1.5f);
         }
 
         GameController.GetInstance().SetBossMode();
         bossReadyToReturn = false;
+    }
+
+
+
+
+    public override void Death()
+    {   
+        canShoot = false;
+
+        if (bossStartExplosion)
+        {
+            GameController.GetInstance().PlaySound(bossStartExplosion, 8.0f);
+        }
+
+        if (explosionEffect)
+        {
+            DeathSound();
+            GameObject expolion = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
+            Destroy(expolion, 3);
+            
+        }
+
+        Destroy(gameObject);
     }
 }

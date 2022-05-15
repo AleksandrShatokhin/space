@@ -33,3 +33,4 @@ MonoBehaviour:
   bossLevel: 1
   waitBeforeBoss: 5
   boss: {fileID: 6264109450077427440, guid: af719ddbf281540a59014d23d0709cf0, type: 3}
+  waitAfterLevel: 5

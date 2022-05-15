@@ -807,9 +807,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 65064700458910478, guid: c86631eb74bc549d096240d06404f759, type: 3}
   shootSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
   hitSound: {fileID: 0}
   projectileEnemy: {fileID: 0}
   FirstShootWait: 2
@@ -824,11 +824,12 @@ MonoBehaviour:
   blasterProjectile: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
   bombProjectile: {fileID: 2586940537171241702, guid: 7e4bf103534c842ff919790c14238030, type: 3}
   rocketProjectile: {fileID: 3471483272150006156, guid: 5138360e38d6c41ae9178d703fcf6161, type: 3}
-  stage: 1
+  stage: 3
   timeToNextStage: 10
   blasterSound: {fileID: 8300000, guid: 249b25ccc8c0a491a9d24a0fb08943a9, type: 3}
   bombSound: {fileID: 0}
-  launcherSound: {fileID: 8300000, guid: e1ab7c1c62bdc4438b791791536f4927, type: 3}
+  launcherSound: {fileID: 0}
+  bossStartExplosion: {fileID: 8300000, guid: 6c33acaf55ce94da397f9692cad3486b, type: 3}
 --- !u!114 &5841346117408434716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,7 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a72b98c0e9347d7aef433ee69729f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 1
 --- !u!135 &131236857151673408
 SphereCollider:
   m_ObjectHideFlags: 0
