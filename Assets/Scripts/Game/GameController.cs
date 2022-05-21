@@ -403,4 +403,6 @@ public class GameController : MonoBehaviour
        return spawnedEnemies.Count > 0 ? true : false;
     }
 
+
+    public GameObject GetBoss() => boss;
 }

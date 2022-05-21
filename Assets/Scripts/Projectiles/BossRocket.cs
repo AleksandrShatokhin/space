@@ -15,7 +15,16 @@ public class BossRocket : Projectile
 
     void Start()
     {
-        RandomPoint();
+        //Получить ссылку на босса
+        BoxCollider bossCollider = GameController.GetInstance().GetBoss().GetComponent<BoxCollider>();
+
+        // randomPoint = RandomPoint();
+
+        //Если точка еще не сгенерирована или попала в ограничение на боссе, то делаем новую генерацию 
+        while(CheckPointInBoxCollider(randomPoint, bossCollider) || randomPoint == new Vector3())
+        {
+            randomPoint = RandomPoint();
+        }
     }
 
     override protected void FixedUpdate()
@@ -86,8 +95,23 @@ public class BossRocket : Projectile
         float valueX = Random.Range(centerPoint.x - Random.Range(0, screenBounds.x), centerPoint.x + Random.Range(0, screenBounds.x));
         float valueZ = Random.Range(centerPoint.z - Random.Range(0, screenBounds.z), centerPoint.z + Random.Range(0, screenBounds.z));
 
-        randomPoint = new Vector3(valueX, 0.0f, valueZ);
-
-        return randomPoint = new Vector3(valueX, 0.0f, valueZ);
+        return new Vector3(valueX, 0.0f, valueZ);
     }
+
+    private bool CheckPointInBoxCollider(Vector3 point, BoxCollider box){
+
+        //По сути у нас есть прямоугольник, который мы хотим исключить
+        //Поэтому мы просто проверяем координаты X и Z для точки и коллайдера-ограничителя
+        if(box.bounds.min.x < point.x && box.bounds.max.x > point.x && 
+           box.bounds.min.z < point.z && box.bounds.max.z > point.z)
+           {
+               return true;
+           }
+           else 
+           {
+               return false;
+           }
+
+    }
+
 }
