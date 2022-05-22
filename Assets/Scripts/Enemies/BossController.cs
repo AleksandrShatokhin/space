@@ -78,8 +78,16 @@ public class BossController : EnemyBase
 
     void Update()
     {
-        LookAtBlasterGuns();
-        Movement();
+        if (!targetLookAtPlayer)
+        {
+            return;
+        }
+
+        if (targetLookAtPlayer)
+        {
+            LookAtBlasterGuns();
+            Movement();
+        }
     }
 
     private void Movement()
@@ -256,9 +264,10 @@ public class BossController : EnemyBase
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
-        {   
+        {
 
-            if(!canShoot){
+            if (!canShoot)
+            {
                 continue;
             }
 
@@ -280,9 +289,10 @@ public class BossController : EnemyBase
         yield return new WaitForSeconds(firstDelay);
 
         while (true)
-        {   
+        {
 
-            if(!canShoot){
+            if (!canShoot)
+            {
                 continue;
             }
 
@@ -302,8 +312,9 @@ public class BossController : EnemyBase
     IEnumerator ShootingRocket()
     {
         while (true)
-        {   
-            if(!canShoot){
+        {
+            if (!canShoot)
+            {
                 continue;
             }
 
@@ -402,7 +413,7 @@ public class BossController : EnemyBase
 
 
     public override void Death()
-    {   
+    {
         canShoot = false;
 
         if (bossStartExplosion)
@@ -415,7 +426,7 @@ public class BossController : EnemyBase
             DeathSound();
             GameObject expolion = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
             Destroy(expolion, 3);
-            
+
         }
 
         Destroy(gameObject);

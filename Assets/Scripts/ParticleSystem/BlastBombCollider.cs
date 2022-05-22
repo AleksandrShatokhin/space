@@ -11,6 +11,7 @@ public class BlastBombCollider : PS_BombBlast
         {
             isCollision = true;
             other.gameObject.GetComponent<PlayerController>().AddDamage(damage);
+            CameraController.shake = true;
         }
     }
 }
