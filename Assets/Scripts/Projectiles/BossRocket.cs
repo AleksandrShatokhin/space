@@ -15,6 +15,8 @@ public class BossRocket : Projectile
 
     void Start()
     {
+        isStopPosition = false;
+
         //Получить ссылку на босса
         BoxCollider bossCollider = GameController.GetInstance().GetBoss().GetComponent<BoxCollider>();
 
@@ -31,7 +33,7 @@ public class BossRocket : Projectile
     {
         base.BossRocket();
 
-        if (transform.position.y <= destroyRocketPosition.y)
+        if (transform.position.y <= destroyRocketPosition.y && isStopPosition)
         {
             BlastBossRocket();
             Destroy(this.gameObject);
@@ -83,6 +85,7 @@ public class BossRocket : Projectile
         {
             transform.LookAt(randomPoint);
             Indicator();
+            isStopPosition = true;
         }
     }
 
