@@ -40,7 +40,7 @@ public class BombEnemyShip : MonoBehaviour
 
         if (counter == 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
             Instantiate(bombBlast, transform.position, transform.rotation);
         }
     }

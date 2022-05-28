@@ -136,10 +136,13 @@ public class GameController : MonoBehaviour
                 continue;
             }
 
-            //Если босс готов вернуться, то не делаем спаун новых врагов
-            if(boss.GetComponent<BossController>().IsReadyToReturn()){
-                yield return new WaitForSeconds(1.5f);
-                continue;
+            if(isBossMode)
+            {
+                //Если босс готов вернуться, то не делаем спаун новых врагов
+                if(boss.GetComponent<BossController>().IsReadyToReturn()){
+                    yield return new WaitForSeconds(1.5f);
+                    continue;
+                }
             }
 
             if (!isInfluencerTryToSpawn)
