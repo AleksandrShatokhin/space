@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,6 +35,113 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>2020.3.19f1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\Projectiles\PlayerSimpleProjectile.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyBase.cs" />
+    <Compile Include="Assets\Scripts\Utilities\RandomRotator.cs" />
+    <Compile Include="Assets\Scripts\Player\MoveJoyStick.cs" />
+    <Compile Include="Assets\CreditsController.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\ProjectileEnemyShip.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\PS_RocketBlast.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\DebuffDisableShot.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\BossParticleController.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
+    <Compile Include="Assets\Scripts\UI\ClickButtonStart.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\ProjectileRoket.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BossState.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\DebuffSlowing.cs" />
+    <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BoundSpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyBomber.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Utilities\HealtComponent.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\BuffRocket.cs" />
+    <Compile Include="Assets\Scripts\Utilities\IndicatorForBossRocket.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BossController.cs" />
+    <Compile Include="Assets\Scripts\Utilities\DataStore.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Game\TimerController.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\BlastWaveController.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\Influencer.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneManagerForLevelSelect.cs" />
+    <Compile Include="Assets\Scripts\Utilities\LayersEnum.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TransformMover.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\PS_BombBlast.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\Scripts\Utilities\GarbageCollector.cs" />
+    <Compile Include="Assets\Scripts\Enemies\AsteroidEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\GameController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyShip.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TestEmpty.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Switcher.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\BossRocket.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
+    <Compile Include="Assets\Scripts\Player\ShieldController.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\ParticleSistemBlastWave.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuController.cs" />
+    <Compile Include="Assets\Scripts\Utilities\DeathComponent.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Rotator.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\BlastCollider.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BoundEmemyShip.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonShot.cs" />
+    <Compile Include="Assets\Scripts\UI\PostLevelController.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\LevelSet\LevelData.cs" />
+    <Compile Include="Assets\Scripts\Utilities\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\BombEnemyShip.cs" />
+    <Compile Include="Assets\Scripts\Utilities\HeartAction.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\BuffShield.cs" />
+    <Compile Include="Assets\Scripts\UI\HealthBarComponent.cs" />
+    <Compile Include="Assets\Scripts\Utilities\ScreenBounds.cs" />
+    <Compile Include="Assets\Scripts\UI\CenterTextUI.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\BlastWaveCollider.cs" />
+    <Compile Include="Assets\Scripts\Base\Deathable.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\BlastBombCollider.cs" />
+    <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseMode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\file.txt" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Materials\ShieldShader.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+  </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/Projectiles/PlayerSimpleProjectile.cs" />
      <Compile Include="Assets/Scripts/Enemies/EnemyBase.cs" />

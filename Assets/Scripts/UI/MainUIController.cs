@@ -18,6 +18,7 @@ public class MainUIController : MonoBehaviour
 
     public Button shotButton;
     public Button switchWeaponButton;
+    [SerializeField] private Button pauseButton;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class MainUIController : MonoBehaviour
 
         shotButton.onClick.AddListener(ShotButtonClick);
         switchWeaponButton.onClick.AddListener(SwitchWeaponButton);
+        pauseButton.onClick.AddListener(PauseButton);
     }
     
     void Update()
@@ -106,5 +108,10 @@ public class MainUIController : MonoBehaviour
     void SwitchWeaponButton()
     {
         player.GetComponent<PlayerController>().SwitchProjectile();
+    }
+
+    void PauseButton()
+    {
+        GameController.GetInstance().PauseModeOn();
     }
 }

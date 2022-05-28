@@ -24,5 +24,9 @@ public class PS_BombBlast : MonoBehaviour
     private void FixedUpdate()
     {
         blastColBomb.radius += 0.02f;
+        if (blastColBomb.radius >= 1.9f)
+        {
+            blastColBomb.gameObject.SetActive(false);
+        }
     }
 }

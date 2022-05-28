@@ -63,6 +63,9 @@ public class GameController : MonoBehaviour
 
     private GameObject boss;
 
+    [SerializeField] private GameObject pausePrefab;
+    [SerializeField] GameObject MainUIObject;
+
     [SerializeField]
     private Vector3 bossSpawnLocation;
 
@@ -76,9 +79,9 @@ public class GameController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         instance = this;
-        
+
         //Получить данные по номеру уровня
         if (debugLevelNumber > 0)
         {
@@ -127,11 +130,12 @@ public class GameController : MonoBehaviour
         int enemiesSpawned = 0;
 
         while (shouldSpawnWave)
-        {   
+        {
 
             //Если сейчас идет бой с боссом, то процесс спауна волн не должен запускаться
             //но при смене стадий будет выключен признак Boss Fight'а и волна должна будет запуститься
-            if(isBossMode){
+            if (isBossMode)
+            {
                 yield return new WaitForSeconds(5.0f);
                 continue;
             }
@@ -216,14 +220,14 @@ public class GameController : MonoBehaviour
             return;
         }
 
-        if(bossWasSpawned && !boss)
+        if (bossWasSpawned && !boss)
         {
             LevelEnded();
         }
 
         if (allEnemies == allEnemiesSpawned && enemiesKilled == allEnemiesSpawned)
         {
-            if (lastEnemy == null) 
+            if (lastEnemy == null)
             {
                 LevelEnded();
             }
@@ -320,19 +324,23 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        if(levelNumber == levelsData.Length - 1){
+        if (levelNumber == levelsData.Length - 1)
+        {
             //Можно перейти к титрам и финалу игры
             SceneManager.LoadScene("Credits");
-        } else {
+        }
+        else
+        {
             _ = Instantiate(postGame);
         }
-        
+
     }
 
     private void SpawnPlanet()
-    {   
-        
-        if(!levelData.Planet){
+    {
+
+        if (!levelData.Planet)
+        {
             return;
         }
 
@@ -386,26 +394,44 @@ public class GameController : MonoBehaviour
         return isBossMode;
     }
 
-    void SpawnBoss(){
-        if(!levelData.BossLevel || levelData.Boss == null){
+    void SpawnBoss()
+    {
+        if (!levelData.BossLevel || levelData.Boss == null)
+        {
             return;
         }
 
         StartCoroutine(SpawnBossCoroutine());
     }
 
-    IEnumerator SpawnBossCoroutine(){
+    IEnumerator SpawnBossCoroutine()
+    {
         yield return new WaitForSeconds(levelData.WaitBeforeBoss);
         SetBossMode();
         boss = Instantiate(levelData.Boss, bossSpawnLocation, Quaternion.identity);
         bossWasSpawned = true;
     }
 
-    public bool IsLastEnemyAlive(){
-       spawnedEnemies.RemoveAll(spawned => spawned == null);
-       return spawnedEnemies.Count > 0 ? true : false;
+    public bool IsLastEnemyAlive()
+    {
+        spawnedEnemies.RemoveAll(spawned => spawned == null);
+        return spawnedEnemies.Count > 0 ? true : false;
     }
 
+    public void PauseModeOn()
+    {
+        MainUIObject.SetActive(false);
+        Instantiate(pausePrefab, pausePrefab.transform.position, pausePrefab.transform.rotation);
+        Time.timeScale = 0.0f;
+    }
+
+    public void PauseModeOff()
+    {
+        Time.timeScale = 1.0f;
+        MainUIObject.SetActive(true);
+        GameObject pause = GameObject.Find("PauseMode(Clone)");
+        Destroy(pause);
+    }
 
     public GameObject GetBoss() => boss;
 }

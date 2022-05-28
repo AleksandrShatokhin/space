@@ -825,7 +825,7 @@ MonoBehaviour:
   blasterProjectile: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
   bombProjectile: {fileID: 2586940537171241702, guid: 7e4bf103534c842ff919790c14238030, type: 3}
   rocketProjectile: {fileID: 3471483272150006156, guid: 5138360e38d6c41ae9178d703fcf6161, type: 3}
-  stage: 3
+  stage: 1
   timeToNextStage: 10
   blasterSound: {fileID: 8300000, guid: 249b25ccc8c0a491a9d24a0fb08943a9, type: 3}
   bombSound: {fileID: 0}
@@ -1113,6 +1113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_EnemyEngine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 6.62
@@ -1190,6 +1194,10 @@ PrefabInstance:
     - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_Name
       value: P_EnemyEngine (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -1269,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_EnemyEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 6.62
@@ -1346,6 +1358,10 @@ PrefabInstance:
     - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_Name
       value: P_EnemyEngine (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
