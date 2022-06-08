@@ -123,81 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &235894577
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 235894578}
-  - component: {fileID: 235894580}
-  - component: {fileID: 235894579}
-  m_Layer: 5
-  m_Name: telegram
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &235894578
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235894577}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1609674130}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292, y: 138}
-  m_SizeDelta: {x: 140.1004, y: 133.1043}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &235894579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235894577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a9822f831b46a45f7b43d68507420752, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &235894580
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235894577}
-  m_CullTransparentMesh: 1
 --- !u!1 &710396822
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +364,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1695864738}
-  - {fileID: 235894578}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -520,12 +444,13 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "THANKS FOR THE PLAYING\n\nPROJECT SPACE\n\n\nCREATORS:\n\nDMITRY SITNIK\nt.me/DmitrySitnik\n\nALEKSANDER
-    SHATOKHIN\n\n\nSOUNDS:\nZVUKI.PRO\n\n\nFell free to contact us if you want to
-    say something about our project.\n\nGithub reference: \ngithub.com/dmitrysitnik/space\n\n\n\u0411\u041E\u041B\u042C\u0428\u041E\u0415
+    SHATOKHIN\nt.me/AlShatokhin\nvk.com/id84643882\n\n\nSOUNDS:\nZVUKI.PRO\n\n\nFell
+    free to contact us if you want to say something about our project.\n\nGithub
+    reference: \ngithub.com/dmitrysitnik/space\n\n\n\u0411\u041E\u041B\u042C\u0428\u041E\u0415
     \u0421\u041F\u0410\u0421\u0418\u0411\u041E \u0418\u0413\u0420\u0423\n\nPROJECT
     SPACE\n\n\n\u0421\u041E\u0417\u0414\u0410\u0422\u0415\u041B\u0418:\n\n\u0414\u041C\u0418\u0422\u0420\u0418\u0419
     \u0421\u0418\u0422\u041D\u0418\u041A\nt.me/DmitrySitnik\n\n\u0410\u041B\u0415\u041A\u0421\u0410\u041D\u0414\u0420
-    \u0428\u0410\u0422\u041E\u0425\u0418\u041D\n\n\u0417\u0412\u0423\u041A\u0418:\nZVUKI.PRO\n\n\n\u041C\u044B
+    \u0428\u0410\u0422\u041E\u0425\u0418\u041D\nt.me/AlShatokhin\nvk.com/id84643882\n\n\u0417\u0412\u0423\u041A\u0418:\nZVUKI.PRO\n\n\n\u041C\u044B
     \u0431\u0443\u0434\u0435\u043C \u0440\u0430\u0434\u044B \u043B\u044E\u0431\u043E\u0439
     \u043E\u0431\u0440\u0430\u0442\u043D\u043E\u0439 \u0441\u0432\u044F\u0437\u0438
     \u043E\u0431 \u0438\u0433\u0440\u0435. \u041C\u043E\u0436\u0435\u0442\u0435 \u0441\u0432\u044F\u0437\u0430\u0442\u044C\u0441\u044F

@@ -80,8 +80,17 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     {
         yield return new WaitForSeconds(FirstShootWait);
 
+        
+
         while (true)
         {
+
+            //Проверить, что враг уже на экране. Не надо вести огонь из-за экрана
+            if (!CheckIfOnScreen()){
+                yield return new WaitForSeconds(FirstShootWait);
+                continue;
+            }
+
             Instantiate(projectileEnemy, GetProjectilePosition(), GetProjectileRotation());
 
             PlayAnimation();
@@ -111,4 +120,21 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     }
 
     protected Vector3 GetCurrentPositionBoss() => currentPositionBoss;
+
+
+    protected bool CheckIfOnScreen(){
+
+        Vector3 screenBounds = GameController.GetInstance().ScreenBound();
+
+        if ( -screenBounds.x < this.transform.position.x && screenBounds.x > this.transform.position.x &&
+             -screenBounds.z < this.transform.position.z && screenBounds.z > this.transform.position.z )
+              {
+                  return true;
+              }
+              else
+              {
+                  return false;
+              }
+
+    }
 }
