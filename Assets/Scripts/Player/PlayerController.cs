@@ -258,5 +258,6 @@ public class PlayerController : MonoBehaviour, Deathable
 
     void UpdateHealthBar(){ 
             healthBar.SetValue(health.GetHealth());
+        
     }
 }

@@ -140,10 +140,11 @@ public class GameController : MonoBehaviour
                 continue;
             }
 
-            if(isBossMode)
+            if (levelData.BossLevel)
             {
                 //Если босс готов вернуться, то не делаем спаун новых врагов
-                if(boss.GetComponent<BossController>().IsReadyToReturn()){
+                if (boss.GetComponent<BossController>().IsReadyToReturn())
+                {
                     yield return new WaitForSeconds(1.5f);
                     continue;
                 }
@@ -225,11 +226,14 @@ public class GameController : MonoBehaviour
             LevelEnded();
         }
 
-        if (allEnemies == allEnemiesSpawned && enemiesKilled == allEnemiesSpawned)
+        if (!levelData.BossLevel) //Данная проверка нужна только на уровнях без босса
         {
-            if (lastEnemy == null)
+            if (allEnemies == allEnemiesSpawned && enemiesKilled == allEnemiesSpawned)
             {
-                LevelEnded();
+                if (lastEnemy == null)
+                {
+                    LevelEnded();
+                }
             }
         }
 
@@ -324,7 +328,7 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        if (levelNumber == levelsData.Length - 1)
+        if (levelNumber == levelsData.Length - 1 && !isGameOver)
         {
             //Можно перейти к титрам и финалу игры
             SceneManager.LoadScene("Credits");

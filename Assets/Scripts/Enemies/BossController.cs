@@ -97,7 +97,7 @@ public class BossController : EnemyBase
             if (step < 1)
             {
                 transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
-                step = step + 0.001f;
+                step += 0.001f;
             }
 
             if (step >= 1)
@@ -111,17 +111,21 @@ public class BossController : EnemyBase
         {
             newPositionBoss = betweenStagePositionBoss;
 
-            if (step < 1)
-            {
-                transform.position = Vector3.Lerp(base.GetCurrentPositionBoss(), newPositionBoss, step);
-                step = step + 0.001f;
-            }
+            transform.position = Vector3.Lerp(transform.position, newPositionBoss, Time.deltaTime);
+            
+            //if (step < 1)
+            //{
+            //    transform.position = Vector3.Lerp(base.GetCurrentPositionBoss(), newPositionBoss, 0.001f);
+            //    step += 0.001f;
+            //}
 
-            if (step >= 1)
-            {
-                transform.position = newPositionBoss;
-            }
+            //if (step >= 1000.0f)
+            //{
+            //    transform.position = newPositionBoss;
+            //}
         }
+
+        
     }
 
     // �������� ������������� ��������� ������� player � boss � ����� ������� ������� ��������� � ������� player
@@ -381,7 +385,7 @@ public class BossController : EnemyBase
         {
             NextStage();
             GameController.GetInstance().SetBossModeOff();
-            SetCurrentPositionBoss(this.transform.position);
+            SetCurrentPositionBoss(transform.position);
             StartCoroutine(SetBossModeAfterPause());
         }
     }
@@ -398,14 +402,15 @@ public class BossController : EnemyBase
         yield return new WaitForSeconds(timeToNextStage);
         bossReadyToReturn = true;
 
+
         //Подождать смерти последнего противника из волны
         while (GameController.GetInstance().IsLastEnemyAlive())
         {
             Debug.Log("Ready to return");
             yield return new WaitForSeconds(1.5f);
         }
-
         GameController.GetInstance().SetBossMode();
+
         bossReadyToReturn = false;
     }
 
