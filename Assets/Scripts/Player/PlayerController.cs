@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour, Deathable
 
         weapons = new List<Weapon>
         {
-            new Weapon(Weapons.Laser, laserProjectile, 7, 7, blasterSound, true),
-            new Weapon(Weapons.Rocket, rocketProjectile, 6, 16, rocketSound, false)
+            new Weapon(Weapons.Laser, laserProjectile, 8, 8, blasterSound, true),
+            new Weapon(Weapons.Rocket, rocketProjectile, 8, 10, rocketSound, false)
         };
 
         currentWeapon = weapons[0];
