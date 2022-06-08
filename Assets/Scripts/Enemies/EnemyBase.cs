@@ -18,6 +18,11 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     private Vector3 currentPositionBoss;
 
+    [SerializeField]
+    float shootingMinRange = 2.0f;
+    [SerializeField]
+    float shootingMaxRange = 5.0f;
+
     //Ожидание перед первым выстрелом
     public float FirstShootWait = 2.0f;
 
@@ -95,7 +100,7 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
             PlayAnimation();
 
-            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+            yield return new WaitForSeconds(Mathf.Lerp(shootingMinRange, shootingMaxRange, Random.value));
 
             ShootSound();
         }
