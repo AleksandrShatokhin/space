@@ -88,6 +88,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
   hitSound: {fileID: 8300000, guid: 077b2e6cce38546a5b265d36692ab2a3, type: 3}
   projectileEnemy: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
+  FirstShootWait: 2
   leftEnemyGun: {fileID: 5184522325005704937}
   rightEnemyGun: {fileID: 7538318708422303360}
   EnemyShipProjectile: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a72b98c0e9347d7aef433ee69729f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
 --- !u!114 &1792117863829712764
 MonoBehaviour:
   m_ObjectHideFlags: 0
