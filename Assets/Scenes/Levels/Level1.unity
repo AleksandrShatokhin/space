@@ -10540,7 +10540,7 @@ MonoBehaviour:
   waitAfterWave: 5
   waitOnStart: 2
   isBossMode: 0
-  shouldSpawnWave: 0
+  shouldSpawnWave: 1
   levelsData:
   - {fileID: 11400000, guid: 9020ecdb89d1b44ed8a9d1aaf73b3675, type: 2}
   - {fileID: 11400000, guid: 618618e6a5d4e4d5d81a4f09b80cabb7, type: 2}
