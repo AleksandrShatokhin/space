@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0011810535, g: 0.0012213722, b: 0.0011747914, a: 1}
+  m_IndirectSpecularColor: {r: 0.0013341557, g: 0.0013341557, b: 0.0013341557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10534,7 +10534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a44bdc21a3cd42cb9b1c719345db76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugLevelNumber: 3
+  debugLevelNumber: 4
   spawner: {fileID: 421200091}
   postGame: {fileID: 797679595789509714, guid: aef3e894c20e7420e891f850875ada82, type: 3}
   waitAfterWave: 5
@@ -10555,7 +10555,7 @@ MonoBehaviour:
   maxPlanetSize: 1.5
   pausePrefab: {fileID: 7543783013263340439, guid: 08db97c8655a73841bafee58176d56ce, type: 3}
   MainUIObject: {fileID: 924179766}
-  bossSpawnLocation: {x: 0, y: 0, z: 7.02}
+  bossSpawnLocation: {x: 0, y: 0, z: 28}
 --- !u!224 &716065760
 RectTransform:
   m_ObjectHideFlags: 0
