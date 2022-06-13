@@ -148,7 +148,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 1
+  m_MotionVectors: 2
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
@@ -761,7 +761,6 @@ GameObject:
   - component: {fileID: 5841346117408434716}
   - component: {fileID: 131236857151673408}
   - component: {fileID: 7147476779804654250}
-  - component: {fileID: 1452632761799264775}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Boss
@@ -814,6 +813,8 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
   hitSound: {fileID: 0}
   projectileEnemy: {fileID: 0}
+  shootingMinRange: 2
+  shootingMaxRange: 5
   FirstShootWait: 2
   leftBlasterGun: {fileID: 7216565909510956140}
   rightBlasterGun: {fileID: 7056396759173264713}
@@ -871,22 +872,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 250, y: 1, z: 200}
   m_Center: {x: 0, y: 0, z: 35}
---- !u!54 &1452632761799264775
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6264109450077427440}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &6446323469651948717
 GameObject:
   m_ObjectHideFlags: 0
