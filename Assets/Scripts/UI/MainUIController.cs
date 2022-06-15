@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class MainUIController : MonoBehaviour
 {
@@ -56,7 +58,10 @@ public class MainUIController : MonoBehaviour
 
             case (int)BonusNumber.BuffBlastWave:
                 {
-                    BonusText = "Взрывная волна";
+                    //LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("ru");
+                    var localizedString = new LocalizedString("Strings", "blast");
+                    //BonusText = "Взрывная волна";
+                    BonusText = localizedString.GetLocalizedString();
                     break;
                 }
 
