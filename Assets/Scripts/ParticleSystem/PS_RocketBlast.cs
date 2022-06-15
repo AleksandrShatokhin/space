@@ -8,15 +8,16 @@ public class PS_RocketBlast : MonoBehaviour
 
     void Start()
     {
-        blastCol = GetComponentInChildren<SphereCollider>();
+        //blastCol = GetComponentInChildren<SphereCollider>();
         blastCol.enabled = false;
 
         StartCoroutine(Blast());
+        Destroy(gameObject, 2);
     }
 
     void Update()
     {
-        Destroy(gameObject, 2);
+        
     }
 
     IEnumerator Blast()

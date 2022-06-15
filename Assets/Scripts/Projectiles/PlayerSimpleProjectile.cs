@@ -12,6 +12,7 @@ public class PlayerSimpleProjectile : Projectile
 
     override protected void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == (int)Layers.Enemy)
         {
             collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
