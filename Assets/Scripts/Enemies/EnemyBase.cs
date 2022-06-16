@@ -18,6 +18,8 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     private Vector3 currentPositionBoss;
 
+    private TutorialMode isTutorial = new TutorialMode();
+
     [SerializeField]
     float shootingMinRange = 2.0f;
     [SerializeField]
@@ -85,24 +87,29 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     {
         yield return new WaitForSeconds(FirstShootWait);
 
-        
 
-        while (true)
+        // проверить что режим обучения не включен. Не вести огонь если обучаем
+        if (!isTutorial.isTutorialMode)
         {
 
-            //Проверить, что враг уже на экране. Не надо вести огонь из-за экрана
-            if (!CheckIfOnScreen()){
-                yield return new WaitForSeconds(FirstShootWait);
-                continue;
+            while (true)
+            {
+
+                //Проверить, что враг уже на экране. Не надо вести огонь из-за экрана
+                if (!CheckIfOnScreen())
+                {
+                    yield return new WaitForSeconds(FirstShootWait);
+                    continue;
+                }
+
+                Instantiate(projectileEnemy, GetProjectilePosition(), GetProjectileRotation());
+
+                PlayAnimation();
+
+                yield return new WaitForSeconds(Mathf.Lerp(shootingMinRange, shootingMaxRange, Random.value));
+
+                ShootSound();
             }
-
-            Instantiate(projectileEnemy, GetProjectilePosition(), GetProjectileRotation());
-
-            PlayAnimation();
-
-            yield return new WaitForSeconds(Mathf.Lerp(shootingMinRange, shootingMaxRange, Random.value));
-
-            ShootSound();
         }
     }
 
