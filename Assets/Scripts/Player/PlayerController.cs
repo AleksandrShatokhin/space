@@ -43,9 +43,11 @@ public class PlayerController : MonoBehaviour, Deathable
     public GameObject blastWave;
     private Rigidbody rb;
     private GameObject joystick;
+    private TutorialMode isTutorial = new TutorialMode();
 
     [SerializeField]
     private bool godMode;
+
 
     void Start()
     {
@@ -127,6 +129,12 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public void Shoot()
     {
+        // Проверить, что режим обучения не включен
+        if (isTutorial.isTutorialMode)
+        {
+            return;
+        }
+
         //Проверить, что стрельба не отключена
         if (isDisableShot)
         {
