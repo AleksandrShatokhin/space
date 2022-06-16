@@ -127,6 +127,7 @@
     <Compile Include="Assets/Scripts/UI/HealthBarComponent.cs" />
     <Compile Include="Assets/Scripts/Utilities/ScreenBounds.cs" />
     <Compile Include="Assets/Scripts/ParticleSystem/BlastBombCollider.cs" />
+    <Compile Include="Assets/Scripts/Utilities/LocalizationUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

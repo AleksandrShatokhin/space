@@ -25,7 +25,43 @@ MonoBehaviour:
       m_Items:
       - id: 0
   - m_Id: 13554336915456
-    m_Localized: Next
+    m_Localized: NEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341214636269568
+    m_Localized: Shield activated!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341428138926080
+    m_Localized: Weapons disabled!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341708754640896
+    m_Localized: Rockets were added!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342077949861888
+    m_Localized: Slow!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345330083160064
+    m_Localized: RESTART LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345467652136960
+    m_Localized: MAIN MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346066049294336
+    m_Localized: RESUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348814123720704
+    m_Localized: NEW GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348898135629824
+    m_Localized: EXIT
     m_Metadata:
       m_Items: []
   references:

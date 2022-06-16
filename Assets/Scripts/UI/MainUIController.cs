@@ -31,7 +31,7 @@ public class MainUIController : MonoBehaviour
         switchWeaponButton.onClick.AddListener(SwitchWeaponButton);
         pauseButton.onClick.AddListener(PauseButton);
     }
-    
+
     void Update()
     {
         ProjectileOnScreen();
@@ -46,41 +46,40 @@ public class MainUIController : MonoBehaviour
         {
             case (int)BonusNumber.BuffShield:
                 {
-                    BonusText = "Подобран щит";
+                    BonusText = LocalizationUtility.GetLocString("Shield");
+
                     break;
                 }
 
             case (int)BonusNumber.DebuffDisableShot:
                 {
-                    BonusText = "Орудия повреждены";
+                    BonusText = LocalizationUtility.GetLocString("WeaponDisabled");
                     break;
                 }
 
             case (int)BonusNumber.BuffBlastWave:
                 {
-                    //LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("ru");
-                    var localizedString = new LocalizedString("Strings", "blast");
-                    //BonusText = "Взрывная волна";
-                    BonusText = localizedString.GetLocalizedString();
+
+                    BonusText = LocalizationUtility.GetLocString("Blast");
                     break;
                 }
 
             case (int)BonusNumber.BuffRocket:
                 {
-                    BonusText = "Добавлены ракеты";
+                    BonusText = LocalizationUtility.GetLocString("AddRockets");
                     break;
                 }
 
             case (int)BonusNumber.DebuffSlowing:
                 {
-                    BonusText = "Замедление";
+                    BonusText = LocalizationUtility.GetLocString("Slow");
                     break;
                 }
         }
 
         return BonusText;
     }
-    
+
     // метод для чтения, табло с текстом по бонусам получает текст, который нужно показать
     public string GetCurrentText()
     {
@@ -90,7 +89,7 @@ public class MainUIController : MonoBehaviour
     void ProjectileOnScreen() // зададим условия выводимого изображения на экран по выбранному виду оружия игроком
     {
 
-        Weapons currentWeapon  = GameController.GetInstance().GetPlayer().GetWeapon().id;
+        Weapons currentWeapon = GameController.GetInstance().GetPlayer().GetWeapon().id;
         string bullets = GameController.GetInstance().GetPlayer().GetWeapon().GetBullets().ToString();
 
         if (currentWeapon == Weapons.Rocket)
@@ -98,7 +97,7 @@ public class MainUIController : MonoBehaviour
             imageProjectile.sprite = rocketPr;
             bulletsText.text = bullets;
         }
-        else if(currentWeapon == Weapons.Laser)
+        else if (currentWeapon == Weapons.Laser)
         {
             imageProjectile.sprite = defaultPr;
             bulletsText.text = bullets;

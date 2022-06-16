@@ -16,11 +16,47 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 7b97144ae35854f1599962b3becbf5f9
   m_Entries:
   - m_Id: 65883070464
-    m_Key: blast
+    m_Key: Blast
     m_Metadata:
       m_Items: []
   - m_Id: 13554336915456
     m_Key: MenuNext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341214636269568
+    m_Key: Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341428138926080
+    m_Key: WeaponDisabled
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341708754640896
+    m_Key: AddRockets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342077949861888
+    m_Key: Slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345330083160064
+    m_Key: MenuRestart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345467652136960
+    m_Key: MenuToMain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346066049294336
+    m_Key: MenuResume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348814123720704
+    m_Key: MenuNewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348898135629824
+    m_Key: MenuExit
     m_Metadata:
       m_Items: []
   m_Metadata:
