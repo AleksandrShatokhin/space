@@ -6,9 +6,9 @@ using System.Collections.Generic;
 public class GameController : MonoBehaviour
 {
     //Синглтон на GameController
-    static private GameController instance;
+    static protected GameController instance;
     static public GameController GetInstance() => instance;
-    private PlayerController player;
+    protected PlayerController player;
 
     public int debugLevelNumber = 0;
 
@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
     public static int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         instance = this;
 
@@ -91,7 +91,6 @@ public class GameController : MonoBehaviour
         levelData = levelsData[LevelNumber];
         isBossMode = levelData.BossLevel;
 
-        Debug.Log(levelData.EnemiesInWave);
         allEnemies = levelData.EnemiesInWave * levelData.NumberOfWaves;
 
         SceneObjectCreate();
@@ -104,7 +103,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(AddBullets());
     }
 
-    private void Awake()
+    protected void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = backgroundMusic;
@@ -114,7 +113,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         //Проверка на нажатие клавиши R для перезапуска
         Restart();
@@ -205,7 +204,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(PostGame(levelData.WaitAfterLevel));
     }
 
-    void Restart()
+    protected void Restart()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -296,7 +295,7 @@ public class GameController : MonoBehaviour
     public PlayerController GetPlayer() => player;
 
 
-    IEnumerator AddBullets()
+    protected IEnumerator AddBullets()
     {
         while (true)
         {
