@@ -55,6 +55,9 @@ public class PostLevelController : MonoBehaviour
         
         // SceneManager.LoadScene(nextLevel);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        // Сохранение данных по уровню игры
+        SaveGameData.SaveLevelNumber();
     }
 
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
-{   
+{
     [SerializeField]
     private GameObject continueGO;
     [SerializeField]
@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private Button newGameBtn;
     [SerializeField]
-    private Button exitBtn; 
+    private Button exitBtn;
 
     private void Start()
     {
@@ -31,16 +31,24 @@ public class MenuController : MonoBehaviour
 
     }
 
-    void StartNewGame(){
-        SceneManager.LoadScene("Level1");
+    void StartNewGame()
+    {
+        if (SaveGameData.TutorialComlete())
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        else
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
     }
 
 
     void ExitGame()
-    {   
-        #if UNITY_EDITOR
+    {
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#endif
         Application.Quit();
     }
 }
