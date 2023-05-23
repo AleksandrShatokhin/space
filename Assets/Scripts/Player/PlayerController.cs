@@ -43,6 +43,11 @@ public class PlayerController : MonoBehaviour, Deathable
     public GameObject blastWave;
     private Rigidbody rb;
     private GameObject joystick;
+    private TutorialMode isTutorial = new TutorialMode();
+
+    [SerializeField]
+    private bool godMode;
+
 
     void Start()
     {
@@ -53,8 +58,8 @@ public class PlayerController : MonoBehaviour, Deathable
 
         weapons = new List<Weapon>
         {
-            new Weapon(Weapons.Laser, laserProjectile, 7, 7, blasterSound, true),
-            new Weapon(Weapons.Rocket, rocketProjectile, 6, 16, rocketSound, false)
+            new Weapon(Weapons.Laser, laserProjectile, 8, 8, blasterSound, true),
+            new Weapon(Weapons.Rocket, rocketProjectile, 8, 10, rocketSound, false)
         };
 
         currentWeapon = weapons[0];
@@ -124,6 +129,12 @@ public class PlayerController : MonoBehaviour, Deathable
 
     public void Shoot()
     {
+        // Проверить, что режим обучения не включен
+        if (isTutorial.isTutorialMode)
+        {
+            return;
+        }
+
         //Проверить, что стрельба не отключена
         if (isDisableShot)
         {
@@ -160,33 +171,40 @@ public class PlayerController : MonoBehaviour, Deathable
     //Правильный путь для смерти игрока. Должны задаваться все необходимые переменные
     //Например, признак конца игры
     public void Death()
-    {
+    {   
+        
         GameObject explosion = Instantiate(particlePlayerExplosion, this.transform.position, Quaternion.identity);
         Destroy(explosion, 3);
         GameController.GetInstance().PlaySound(playerExplosion, 2.0f);
         GameController.GetInstance().GameOver();
+        UpdateHealthBar();
         Destroy(this.gameObject);
     }
 
     void Deathable.Kill()
     {
-        
         Death();
     }
 
 
     public void AddDamage(float dmg)
     {
+        if(godMode){
+            return;
+        }
+
         if (!invulnerable)
         {
             GameController.GetInstance().PlaySound(hitPlayer);
             GetComponent<HealtComponent>().Change(-dmg);
+            UpdateHealthBar();
         }
     }
 
     public void AddHealth(byte hp)
     {
         GetComponent<HealtComponent>().Change(hp);
+        UpdateHealthBar();
     }
 
     public void SwitchProjectile()
@@ -244,4 +262,10 @@ public class PlayerController : MonoBehaviour, Deathable
 
 
     public Weapon GetWeapon() => currentWeapon;
+
+
+    void UpdateHealthBar(){ 
+            healthBar.SetValue(health.GetHealth());
+        
+    }
 }

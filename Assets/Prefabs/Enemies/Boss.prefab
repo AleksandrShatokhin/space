@@ -148,7 +148,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 1
+  m_MotionVectors: 2
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 2961633778835356414}
   - component: {fileID: 7496795266628405349}
   - component: {fileID: 6602700105380820950}
+  - component: {fileID: 6334493720747499904}
   m_Layer: 0
   m_Name: Cab
   m_TagString: Untagged
@@ -303,6 +304,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &6334493720747499904
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365590740177379222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.009999998
+  m_Center: {x: -0.0000000032887324, y: -0.000000010710209, z: -1.1641532e-10}
 --- !u!1 &1304674816850049400
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +774,8 @@ GameObject:
   - component: {fileID: 3038300377819460840}
   - component: {fileID: 5841346117408434716}
   - component: {fileID: 131236857151673408}
+  - component: {fileID: 7147476779804654250}
+  - component: {fileID: 1973786198927083280}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Boss
@@ -807,11 +823,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 65064700458910478, guid: c86631eb74bc549d096240d06404f759, type: 3}
   shootSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 2a35757ae4cf9472fbc447ca877b502f, type: 3}
   hitSound: {fileID: 0}
   projectileEnemy: {fileID: 0}
+  shootingMinRange: 2
+  shootingMaxRange: 5
   FirstShootWait: 2
   leftBlasterGun: {fileID: 7216565909510956140}
   rightBlasterGun: {fileID: 7056396759173264713}
@@ -824,7 +842,12 @@ MonoBehaviour:
   blasterProjectile: {fileID: 6138832901010232634, guid: b8a190255314b6542a986b4f0f622a27, type: 3}
   bombProjectile: {fileID: 2586940537171241702, guid: 7e4bf103534c842ff919790c14238030, type: 3}
   rocketProjectile: {fileID: 3471483272150006156, guid: 5138360e38d6c41ae9178d703fcf6161, type: 3}
-  stage: 3
+  stage: 1
+  timeToNextStage: 10
+  blasterSound: {fileID: 8300000, guid: 249b25ccc8c0a491a9d24a0fb08943a9, type: 3}
+  bombSound: {fileID: 0}
+  launcherSound: {fileID: 0}
+  bossStartExplosion: {fileID: 8300000, guid: 6c33acaf55ce94da397f9692cad3486b, type: 3}
 --- !u!114 &5841346117408434716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,6 +874,35 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 33
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &7147476779804654250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264109450077427440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 250, y: 1, z: 200}
+  m_Center: {x: 0, y: 0, z: 35}
+--- !u!54 &1973786198927083280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264109450077427440}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6446323469651948717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_EnemyEngine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 6.62
@@ -1171,6 +1227,10 @@ PrefabInstance:
     - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_Name
       value: P_EnemyEngine (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -1250,6 +1310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_EnemyEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 6.62
@@ -1327,6 +1391,10 @@ PrefabInstance:
     - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: m_Name
       value: P_EnemyEngine (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058080328686057530, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7421539115389553789, guid: 51f9133a172e54a8e81a3863407f533d, type: 3}
       propertyPath: InitialModule.startSize.scalar

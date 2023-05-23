@@ -74,6 +74,10 @@ PrefabInstance:
       value: EnemyShipProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 6311570661009233908, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
+      propertyPath: m_Height
+      value: 2.5668192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311570661009233908, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
       propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
@@ -83,7 +87,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6311570661009233908, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
       propertyPath: m_Center.z
-      value: 3.04
+      value: 2.233942
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311570661009233908, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
+      propertyPath: m_Direction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6311570661009233910, guid: e39db4f2e5794464ba7cb4c68c4b9e2b, type: 3}
       propertyPath: m_Mesh

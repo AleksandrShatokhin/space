@@ -17,7 +17,7 @@ public class MoveJoyStick : MonoBehaviour
 
     void Start()
     {
-        FindOutSize();
+        //FindOutSize();
     }
 
     private void FindOutSize()
@@ -76,8 +76,9 @@ public class MoveJoyStick : MonoBehaviour
             joystick.transform.position = pointA;
 
             // делаем джойстик видимым
-            joystick.GetComponent<Image>().enabled = true;
-            cursor.GetComponent<Image>().enabled = true;
+            // пробую игру без видимого джостика
+            //joystick.GetComponent<Image>().enabled = true;
+            //cursor.GetComponent<Image>().enabled = true;
         }
 
         // при удерживании нажатой кнопки мыши (при удержании нажания на экран)
@@ -102,8 +103,9 @@ public class MoveJoyStick : MonoBehaviour
             joystick.transform.position = pointA;
 
             // делаем джойстик невидимым
-            joystick.GetComponent<Image>().enabled = false;
-            cursor.GetComponent<Image>().enabled = false;
+            // пробую игру без видимого джостика
+            //joystick.GetComponent<Image>().enabled = false;
+            //cursor.GetComponent<Image>().enabled = false;
         }
     }
 

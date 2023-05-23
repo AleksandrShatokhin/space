@@ -12,9 +12,9 @@ public class PlayerSimpleProjectile : Projectile
 
     override protected void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == (int)Layers.Enemy) // слой 6 - это enemy
+        Debug.Log(collision.gameObject.layer);
+        if (collision.gameObject.layer == (int)Layers.Enemy)
         {
-            //collision.gameObject.GetComponent<EnemyBase>().Death();
             collision.gameObject.GetComponent<EnemyBase>().AddDamage(damage);
 
             ContactPoint contact = collision.GetContact(0);

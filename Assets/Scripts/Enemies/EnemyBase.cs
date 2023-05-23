@@ -16,6 +16,15 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
 
     public GameObject projectileEnemy;
 
+    private Vector3 currentPositionBoss;
+
+    private TutorialMode isTutorial = new TutorialMode();
+
+    [SerializeField]
+    float shootingMinRange = 2.0f;
+    [SerializeField]
+    float shootingMaxRange = 5.0f;
+
     //Ожидание перед первым выстрелом
     public float FirstShootWait = 2.0f;
 
@@ -78,15 +87,29 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
     {
         yield return new WaitForSeconds(FirstShootWait);
 
-        while (true)
+
+        // проверить что режим обучения не включен. Не вести огонь если обучаем
+        if (!isTutorial.isTutorialMode)
         {
-            Instantiate(projectileEnemy, GetProjectilePosition(), GetProjectileRotation());
 
-            PlayAnimation();
+            while (true)
+            {
 
-            yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
+                //Проверить, что враг уже на экране. Не надо вести огонь из-за экрана
+                if (!CheckIfOnScreen())
+                {
+                    yield return new WaitForSeconds(FirstShootWait);
+                    continue;
+                }
 
-            ShootSound();
+                Instantiate(projectileEnemy, GetProjectilePosition(), GetProjectileRotation());
+
+                PlayAnimation();
+
+                yield return new WaitForSeconds(Mathf.Lerp(shootingMinRange, shootingMaxRange, Random.value));
+
+                ShootSound();
+            }
         }
     }
 
@@ -100,5 +123,30 @@ public abstract class EnemyBase : MonoBehaviour, Deathable
         float angleBetween = Vector3.SignedAngle(targetAngle, gameObject.transform.forward, Vector3.up);
 
         return angleBetween;
+    }
+
+    protected Vector3 SetCurrentPositionBoss(Vector3 posBoss)
+    {
+        currentPositionBoss = posBoss;
+        return currentPositionBoss;
+    }
+
+    protected Vector3 GetCurrentPositionBoss() => currentPositionBoss;
+
+
+    protected bool CheckIfOnScreen(){
+
+        Vector3 screenBounds = GameController.GetInstance().ScreenBound();
+
+        if ( -screenBounds.x < this.transform.position.x && screenBounds.x > this.transform.position.x &&
+             -screenBounds.z < this.transform.position.z && screenBounds.z > this.transform.position.z )
+              {
+                  return true;
+              }
+              else
+              {
+                  return false;
+              }
+
     }
 }

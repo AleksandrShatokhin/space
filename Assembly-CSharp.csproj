@@ -54,7 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Projectiles\PlayerSimpleProjectile.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyBase.cs" />
     <Compile Include="Assets\Scripts\Utilities\RandomRotator.cs" />
     <Compile Include="Assets\Scripts\Player\MoveJoyStick.cs" />
@@ -62,64 +61,72 @@
     <Compile Include="Assets\Scripts\ParticleSystem\PS_RocketBlast.cs" />
     <Compile Include="Assets\Scripts\BuffAndDebuff\DebuffDisableShot.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
+    <Compile Include="Assets\Scripts\BossParticleController.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
     <Compile Include="Assets\Scripts\UI\ClickButtonStart.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyBomber.cs" />
+    <Compile Include="Assets\Scripts\Utilities\HealtComponent.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\BuffRocket.cs" />
+    <Compile Include="Assets\Scripts\Utilities\IndicatorForBossRocket.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BossController.cs" />
+    <Compile Include="Assets\Scripts\Utilities\DataStore.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\BlastWaveController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneManagerForLevelSelect.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TransformMover.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\Scripts\Utilities\GarbageCollector.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyShip.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TestEmpty.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\ParticleSistemBlastWave.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Rotator.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonShot.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\LevelSet\LevelData.cs" />
+    <Compile Include="Assets\Scripts\Utilities\CameraController.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\BuffShield.cs" />
+    <Compile Include="Assets\Scripts\UI\CenterTextUI.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem\BlastWaveCollider.cs" />
+    <Compile Include="Assets\Scripts\Base\Deathable.cs" />
+    <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
+    <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\CreditsController.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TutorialMode.cs" />
     <Compile Include="Assets\Scripts\Projectiles\ProjectileRoket.cs" />
     <Compile Include="Assets\Scripts\BuffAndDebuff\DebuffSlowing.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
     <Compile Include="Assets\Scripts\Utilities\BoundSpawner.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyBomber.cs" />
     <Compile Include="Assets\Scripts\Utilities\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Utilities\HealtComponent.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\BuffRocket.cs" />
-    <Compile Include="Assets\Scripts\Enemies\BossController.cs" />
-    <Compile Include="Assets\Scripts\Utilities\DataStore.cs" />
-    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Game\TutorialGameController.cs" />
     <Compile Include="Assets\Scripts\Game\TimerController.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\BlastWaveController.cs" />
     <Compile Include="Assets\Scripts\BuffAndDebuff\Influencer.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\UI\SceneManagerForLevelSelect.cs" />
     <Compile Include="Assets\Scripts\Utilities\LayersEnum.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\NewMonoBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Utilities\TransformMover.cs" />
     <Compile Include="Assets\Scripts\ParticleSystem\PS_BombBlast.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
-    <Compile Include="Assets\Scripts\Utilities\GarbageCollector.cs" />
     <Compile Include="Assets\Scripts\Enemies\AsteroidEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyShip.cs" />
-    <Compile Include="Assets\Scripts\Utilities\TestEmpty.cs" />
     <Compile Include="Assets\Scripts\Utilities\Switcher.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-    <Compile Include="Assets\Scripts\Utilities\Mover.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\BossRocket.cs" />
     <Compile Include="Assets\Scripts\Player\ShieldController.cs" />
-    <Compile Include="Assets\Scripts\ParticleSystem\ParticleSistemBlastWave.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseMode.cs" />
     <Compile Include="Assets\Scripts\UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\Utilities\DeathComponent.cs" />
-    <Compile Include="Assets\Scripts\Utilities\Rotator.cs" />
     <Compile Include="Assets\Scripts\ParticleSystem\BlastCollider.cs" />
     <Compile Include="Assets\Scripts\Utilities\BoundEmemyShip.cs" />
-    <Compile Include="Assets\Scripts\UI\ButtonShot.cs" />
     <Compile Include="Assets\Scripts\UI\PostLevelController.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObjects\LevelSet\LevelData.cs" />
-    <Compile Include="Assets\Scripts\Utilities\CameraController.cs" />
     <Compile Include="Assets\Scripts\Projectiles\BombEnemyShip.cs" />
     <Compile Include="Assets\Scripts\Utilities\HeartAction.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\BuffShield.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarComponent.cs" />
     <Compile Include="Assets\Scripts\Utilities\ScreenBounds.cs" />
-    <Compile Include="Assets\Scripts\UI\CenterTextUI.cs" />
-    <Compile Include="Assets\Scripts\ParticleSystem\BlastWaveCollider.cs" />
-    <Compile Include="Assets\Scripts\Base\Deathable.cs" />
+    <Compile Include="Assets\Scripts\Utilities\LocalizationUtility.cs" />
     <Compile Include="Assets\Scripts\ParticleSystem\BlastBombCollider.cs" />
-    <Compile Include="Assets\Scripts\Utilities\SpawnerBox.cs" />
-    <Compile Include="Assets\Scripts\BuffAndDebuff\MoveElements.cs" />
-    <Compile Include="Assets\Scripts\Projectiles\BossRocket.cs" />
-    <Compile Include="Assets\Scripts\Utilities\IndicatorForBossRocket.cs" />
+    <Compile Include="Assets\Scripts\Utilities\SaveData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -360,6 +367,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Unity\Unity Hub\2020.3.19f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
       <HintPath>Library\PackageCache\com.unity.analytics@3.6.11\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
@@ -733,11 +743,17 @@
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.CacheServer">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -753,6 +769,9 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -775,6 +794,12 @@
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Purchasing.SecurityCore">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
     </Reference>
@@ -796,8 +821,17 @@
     <Reference Include="UnityEngine.Monetization">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Monetization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>

@@ -21,20 +21,44 @@ public class BossController : EnemyBase
     [SerializeField] private GameObject blasterProjectile, bombProjectile, rocketProjectile;
     private bool isShotLeftBlasterGun, isShotRightBlasterGun;
 
-    private Vector3 startPositionBoss, newPositionBoss, betweenStagePositionBoss, currentPositionBoss;
-    private float step = 0.0f, stepBetweenStage = 0.0f;
-
     private float firstDelay;
+
+    private Vector3 startPositionBoss, newPositionBoss;
+    private float step = 0.0f;
+
+    private Vector3 betweenStagePositionBoss = new Vector3(0.0f, -10.0f, 28.0f);
 
     [SerializeField]
     private BossStages stage;
     private int stageCount;
     private float hpOnOneStage;
 
+    [SerializeField]
+    private float timeToNextStage = 30.0f;
+
+
+    // Звуки для босса, так как у него отдельная модель с оружиями
+    [SerializeField]
+    private AudioClip blasterSound;
+    [SerializeField]
+    private AudioClip bombSound;
+    [SerializeField]
+    private AudioClip launcherSound;
+
+    [SerializeField]
+    private AudioClip bossStartExplosion;
+
+    private bool bossReadyToReturn = false;
+
+
+    //Стрельба вкл/выкл
+    private bool canShoot = true;
+
+    public bool IsReadyToReturn() => bossReadyToReturn;
 
     void Start()
     {
-        stage = BossStages.Stage1;
+        // stage = BossStages.Stage1;
         stageCount = GetNames(typeof(BossStages)).Length;
         hpOnOneStage = GetComponent<HealtComponent>().GetHealth() / stageCount;
 
@@ -42,22 +66,66 @@ public class BossController : EnemyBase
 
         // �������� ��������� ������
         animatorCamera = Camera.main.GetComponent<Animator>();
-        animatorCamera.SetBool("isPlus", true);
+        GameController.GetInstance().SetBossMode();
 
         targetLookAtPlayer = GameObject.Find("Player").GetComponent<Transform>();
 
         startPositionBoss = transform.position;
         newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
-        betweenStagePositionBoss = new Vector3(0.0f, -10.0f, 28.0f);
 
         BossShooting();
-
     }
 
     void Update()
     {
-        LookAtBlasterGuns();
-        Movement();
+        if (!targetLookAtPlayer)
+        {
+            return;
+        }
+
+        if (targetLookAtPlayer)
+        {
+            LookAtBlasterGuns();
+            Movement();
+        }
+    }
+
+    private void Movement()
+    {
+        if (GameController.GetInstance().IsBossMode())
+        {
+            if (step < 1)
+            {
+                transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
+                step += 0.001f;
+            }
+
+            if (step >= 1)
+            {
+                step = 0;
+                startPositionBoss = newPositionBoss;
+                newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
+            }
+        }
+        else
+        {
+            newPositionBoss = betweenStagePositionBoss;
+
+            transform.position = Vector3.Lerp(transform.position, newPositionBoss, Time.deltaTime);
+            
+            //if (step < 1)
+            //{
+            //    transform.position = Vector3.Lerp(base.GetCurrentPositionBoss(), newPositionBoss, 0.001f);
+            //    step += 0.001f;
+            //}
+
+            //if (step >= 1000.0f)
+            //{
+            //    transform.position = newPositionBoss;
+            //}
+        }
+
+        
     }
 
     // �������� ������������� ��������� ������� player � boss � ����� ������� ������� ��������� � ������� player
@@ -131,9 +199,16 @@ public class BossController : EnemyBase
 
         while (true)
         {
+
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (isShotLeftBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnLeftBlasterProjectile.transform.position, spawnLeftBlasterProjectile.transform.rotation);
+                GameController.GetInstance().PlaySound(blasterSound);
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
@@ -147,9 +222,15 @@ public class BossController : EnemyBase
 
         while (true)
         {
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (isShotRightBlasterGun && GameController.GetInstance().IsBossMode())
             {
                 Instantiate(blasterProjectile, spawnRightBlasterProjectile.transform.position, spawnRightBlasterProjectile.transform.rotation);
+                GameController.GetInstance().PlaySound(blasterSound);
             }
 
             yield return new WaitForSeconds(Mathf.Lerp(1, 3, Random.value));
@@ -188,6 +269,12 @@ public class BossController : EnemyBase
 
         while (true)
         {
+
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (stage >= BossStages.Stage2)
             {
                 if (AngleBetweenBossAndPlayer() > -180 && AngleBetweenBossAndPlayer() < -100 && GameController.GetInstance().IsBossMode())
@@ -207,6 +294,12 @@ public class BossController : EnemyBase
 
         while (true)
         {
+
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (stage >= BossStages.Stage2)
             {
                 if (AngleBetweenBossAndPlayer() < 180 && AngleBetweenBossAndPlayer() > 100 && GameController.GetInstance().IsBossMode())
@@ -224,6 +317,11 @@ public class BossController : EnemyBase
     {
         while (true)
         {
+            if (!canShoot)
+            {
+                continue;
+            }
+
             if (stage >= BossStages.Stage3 && GameController.GetInstance().IsBossMode())
             {
                 StartCoroutine(ShotLeftRocketGun());
@@ -242,6 +340,7 @@ public class BossController : EnemyBase
 
         while (currentCount < maxCount)
         {
+            GameController.GetInstance().PlaySound(launcherSound, 0.6f);
             currentCount += 1;
             Instantiate(rocketProjectile, spawnLeftRocketProjectile.transform.position, rocketProjectile.transform.rotation);
 
@@ -265,24 +364,7 @@ public class BossController : EnemyBase
     }
 
     //������� �������� ���������� �������
-    private void Movement()
-    {
-        if (GameController.GetInstance().IsBossMode())
-        {
-            if (step < 1)
-            {
-                transform.position = Vector3.Lerp(startPositionBoss, newPositionBoss, step);
-                step = step + 0.001f;
-            }
 
-            if (step >= 1)
-            {
-                step = 0;
-                startPositionBoss = newPositionBoss;
-                newPositionBoss = new Vector3(Random.Range(-10, 10), 0, Random.Range(6, 10));
-            }
-        }
-    }
 
     private void NextStage()
     {
@@ -299,15 +381,13 @@ public class BossController : EnemyBase
         float hp = GetComponent<HealtComponent>().GetHealth();
         float startHp = GetComponent<HealtComponent>().GetStartHealth();
 
-        Debug.Log(startHp - hp);
-        Debug.Log(hpOnOneStage * (int)stage);
-
         if (startHp - hp >= hpOnOneStage * (int)stage)
         {
             NextStage();
+            GameController.GetInstance().SetBossModeOff();
+            SetCurrentPositionBoss(transform.position);
+            StartCoroutine(SetBossModeAfterPause());
         }
-
-        Debug.Log(stage);
     }
 
     public override void AddDamage(float damage)
@@ -316,4 +396,44 @@ public class BossController : EnemyBase
         ChangeBossStageProcess();
     }
 
+
+    protected IEnumerator SetBossModeAfterPause()
+    {
+        yield return new WaitForSeconds(timeToNextStage);
+        bossReadyToReturn = true;
+
+
+        //Подождать смерти последнего противника из волны
+        while (GameController.GetInstance().IsLastEnemyAlive())
+        {
+            Debug.Log("Ready to return");
+            yield return new WaitForSeconds(1.5f);
+        }
+        GameController.GetInstance().SetBossMode();
+
+        bossReadyToReturn = false;
+    }
+
+
+
+
+    public override void Death()
+    {
+        canShoot = false;
+
+        if (bossStartExplosion)
+        {
+            GameController.GetInstance().PlaySound(bossStartExplosion, 8.0f);
+        }
+
+        if (explosionEffect)
+        {
+            DeathSound();
+            GameObject expolion = Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
+            Destroy(expolion, 3);
+
+        }
+
+        Destroy(gameObject);
+    }
 }
